@@ -1,0 +1,23 @@
+.padded {
+    padding-left: 5%;
+    padding-right: 20%;
+}
+header {
+    background-color: grey;
+    border-style: solid;
+    margin: 0px;
+    top: 0;
+}
+body {
+    margin: 0px;
+}
+h1 {
+    font-size: 25pt;
+    color: black;
+}
+p {
+    font-size: 15pt;
+}
+a {
+    font-size: 15pt;
+}
