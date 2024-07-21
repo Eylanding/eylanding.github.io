@@ -3,6 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="index.css">
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <title>Test Website</title>
     </head>
     <body>
@@ -10,6 +12,7 @@
             <a href="https://eylanding.github.io"><h1 style="width: 50%; padding-left: 5%;">Exponential Idle Simplified Guides</h1></a>
         </header>
         <div class="padded">
+
             <p>
                 In my experience with the exponential idle discord server, I have come across players,
                 who, intimidated by the amount of math in the guide, decided to ignore it, or simply,
@@ -21,7 +24,7 @@
             </p>
             <table>
                 <ol>
-                    <li><a href="https://www.eylanding.com">Progress 0 - ee2000 f(t)</a></li>
+                    <li><a href="0-2000.html">Progress 0 - ee2000 f(t)</a></li>
                     <li><a href="https://www.eylanding.com">Progress ee2000 - ee5000 f(t)</a></li>
                     <li><a href="https://www.eylanding.com">Theories 1 - 4</a></li>
                     <li><a href="https://www.eylanding.com">Theories 5 - 7</a></li>
@@ -31,9 +34,103 @@
                 </ol>
             </table>
             <p>
-                Alse, I highly recommend everyone to read the actual exponential idle guides:
+                Also, I highly recommend everyone to read the actual exponential idle guides:
                 <a href="https://www.exponential-idle-guides.netlify.app/">Exponential Idle Guides</a>
             </p>
+
+            <!-- GENERAL GUIDE INFO HERE-->
+            <h2>General Guide Info</h2>
+            <ul>
+                <li>
+                    If you notice anything that you don't understand, is hard to understand, something
+                    that is wrong, or something you think I can improve, do not hesitate to contact me.
+                    Me, and other amazing helpers are on the exponential idle discord server, and always
+                    willing to help. If you give me feedback, I will strive to get it simplified/fixed
+                    as soon as possible, so that this guide remains as helpful as possible.
+                </li>
+                <li>
+                    Sometimes, knowledge is assumed by the fact that you couldn't have gotten to where you
+                    are without it. If you somehow don't have the knowledge (i.e. you are confused about
+                    something), check back to previous section, and please tell me so I can add it.
+                </li>
+                <li>
+                    There will be spoilers, so don't read further than you have reached (unless maybe
+                    you've unlocked something very early and want to look it up)
+                </li>
+                <li>
+                    The guide's main goal is to be readable to everyone. It is not meant to be a full,
+                    in depth look into the game, nor will it provide the best strategies. I highly,
+                    HIGHLY, encourage anyone reading this guide to go and read
+                    <a href="https://exponential-idle-guides.netlify.app">the real exponential idle guides</a>
+                    , written by people a lot more knowledgable than me (i.e. Snaeky).
+                </li>
+            </ul>
+
+            <!--STAR INFORMATION-->
+            <h2>Stars</h2>
+            <p>
+                Stars are obtained passively over time.<br/>
+                You have a tick star chance, which is the chance you will get a star every tick.<br/>
+                This amount starts at 0.04%, and scales with dt. Basically, more dt = more stars.<br/>
+                Also, you can play minigames. If you can afford and complete it, hard arrow is the best
+                minigame. Furthermore, the achivement for solving the expert arrow puzzles awards 125
+                stars, so, after buying the arrow minigame, one can complete expert arrow once and get a full refund.<br/>
+                Minigame rewards are also scaled with dt, but it may not be immediately apparent if you
+                are at the start of the game, you might need quite a bit of dt for this so start having an affect.
+            </p>
+
+            <!--MAIN EQUATION-->
+            <h2>Main Equation Explanation</h2>
+            <p>
+                The main equation looks intimidating, but is actually quite simple. Here's the breakdown<br\><br\>
+                \(f(t+dt) = f(t) \times e^{bxdt}\)<br/>
+                (for post 2k equation refer to intro to grad)<br/>
+                <br/>
+                Essentially, it means that every second, your current f(t) is multiplied by \(e^{bxdt}\), where e is eulers number (1.71828)<br/><br/>
+                For example, if your b and dt are 1, and your f(t) and x are 2, then on the next time step, your f(t) of 1 will increase by a
+                factor of \(e ^ {bxdt} = e ^ {1\times2\times1} = e^2\), which is approximately 7.39. So afterwards, your f(t) will be multiplied by 7.39. 2 * 7.29
+                is approximately 14.54, so after 1 second your ft will have increased from 2 to 14.5<br/><br/>
+                This repeated multiplication means your ft will increase exponentially (going faster) over time. This means that the number after
+                1 e will appear to grow linearly (a constant speed) and the number after ee will appear to grow logarithmically (slowing down).<br/><br/>
+                Note that because of this, a more reasonable way of doing costs is by dividing instead of subtracting. For example, if you have 1000 f(t)
+                and buy something that costs 100 ft, afterwords you will have 10 ft, not 900.
+            </p>
+
+            <!--AUTOPRESTIGE AND AUTOSUPREMACY-->
+            <h2>Autoprestige & Autosupremacy Formulae</h2>
+            <p><i>If you don't know what this is ignore pls</i></p>
+            <p>
+                Autoprestige:<br/><br/>
+
+                ((timer(pt * d(ln(ln(db / b + 1))) &lt 1)> 3 * tr && db > b &&((d(smooth(10^10^10^(phi * tau), 1))
+                > 1)&& timer(abs(d(log10(phi + 1))) &lt 50) > 15))&& phi > 1) ||((timer(pt * d(ln(ln(db / b + 1)))
+                &lt 1)> 3 * tr) && db > b &&((phi >= 1 && phi %lt= 1) ||((0.8 * log10(log10(lf)) > log10(log10(gf)))
+                ||(0.8 * log10(log10(gf)) > log10(log10(sf))))))<br/><br/>
+
+                (for more info please read progress ee50 to ee200) <br/><br/>
+
+                Autosupremacy: <br/><br/>
+
+                timer(d(ln(db / b + 1) / pt) &lt 0)> 3 * tr && db > b&& dpsi + psi > min(min(costUpS(1),costUpS(2)),
+                costUpS(3))&& ln(1 + max(1, log10(sf)) /smooth(max(1, log10(gf)),(st > tr) * ee99)) / max(1, st)
+                &ltsmooth(ln(1 + max(1, log10(sf)) /smooth(max(1, log10(gf)), (st > tr)* ee99)) / max(1, st), (pt >
+                tr) * ee99)<br/><br/>
+
+                Remember to set your mode to equation<br/>
+                <b>IMPORTANT! After you input this, do a manual supremacy. Anytime you enter the edit expression field
+                (the place where you put this in) you have to do another manual supremacy or this will break</b><br/>
+                Also, you have to have you autobuyers set to x1 or xMax <br/><br/>
+
+                (for more info please read progress ee200 to ee2k)
+            </p>
+
+            <!--ACKNOWLEDGEMENTS-->
+            <h2>Acknowledgements</h2>
+            <p>Thank you to:</p>
+            <ul>
+            <li>Snaeky and Baldy for writing the original exponential idle guide, which was copiedused extensively.</li>
+            <li>The Helpers on the exponential idle discord server (Snaeky, XLII, Playspout, Omega, and Axiss) who pointed out my numerous errors</li>
+            </ul>
         </div>
     </body>
 </html>

@@ -15,9 +15,9 @@ h1 {
     font-size: 25pt;
     color: black;
 }
-p {
+p, li {
     font-size: 15pt;
 }
 a {
-    font-size: 15pt;
+    font-style: inherit;
 }
