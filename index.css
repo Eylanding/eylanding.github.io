@@ -12,12 +12,24 @@ body {
     margin: 0px;
 }
 h1 {
-    font-size: 25pt;
+    font-size: 40pt;
     color: black;
+}
+h2 {
+    font-size: 25pt;
 }
 p, li {
     font-size: 15pt;
 }
-a {
+a, blockquote {
     font-style: inherit;
+    font-size: inherit
+}
+table {
+    border: 1px solid black;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
 }
