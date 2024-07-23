@@ -10,6 +10,7 @@ header {
 }
 body {
     margin: 0px;
+    
 }
 h1 {
     font-size: 40pt;
@@ -18,13 +19,33 @@ h1 {
 h2 {
     font-size: 25pt;
 }
+
+h3 {
+    font-size:15pt;
+    text-decoration:underline;
+}
+
 p, li {
     font-size: 15pt;
+    margin-bottom:1em;
+    line-height: 1.3em;
 }
+
+p.important {
+    background-color:#FFCCCC;
+    padding:1em;
+}
+
 a, blockquote {
     font-style: inherit;
-    font-size: inherit
+    font-size: inherit;
 }
+
+blockquote {
+    font-family: 'Courier New', Courier, monospace;
+    font-size:14pt;
+}
+
 table {
     border: 1px solid black;
 }
