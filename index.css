@@ -3,14 +3,16 @@
     padding-right: 20%;
 }
 header {
-    background-color: grey;
+    background-color: #CCCCCC;
     border-style: solid;
+    border-color: #AAAAAA;
+    border-width: 1px 0px 10px 0px;
     margin: 0px;
     top: 0;
 }
 body {
     margin: 0px;
-    
+    color:#222222;   
 }
 h1 {
     font-size: 40pt;
@@ -36,9 +38,8 @@ p.important {
     padding:1em;
 }
 
-a, blockquote {
-    font-style: inherit;
-    font-size: inherit;
+a, a:visited {
+    color:#2218A7;
 }
 
 blockquote {
@@ -53,4 +54,22 @@ td, th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
+}
+
+OL.nav_bar {
+    padding:0px;
+}
+
+OL.nav_bar LI {
+    display:inline-block;
+    margin-right:30px;
+    font-size:20px;
+}
+
+header A {
+    text-decoration:none;
+}
+
+header A:hover {
+    text-decoration:underline;
 }
