@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="index.css">
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <title>Custom Theories - Expidle Simplified guide</title>
+    </head>
+    <body>
+
+       <header style="padding-left: 5%;">
+            <a href="index.html"><h1>Exponential Idle Simplified Guides</h1></a>
+
+            <ol class="nav_bar">
+                <li><a href="0-2000.html">0-2000</a></li>
+                <li><a href="IntroToGrad.html">Intro to Grad</a></li>
+                <li><a href="2000-5000.html">2000-5000</a></li>
+                <li><a href="Theories-1-to-4.html">T1-4</a></li>
+                <li><a href="Theories-5-to-7.html">T5-7</a></li>
+                <li><a href="Theory-8-and-R9.html">T8 & R9</a></li>
+                <li><a href="Theory-9-to-endgame.html">T9 to Endgame</a></li>
+                <li><b>Custom theories</b></li>
+            </ol>
+
+        </header>
+        <div class="padded">
+
+            <p><i>Previous: <a href="Theory-9-to-endgame.html">Theory 9 to Endgame</a></i></p>
+
+            <h2>PLEASE READ <a href="index.html">GENERAL GUIDE</a> PAGE BEFORE READING THIS</h2>
+            <h2>WIP THIS INFORMATION IS NOT PROOFREAD AND MAY BE INNACURATE</h2>
+            <p><i>
+                Disclaimer: This is a simplified version of the guide. The guide will skip over things, and is not completely
+                optimal. Click <a href="https://exponential-idle-guides.netlify.app/">here</a> for a more polished, in-depth, and optimal guide.
+            </i></p>
+
+
+            <!--WSP-->
+            <h2>Weierstraß sine product (WSP)</h2>
+            <ul>
+                <li><b>Sim time to completion:</b> 4 years and 333 days</li>
+                <li><b>Dev:</b> Xaleroc</li>
+                <li><b>Milestone route:</b> 0/0/3 -> 0/1/3 -> 4/1/3</li>
+                <li><b>One sentence description:</b> TBA</li>
+            </ul>
+            <h3>T1 overview:</h3>
+                <p>WSP is based of of Weierstrass' sine approximation: \(s_n(x) = x \Pi_{k=1}^n(1 - (\frac{x}{k\pi})^2)\).<br/>
+                As n goes to infinity, sn(x) approaches sin(x)</p>
+                <p>However, \(s_n(x)\) is quite inaccurate, and for large values of x, \(s_n(x)\) is much larger/smaller then sin(x), even for large values of n.<br/>
+                Essentially, as x gets bigger, \(s_n(x) / sin(x)\) gets bigger, very fast, even for large values of n</p>
+                <p>This theory exploits this inaccuracy, and uses it to increase \(\rho\)</p>
+
+            <h3>Equation breakdown</h3>
+                <blockquote>\(\dot{\rho} = q_1q_2q\)</blockquote>
+                <blockquote>\(\dot{q} = c_2\frac{s_n(\chi)}{sin(\chi)}\)</blockquote>
+                <blockquote>\(\chi = \pi \frac{c_1n}{c_1 + n / 3^3} + 1\)</blockquote>
+                <p>These equation shows that to increase \(\rho\) you want to increase q</p>
+                <p>To increase q you want to increase \(s_n(\chi) / sin(\chi)\), which is the stirling approximation from earlier.
+                Thus to increase \(s_n(\chi) / sin(\chi)\), you want to increase \(\chi\).</p>
+                <p>The third line shows how to increase \(\chi\)</p>
+                <p>And thus we have the variable breakdown:</p>
+                <table>
+                    <tr><td>\(q_1\)</td><td>Increases \(\dot{\rho}\) directly by approx 7%</td></tr>
+                    <tr><td>\(q_2\)</td><td>Increases \(\dot{\rho}\) directly by 2x</td></tr>
+                    <tr><td>\(c_1\)</td><td>Increases \(\chi\) (affect changes over time)</td></tr>
+                    <tr><td>\(n\)</td><td>Increases \(\chi\) (affect changes over time)</td></tr>
+                    <tr><td>\(c_2\)</td><td>Increases \(\dot{q}\) by 2x</td></tr>
+                </table>
+                <p>\(c_1\) and \(n\) affect \(\dot{\rho}\) differently over time</p>
+                <table>
+                    <tr><td>\(c_1\)</td><td>Initially 50% increase in q. Decreases to 0 over time. Negligable after 1e400</td></tr>
+                    <tr><td>\(n\)</td><td>Initially 50% increase in q. Increaces to 4x over time. Almost 4x after 1e400</td></tr>
+                </table>
+
+            <h3>Optimal publication multiplier:</h3>
+                <ul>
+                    <li>0 - e50: 2 - 4</li>
+                    <li>e50 - e75: 5 - 7</li>
+                    <li>e75+: ~8</li>
+                </ul>
+
+            <h3>Strategies:</h3>
+                <p>The best strategy for WSP is always WSPdStopC1. This strategy changes to accommodate that changing power of \(c_1\) and \(n\). However, to
+                simplify, I have a different strat written here: WSPdStopC1noMod. This is not a mainstream strat, so people may not know what you're talking
+                about and the sim will not recommend it. The sim will recommend WSPdStopC1 instead.<br/>
+                <a href="https://exponential-idle-guides.netlify.app/guides/theory-strategies/#wspdstopc1">WSPdStopC1</a></p>
+
+                <h4>WSPdStopC1noMod</h4>
+
+                <table>
+                    <tr><th>var    </th><th>First 15s                         </th><th>Rest of pub                                                      </th></tr>
+                    <tr><td>\(q_1\)</td><td style="color: green;">Always buy</td><td>When cost is \(\frac{1}{10}\) of \(min(q_2, n, c_2) cost\)       </td></tr>
+                    <tr><td>\(q_2\)</td><td style="color: green;">Always buy</td><td style="color: green;">Always buy</td></tr>
+                    <tr><td>\(c_1\)</td><td style="color: green;">Always buy</td><td>When cost is \(c_1\) ratio cheaper then \(min(q_2, n, c_2) cost\)</td></tr>
+                    <tr><td>\(n\)  </td><td style="color: green;">Always buy</td><td style="color: green;">Always buy</td></tr>
+                    <tr><td>\(c_2\)</td><td style="color: green;">Always buy</td><td style="color: green;">Always buy</td></tr>
+                </table>
+                <p>\(c_1\) ratio</p>
+                <ul>
+                    <li>0 - e25: 1</li>
+                    <li>e25 - e40: 3</li>
+                    <li>e40 - e200: 10</li>
+                    <li>e200 - e400: 50</li>
+                    <li>e400 - e700: 1000</li>
+                    <li>e700+: Don't buy c1 more then 15 seconds into the publication</li>
+                </ul>
+
+                <p>The idle strat for WSPdStopC1 is WSPStopC1 (no d), which is slightly different from just autobuying all except those listed as never buy</p>
+                <p>✔️ - Always buy, ❌ - Never buy</p>
+                <h3>WSPStopC1</h3>
+                <table>
+                    <tr><th>var    </th><th>First 15s                         </th><th>Rest of pub                                                      </th></tr>
+                    <tr><td>\(q_1\)</td><td>✔️</td><td>✔️</td></tr>
+                    <tr><td>\(q_2\)</td><td>✔️</td><td>✔️</td></tr>
+                    <tr><td>\(c_1\)</td><td>✔️</td><td>❌ unless \(\rho\) &lt 1e450 in which case ✔️</td></tr>
+                    <tr><td>\(n\)  </td><td>✔️</td><td>✔️</td></tr>
+                    <tr><td>\(c_2\)</td><td>✔️</td><td>✔️</td></tr>
+                </table>
+
+            <!--T2-->
+            <h2>Sequential Limits (SL)</h2>
+            <ul>
+                <li><b>Sim time to completion:</b> 288 days</li>
+                <li><b>Dev:</b> </li>
+                <li><b>Milestone route:</b> 0/0/0/2 -> 0/0/2/2 -> 3/0/2/2 -> 3/5/2/2</i></li>
+                <li><b>One sentence description:</b> TBA</li>
+            </ul>
+            <h3>SL overview:</h3>
+                <p>SL is based of a variation of stirlings approximation for e. Stirlings approximation is an expression that approaches e and x approches
+                infinity:</p>
+                <p>\(lim_{x \rightarrow \infty} \frac{x}{\sqrt[x]{x!}} = e\)</p>
+                <p>In the theory \(\frac{x}{\sqrt[x]{x!}}\) is represetned the the symbol \(\gamma\)</p>
+                <p>Essentially, the higher x is, the closer \(\gamma\) is to e</p>
+                <p>Stirlings approximation is linear, that is, doubling x, makes \(\gamma\) twice as close to e</p>
+                <p>Approximations like this are often used to calculate the value of e by plugging in larger and larger values for x</p>
+
+            <h3>Equation breakdown</h3>
+                <blockquote>\(\dot{\rho_1} = \frac{\sqrt{\rho_2}}{e - \gamma}\)</blockquote>
+                <blockquote>\(\gamma = \frac{\rho_3}{\sqrt[\rho_3]{\rho_3!}}\)</blockquote>
+                <blockquote>\(\dot{\rho_2} = a_1a_2a_3^{-ln(\rho_3)}\)</blockquote>
+                <blockquote>\(\dot{\rho_3} = b_1b_2\)</blockquote>
+                <blockquote>\(a_3 = 2\)</blockquote>
+                <p>The first equation shows that \(\dot{\rho_1}\) is affected by \(\rho_2\) (half effectiveness) and how close \(\gamma\) is to e<br/>
+                Half effectiveness means that quarupling \(\rho_2\) only doubles \(\rho_1\).</p>
+                <p>The 2nd equation is stirlings approximation, and shows us that the closeness of gamma to e is proportional to \(\rho_3\)</p>
+                <p>The next equations are simple and show that \(a_{12}\) increases \(\rho_2\) and \(b_{12}\) increases \(\rho_3\)</p>
+                <p>Interestingly, \(\dot{\rho_2}\) is DECREASED by \(a_3\) and \(\rho_3\), meaning to increase \(\rho_2\) you should decrease those</p>
+                <p>The final equation shows the value of \(a_3\) which can be lowered through milestones</p>
+
+                <p>Overall the effectiveness of each variable is</p>
+                <table>
+                    <tr><td>\(a_1\)</td><td>Increases \(\dot{\rho_2}\) by approx 52%, though due to the square root this is only a 26% inclease in \(\rho_1\)</td></tr>
+                    <tr><td>\(a_2\)</td><td>Increases \(\dot{\rho_2}\) by 2x</td></tr>
+                    <tr><td>\(b_1\)</td><td>Increases \(\dot{\rho_3}\) by  approx 60%</td></tr>
+                    <tr><td>\(b_2\)</td><td>Increases \(\dot{\rho_3}\) by 2x</td></tr>
+                </table>
+
+            <h3>Optimal publication multiplier:</h3>
+            <ul>
+                <li>0 - e90: 5 - 8</li>
+                <li>e90 - e200: 9 - 9.5</li>
+                <li>e200-e300: 6 - 8</li>
+                <li>e300+: 7.5 - 8.5</li>
+            </ul>
+
+            <h3>Strategies:</h3>
+            <p>every variable does not affect \(\rho_1\) directly, affecting either \(\rho_2\) or \(\rho_3\), which usually takes a while to build up. Therefore, near
+            the end of a publication, you should stop buying them, because by the time the upgrades have built up, you've past the optimal pub multi. Thus we
+            have the strat SLStopAd. I would like to remove the Mod part for simplicity, but I am afraid I may make the start unviable. Therefore I have
+            decided NOT to list the active strat (SL is super idle anyway), as the speed gain from SLStopAd is rarely enough to justify using over the idle
+            strat SLStopA.</p>
+            <p><a href="https://exponential-idle-guides.netlify.app/guides/theory-strategies/#slstopad">SLStopAd</a></p>
+            <h4>SLStopA</h4>
+            <p>✔️ - Always buy, ❌ - Never buy</p>
+            <table>
+                <tr><th>var    </th><th>Pub multi &lt 4.5</th><th>Pub multi 4.5 - 6</th><th>Pub multi > 6</th></tr>
+                <tr><td>\(a_1\)</td><td>✔️                </td><td>❌               </td><td>❌            </td></tr>
+                <tr><td>\(a_2\)</td><td>✔️                </td><td>❌               </td><td>❌            </td></tr>
+                <tr><td>\(b_1\)</td><td>✔️                </td><td>✔️                </td><td>❌            </td></tr>
+                <tr><td>\(b_2\)</td><td>✔️                </td><td>✔️                </td><td>❌            </td></tr>
+            </table>
+            <p>SL has a MS strat as well. This MS strat is quite difficult, however, without manual buying it might be not too bad. It's also good at get some
+            MS practice in, <s>and if I have to suffer SLMS you all do too</s>. Therefore I have decided to include SLMS here as well (again, SLMSd is not
+            included)</p>
+            <h4>SLMS</h4>
+            <p class="important">SLMS is a DIFFICULT strat to perform. If you are unable to do it, please feel free to ignore this section</p>
+            <table>
+                <tr><td>State 1</td><td>\(4 \rightarrow 3 \rightarrow 1 \rightarrow 2\) (prioritieses \(\rho_3\))</td>
+                <tr><td>State 2</td><td>\(2 \rightarrow 1 \rightarrow 4 \rightarrow 3\) (prioritieses \(\rho_2\))</td>
+                <tr><td>State 3</td><td>\(1 \rightarrow 2 \rightarrow 4 \rightarrow 3\) (prioritieses \(\rho_1\))</td>
+            </table>
+            <p>This notation tells you the priority order to buy milestones. For example \(4 \rightarrow 3 \rightarrow 1 \rightarrow 2\) means to max out the 4th
+            milestone (from the top) then the 3rd then the 1st then the 2nd</p>
+            <table>
+                <tr><th>\(\rho\)      </th><th>State 1</th><th>State 2</th><th>State 3</th></tr>
+                <tr><td>1e25 - 1e50  </td><td>5      </td><td>4      </td><td>1      </td></tr>
+                <tr><td>1e50 - 1e75  </td><td>7      </td><td>6      </td><td>1      </td></tr>
+                <tr><td>1e75 - 1e100 </td><td>12     </td><td>10     </td><td>1      </td></tr>
+                <tr><td>1e100 - 1e150</td><td>20     </td><td>15     </td><td>1      </td></tr>
+                <tr><td>1e150 - 1e175</td><td>8      </td><td>6      </td><td>1      </td></tr>
+                <tr><td>1e175 - 1e200</td><td>1.5    </td><td>1      </td><td>SKIP   </td></tr>
+                <tr><td>1e200 - 1e275</td><td>3      </td><td>SKIP   </td><td>1      </td></tr>
+                <tr><td>1e275 - 1e300</td><td>2      </td><td>SKIP   </td><td>1      </td></tr>
+            </table>
+            <p>This table tells you when to swap to each state. Start in state 1 and read the number in the box (I'm calling it "n"). When your \(\rho_1\)
+            reaches "n" times less then the next \(b_{12}\) upgrade, swap to State 2. Now you have a new "n". When your \(\rho_1\) again reaches "n" times less
+            then the next \(b_{12}\) upgrade with the new "n", swap to State 3 (note that for one of the stages there is no swapping to state 3.). Finally, when
+            you can afford and buy the upgrade, or your \(\rho\) drops back down due to another upgrade, swap back to State 1</p>
+            <p>For variable purcahse, follow the SLStopA strat. Therefore you don't have to worry about variables and just focus on the MS. If you want to take a
+            break, just leave it in state 1 and come back. Any amount of active play is beneficial</p>
+            <p>This strategy is over 2x faster then SLStopA, so I suggest doing it if you can and have the times too. Plus, it's more fun then just waiting</p>
+
+
+            <!--T3-->
+            <h2>Eulers Formula (EF)</h2>
+            <ul>
+                <li><b>Sim time to completion:</b> 132 days</li>
+                <li><b>Dev:</b> Snaeky and peanut</li>
+                <li><b>Milestone route:</b> 2/0 -> 2/3/0 -> 2/3/5/0 -> 2/3/5/2/0 -> 2/3/5/2/2</li>
+                <li><b>One sentence description:</b> TBA</li>
+            </ul>
+
+            <h3>EF overview:</h3>
+            <p>EF is based of eulers formula: \(e^{i\theta} = cos(\theta) + i sin(\theta)\), where \(i = \sqrt{-1}\), the imaginary unit<br/>
+            This means that as you increase θ, \(e^{i\theta}\) spirals around the origin (0, 0), always keeping a distance of 1. (and an angle of θ radians)</p>
+            <p>For those who don't know, a complex number is a number in the form a + bi. I won't fully explain complex number here, but it is in essence a 2d
+            number, in the form a + bi incread of (x, y). if we set z = a + bi, then Re(z) = a, and Im(z) = b.</p>
+            <p>If you imagine the unit circle centered at the origin, then the value \(e^{i\theta}\) can be thought of a point 1 unit away fro mthe origin and
+            \(\theta\) radians around the circle</p>
+            <p>This formula will be used to generate 2 currencies, R and I, which are used to increase \(rho\).</p>
+            <p>The equations in the theory have already expanded out eulers formula, and will be understandable if you have a good grasp of trigenometry, even if 
+            you don't understan complex numbers</p>
+            <p>Note that this theory's rho to tau rate is uniquely 1.6, this means that one must only reach 375 rho to max it out, and that tau increase 4 times
+            faster with respect to rho, making this theory faster then it may seem when compared to the other CT's. This theory can feel extremely slow compared
+            to other theories but it is actually one of the fastest</p>
+
+            <h3>Equation breakdown</h3>
+            <blockquote>\(\dot{\rho} = a_1a_2a_3 \sqrt{tq^2 + R^2 + I^2}\)</blockquote>
+            <blockquote>\(G(t) = g_r + g_i\)</blockquote>
+            <blockquote>\(g_r = b_1b_2cos(t), g_i = c_1c_2sin(t)\)</blockquote>
+            <blockquote>\(\dot{q} = q_1q_2\)</blockquote>
+            <blockquote>\(\dot{R} = (g_r)^2, \dot{I} = -(g_i)^2\)</blockquote>
+            <p>The first line is the main equation, which shows that to increase \(\rho\) you want to increase \(a_1\), \(a_2\), \(a_3\), t, and q (R and I are
+            effectively meaningless due to \(tq^2\) out competing them)<br/>
+            The second line is the graph, G(t) is the graph drawn on screen<br/>
+            The third line is Eulers formula, describing how \(g_r\) and \(g_i\) behave. Note that because they are squared below, negative values are fine<br/>
+            The forth line simple describes q<br/>
+            And the fifth line describes how R and I grow, based on the square of \(g_r\) and \(g_i\)</p>
+            <p>Note that even though R and I are meaningless in the main equation, they are used to buy \(b_{12}\), \(c_{12}\), and \(a_{23}\), making them quite
+            important</p>
+            <p>And thus we have the variable breakdown:</p>
+            <table>
+                <tr><td>\(\dot{t}\)</td><td>Increases \(\dot{t}\) by +0.25 (max 1)</td></tr>
+                <tr><td>\(q_1\)</td><td>Increases \(\dot{q}\) by approx 7%</td></tr>
+                <tr><td>\(q_2\)</td><td>Increases \(\dot{q}\) by 2x</td></tr>
+                <tr><td>\(b_1\)</td><td>Increases \(\dot{R}\) by approx 14%</td></tr>
+                <tr><td>\(b_2\)</td><td>Increases \(\dot{R}\) by approx 21%</td></tr>
+                <tr><td>\(c_1\)</td><td>Increases \(\dot{I}\) by approx 20%</td></tr>
+                <tr><td>\(c_2\)</td><td>Increases \(\dot{I}\) by approx 21%</td></tr>
+                <tr><td>\(a_1\)</td><td>Increases \(\dot{\rho}\) by 2x</td></tr>
+                <tr><td>\(a_2\)</td><td>Increases \(\dot{\rho}\) by 2x, costs R</td></tr>
+                <tr><td>\(a_3\)</td><td>Increases \(\dot{\rho}\) by 2x, costs I</td></tr>
+            </table>
+
+            <h3>Optimal publication multiplier:</h3>
+            <p>TBA</p>
+
+            <h3>Stategy:</h3>
+            <p>EF strategy involves d strats with variable's that cost \(\rho\), and balancing between b/c upgrades and \(a_2/a_3\) upgrades with variable that cost R/I.
+            Always buy \(\dot{t}\) as soon as you can</p>
+            <p>The idea with R and I are as follows: b/c upgrades increase R and I growth, but not \(\rho\). Early on, this is good becasue we need R and I to 
+            buy \(a_{23}\), but later into the pub they are less valuble, as their bonus takes a while to actually take effect. Therefore, later into the pub,
+            we should buy b/c upgrades less</p>
+
+            <h4>EFAInoMod</h4>
+
+            <table>
+                <tr><th>var    </th><th>Recovery                             </th><th>Tau gain                             </th></tr>
+                <tr><td>\(q_1\)</td><td>When \(\frac{1}{15}\) of \(q_2\) cost</td><td>When \(\frac{1}{15}\) of \(q_2\) cost</td></tr>
+                <tr><td>\(q_2\)</td><td style="color: green;">Always buy   </td><td style="color: green;">Always buy   </td></tr>
+                <tr><td>\(b_1\)</td><td style="color: green;">Always buy   </td><td>When \(\frac{1}{5}\) of \(a_2\) cost </td></tr>
+                <tr><td>\(b_2\)</td><td style="color: green;">Always buy   </td><td>When \(\frac{1}{5}\) of \(a_2\) cost </td></tr>
+                <tr><td>\(c_1\)</td><td style="color: green;">Always buy   </td><td>When \(\frac{1}{5}\) of \(a_3\) cost </td></tr>
+                <tr><td>\(c_2\)</td><td style="color: green;">Always buy   </td><td>When \(\frac{1}{5}\) of \(a_3\) cost </td></tr>
+                <tr><td>\(a_1\)</td><td>When \(\frac{1}{10}\) of \(q_2\) cost</td><td>When \(\frac{1}{10}\) of \(q_2\) cost</td></tr>
+                <tr><td>\(a_2\)</td><td style="color: green;">Always buy   </td><td style="color: green;">Always buy   </td></tr>
+                <tr><td>\(a_3\)</td><td style="color: green;">Always buy   </td><td style="color: green;">Always buy   </td></tr>
+            </table>
+
+            <p>The idle strat is EFSNAX not Autobuy All</p>
+            <h4>EFSNAX</h4>
+            <p>✔️ - Always buy, ❌ - Never buy</p>
+            <table>
+                <tr><th>var</th><th>Recovery</th><th>Tau gain</th></tr>
+                <tr><td>\(q_1\)</td><td>✔️</td><td>❌</td></tr>
+                <tr><td>\(q_2\)</td><td>✔️</td><td>✔️</td></tr>
+                <tr><td>\(b_1\)</td><td>✔️</td><td>❌</td></tr>
+                <tr><td>\(b_2\)</td><td>✔️</td><td>❌</td></tr>
+                <tr><td>\(c_1\)</td><td>✔️</td><td>❌</td></tr>
+                <tr><td>\(c_2\)</td><td>✔️</td><td>❌</td></tr>
+                <tr><td>\(a_1\)</td><td>✔️</td><td>✔️</td></tr>
+                <tr><td>\(a_2\)</td><td>✔️</td><td>✔️</td></tr>
+                <tr><td>\(a_3\)</td><td>✔️</td><td>✔️</td></tr>
+            </table>
+
+
+            <!--T4-->
+            <h2>Convergents to the Square root of 2 - CSR2</h2>
+            <ul>
+                <li><b>Sim time to completion:</b> 1 year 73 days</li>
+                <li><b>Dev: </b> Solarion</li>
+                <li><b>Milestone route:</b> 0/1/0 -> 0/1/2 -> 3/1/2</i></li>
+                <li><b>One sentence description:</b> TBA</li>
+            </ul>
+
+            <h3>CSR2 overview:</h3>
+            <p>CSR2 is based on a reccurence relation that computes sqrt(2), which is the following 2 sequences:</p>
+            <ul>
+                <li>The N sequence which goes: 1, 3, 7, 17, 41, 99...</li>
+                <li>The D sequence which goes: 1, 2, 5, 12, 29, 70...</li>
+            </ul>
+            <p>Where the next term (\(N_m\)) is the previous term (\(N_{m-1}\)) times 2 plus the term before that (\(N_{m-2}\)), for both N and D, that is</p>
+            <blockquote>\((N/D)_m = 2(N/D)_{m-1} + (N/D)_{m-2}\)</blockquote>
+            <p>Interestingly, if we take the quotient of corresponding terms in both series (\(\frac{N_m}{D_m}\)) (like 1/1, 3/2, 7/5, 17/12 ect.) as we get
+            further along, it approaches \(\sqrt{2}\). Essentially, as m approaches infinity, (\(\frac{N_m}{D_m}\)) approachs \(\sqrt{2}\)</p>
+
+            <h3>Equation Breakdown</h3>
+            <blockquote>\(\dot{\rho} = q_1q_2q\)</blockquote>
+            <blockquote>\(\dot{q} = c_1c_2|\sqrt{2} - \frac{N_m}{D_m}|^{-1}\)</blockquote>
+            <blockquote>\(N_m = 2N_{m-1} + N_{m-2}, N_0 = 1, N_1 = 3\)</blockquote>
+            <blockquote>\(D_m = 2D_{m-1} + D_{m-2}, D_0 = 1, D_1 = 2\)</blockquote>
+            <blockquote>\(m = n + log_2(c_2)\)</blockquote>
+            <p>The first line is the main equation, which shows that to increase ρ you want to increase q1, q2, and q</p>
+            <p>The second line is the equation for q, ehich shows that increase q you want to increase c1, c2, and get (\\frac{N_m}{D_m}\) closer to
+            \(\sqrt{2}\)</p>
+            <p>The third line and forth line is the recurrence relation described above, which shows to get (\\frac{N_m}{D_m}\) closer to \(\sqrt{2}\), you want
+            to increase m.</p>
+            <p>The fifth line is self explanatory</p>
+            <p>Therefore, \(q_{12}\) affect \(\rho\) directly and \(c_{12}\) and \(n\) affects q directly (and by extention \(\rho\) indirectly)</p>
+            <p>And thus we have the variable breakdown:</p>
+            <table>
+                <tr><td>\(q_1\)</td><td>Increases \(\dot{\rho}\) by approx. 7%</td></tr>
+                <tr><td>\(q_2\)</td><td>Increases \(\dot{\rho}\) by 2x</td></tr>
+                <tr><td>\(c_1\)</td><td>Increases \(\dot{q}\) by approx. 7%</td></tr>
+                <tr><td>\(n\)  </td><td>Increases \(\dot{q}\) by 6x</td></tr>
+                <tr><td>\(c_2\)</td><td>Increases \(\dot{q}\) by 22x!! (wtih full milestones)</td></tr>
+            </table>
+            <p>An increase in \(\dot{q}\) corresponds to an equivelent increase in \(\dot{\rho}\) over time</p>
+            
+
+            <h3>Optimal publication multiplier:</h3>
+            <p>I've found it between 2 and 4.5 usually, but it varies</p>
+
+            <h3>Strategies</h3>
+            <p>CSR2's strat is pretty simple, really heavy d strats. Because of the large variable disparity, doing active strats is especially beneficial</p>
+            <p>This is not the normal CSR2d recommended by the guide but I believe mine is slightly better. This is the only strat in this guide that is actually better</p>
+            <h4>CSR2d+</h4>
+            <table>
+                <tr><td>\(q_1\)</td><td>10x cheaper then \(min(q_2, n, c_2)\)</td></tr>
+                <tr><td>\(q_2\)</td><td>1.9x cheaper then \(min(n, c_2)\)</td></tr>
+                <tr><td>\(q_1\)</td><td>10x cheaper then \(min(q_2, n, c_2)\)</td></tr>
+                <tr><td>\(n\)</td><td>1.11x cheaper then \(c_2\)</td></tr>
+                <tr><td>\(c_2\)</td><td style="color: green;">Always buy</td></tr>
+            </table>
+            <p>note that autobuying \(q_2\) and \(n\) is almost the same. In fact, that is the strat recommended by the guide</p>
+            <p>There is a MS strat for CSR2. You can do CSR2XL x.xx explained 
+            <a href="https://exponential-idle-guides.netlify.app/guides/theory-strategies/#csr2xl-xxx">here</a> or you can just do one swap at the end of your
+            pub, which is swapping form the usual milestone route of "0/1/0 -> 0/1/2 -> 3/1/2" to "3/0 -> 3/1/0 -> 3/1/2" at the end of your pub, wait a bit, and
+            then publish and swap back.</p>
+
+            <p>Next: <a href="IntroToGrad.html">Introduction to Graduation</a></p>
+
+        </div>
+    </body>
+</html>
