@@ -23,8 +23,11 @@ h2 {
 }
 
 h3 {
-    font-size:15pt;
+    font-size:18pt;
     text-decoration:underline;
+}
+h4 {
+    font-size:18pt;
 }
 
 p, li {
@@ -72,4 +75,7 @@ header A {
 
 header A:hover {
     text-decoration:underline;
+}
+.red {
+    color: red;
 }
