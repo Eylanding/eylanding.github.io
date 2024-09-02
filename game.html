@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuclear Physics Idle Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #game-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <h1>Nuclear Physics Idle Game</h1>
+        <p>Energy: <span id="energy-count">0</span> MeV</p>
+        <p>Neutrons: <span id="neutron-count">0</span></p>
+        <p>Protons: <span id="proton-count">0</span></p>
+        <div id="hydrogen-isotopes" class="hidden">
+            <p>Deuterium: <span id="hydrogen2-count">0</span></p>
+            <p>Tritium: <span id="hydrogen3-count">0</span></p>
+            <p>Helium-3: <span id="helium3-count">0</span></p>
+        </div>
+        <p>Neutrons per second: <span id="neutrons-per-second">1</span></p>
+        <p>Beta decay rate: <span id="beta-decay-rate">5</span>%</p>
+        <p>Neutron Flux: <span id="neutron-flux">0</span></p>
+        <p>Tempurature: <span id="tempurature">0</span> K</p>
+        <button id="upgrade-stream">Upgrade Neutron Stream (Cost: 1 MeV)</button>
+        <button id="upgrade-tempurature" class="hidden">Upgrade Fusion Tempurature (Cost: 10000 Tritium)</button><br/>
+        <button id="upgrade-flux" class="hidden">Upgrade Neutron Flux (Cost: 10000 Protons)</button>
+        <button id="prestige" class="hidden">Reset for a small bonus (x1 Game Speed)</button>
+    </div>
+
+    <script>
+
+        let energy = 0.0;
+        let neutrons = 0;
+        let protons = 0;
+        let hydrogen2 = 0;
+        let hydrogen3 = 0;
+        let helium3 = 0;
+        let speed = 1;
+
+        let fluxUnlocked = false;
+        let deuteriumUnlocked = false;
+        let tempUnlocked = false;
+        prestigeUnlocked = false;
+
+        let neutronsPerSecond = 25;
+        let baseNeutronsPerSecond = 25;
+        let betaDecayRate = 0.0007882;
+        let tritiumDecayRate = 0.0000000017814;
+        let flux = 0;
+        let temp = 0;
+
+        let upgradeCost = 1;
+        let fluxCost = 10000;
+        let tempCost = 10000;
+
+        const energyCount = document.getElementById('energy-count');
+        const neutronCount = document.getElementById('neutron-count');
+        const protonCount = document.getElementById('proton-count');
+        const hydrogenIsotopes = document.getElementById('hydrogen-isotopes')
+        const hydrogen2Count = document.getElementById('hydrogen2-count');
+        const hydrogen3Count = document.getElementById('hydrogen3-count');
+        const helium3Count = document.getElementById('helium3-count');
+        const neutronsPerSecondDisplay = document.getElementById('neutrons-per-second');
+        const betaDecayRateDisplay = document.getElementById('beta-decay-rate');
+        const neutronFlux = document.getElementById('neutron-flux')
+        const TempuratureAMT = document.getElementById('tempurature')
+        const upgradeButton = document.getElementById('upgrade-stream');
+        const upgradeFlux = document.getElementById('upgrade-flux');
+        const upgradeTemp = document.getElementById('upgrade-tempurature');
+        const prestige = document.getElementById('prestige');
+
+        const BARN = 10 ** -24
+
+        upgradeButton.addEventListener('click', () => {
+            while (energy >= upgradeCost) {
+                energy -= upgradeCost;
+                neutronsPerSecond = Math.floor(neutronsPerSecond * 2.5);
+                upgradeCost = Math.floor(upgradeCost * 4);
+                upgradeButton.textContent = `Upgrade Neutron Stream (Cost: ${upgradeCost}MeV)`;
+                updateDisplay();
+            }
+        });
+
+        upgradeFlux.addEventListener('click', () => {
+            while (protons >= fluxCost) {
+                protons -= fluxCost;
+                flux = (flux != 0 ? Math.floor(flux * 1.5) : 1e22);
+                fluxCost = Math.floor(fluxCost * 5);
+                upgradeFlux.textContent = `Upgrade Neutron Flux (Cost: ${fluxCost} Protons)`;
+                updateDisplay();
+            }
+        });
+
+        upgradeTemp.addEventListener('click', () => {
+            while (hydrogen3 >= tempCost) {
+                hydrogen3 -= tempCost;
+                temp = (temp != 0 ? Math.floor(temp * 2) : 1e6);
+                tempCost = Math.floor(tempCost * 4);
+                upgradeTemp.textContent = `Upgrade Fusion Tempurature (Cost: ${tempCost} Tritium)`;
+                updateDisplay();
+            }
+        });
+
+        prestige.addEventListener('click', () => {
+            if (helium3**0.1 * 25 > baseNeutronsPerSecond){
+                baseNeutronsPerSecond = helium3 ** 0.1 * 25;
+
+                energy = 0.0;
+                neutrons = 0;
+                protons = 0;
+                hydrogen2 = 0;
+                hydrogen3 = 0;
+                helium3 = 0;
+
+                fluxUnlocked = false;
+                deuteriumUnlocked = false;
+                tempUnlocked = false;
+                prestigeUnlocked = false;
+                upgradeFlux.classList.add('hidden');
+                hydrogenIsotopes.classList.add('hidden');
+                upgradeTemp.classList.add('hidden');
+                prestige.classList.add('hidden')
+        
+
+                neutronsPerSecond = Math.floor(baseNeutronsPerSecond);
+                betaDecayRate = 0.0007882;
+                tritiumDecayRate = 0.0000000017814;
+                flux = 0;
+                temp = 0;
+
+                upgradeCost = 1;
+                fluxCost = 10000;
+                tempCost = 10000;
+
+                upgradeButton.textContent = `Upgrade Neutron Stream (Cost: ${upgradeCost}MeV)`;
+                upgradeFlux.textContent = `Upgrade Neutron Flux (Cost: ${fluxCost} Protons)`;
+                upgradeTemp.textContent = `Upgrade Fusion Tempurature (Cost: ${tempCost} Tritium)`;
+
+
+            }
+        });
+
+        function updateDisplay() {
+            energyCount.textContent = Math.round(energy*100)/100;
+            neutronCount.textContent = Math.floor(neutrons);
+            protonCount.textContent = Math.floor(protons) + (protonFormation < 2 ? ` (${Math.round(protonFormation * 1000) / 10}%)` : `(+${Math.round(protonFormation * 10) / 10})`);
+            hydrogen2Count.textContent = Math.floor(hydrogen2) + (hydrogen2Formation < 2 ? ` (${Math.round(hydrogen2Formation * 1000) / 10}%)` : `(+${Math.round(hydrogen2Formation * 10) / 10})`);
+            hydrogen3Count.textContent = Math.floor(hydrogen3) + (hydrogen3Formation < 2 ? ` (${Math.round(hydrogen3Formation * 1000) / 10}%)` : `(+${Math.round(hydrogen3Formation * 10) / 10})`);
+            helium3Count.textContent = helium3 + (helium3Formation < 2 ? ` (${Math.round(helium3Formation * 10 ** 8) * 10 ** -6}%)` : `(+${Math.round(helium3Formation * 10) / 10})`);
+            neutronsPerSecondDisplay.textContent = neutronsPerSecond;
+            betaDecayRateDisplay.textContent = betaDecayRate * 100;
+            neutronFlux.textContent = flux
+            TempuratureAMT.textContent = temp
+            prestige.textContent = `Reset for a small bonus (x${helium3 ** 0.1 * 25 / baseNeutronsPerSecond})`
+
+            if (protons >= 1000 && !fluxUnlocked) {
+                upgradeFlux.classList.remove('hidden');
+                fluxUnlocked = true;
+            }
+
+            if (flux > 1 && !deuteriumUnlocked) {
+                hydrogenIsotopes.classList.remove('hidden');
+                deuteriumUnlocked = true
+            }
+
+            if (hydrogen3 >= 1000 && !tempUnlocked) {
+                upgradeTemp.classList.remove('hidden');
+                tempUnlocked = true;
+            }
+
+            if (temp > 1 && !prestigeUnlocked) {
+                prestige.classList.remove('hidden')
+                prestigeUnlocked = true;
+            }
+        }
+
+        setInterval(() => {
+            // Generate new neutrons
+            let newNeutrons = neutronsPerSecond / 10 * speed;
+            neutrons += newNeutrons;
+
+            // Calculate beta decay
+            let decayingNeutrons = Math.min(neutrons * betaDecayRate / 10 * speed, neutrons * 0.9);
+            protonFormation = decayingNeutrons
+            let semi = decayingNeutrons % 1;
+            decayingNeutrons = Math.floor(decayingNeutrons) + (Math.random() < semi ? 1 : 0)
+            neutrons -= decayingNeutrons;
+            protons += decayingNeutrons;
+            energy += decayingNeutrons * 0.782343;
+
+            //Calculate neutron capture for protium
+            let crossSection = 0.33 * BARN
+            let reactionRate = Math.min(crossSection * flux * protons * speed, protons * 0.9, neutrons * 0.9);
+            hydrogen2Formation = reactionRate
+            semi = reactionRate % 1
+            reactionRate = Math.floor(reactionRate) + (Math.random() < semi ? 1 : 0)
+            protons -= reactionRate;
+            neutrons -= reactionRate;
+            hydrogen2 += reactionRate;
+            energy += reactionRate * 2.224;
+
+
+            //Calculate neutron capture for tritium
+            crossSection = 0.000519 * BARN
+            reactionRate = Math.min(crossSection * flux * hydrogen2 * speed, hydrogen2 * 0.9, neutrons * 0.9);
+            hydrogen3Formation = reactionRate
+            semi = reactionRate % 1
+            reactionRate = Math.floor(reactionRate) + (Math.random() < semi ? 1 : 0)
+            hydrogen2 -= reactionRate;
+            neutrons -= reactionRate;
+            hydrogen3 += reactionRate;
+            energy += reactionRate * 6.257;
+
+            //Calculate beta decay for tritium
+            let decayingTritium = Math.min(hydrogen3 * tritiumDecayRate / 10 * speed, hydrogen3 * 0.9);
+            helium3Formation = decayingTritium
+            semi = decayingTritium % 1;
+            decayingTritium = Math.floor(decayingTritium) + (Math.random() < semi ? 1 : 0)
+            hydrogen3 -= decayingTritium;
+            helium3 += decayingTritium;
+            energy += decayingTritium * 0.01863;
+
+            //Calculate Protium Duterium fusion
+            k = 1.38 * 10 ** -23;
+            mu = 1.12 * 10 ** -27;
+            let thermalVelocity = Math.sqrt(8*k*temp / Math.PI / mu);
+            crossSection = 10 ** -5 * BARN;
+            reactionRate = protons * hydrogen2 * crossSection * thermalVelocity * (10000 ** 2);
+            helium3Formation += reactionRate
+            semi = reactionRate % 1;
+            reactionRate = Math.min(Math.floor(reactionRate) + (Math.random() < semi ? 1 : 0), protons * 0.9, hydrogen2 * 0.9)
+            helium3 += reactionRate;
+            protons -= reactionRate;
+            hydrogen2 -= reactionRate;
+
+
+            updateDisplay();
+        }, 100);
+    </script>
+</body>
+</html>
