@@ -25,9 +25,14 @@
             padding: 10px 20px;
             margin: 10px 0;
             cursor: pointer;
+            color:#CCC;
         }
         .hidden{
             display: none;
+        }
+
+        .enabled {
+            color:#000;
         }
     </style>
 </head>
@@ -49,7 +54,7 @@
         <button id="upgrade-stream">Upgrade Neutron Stream (Cost: 1 MeV)</button>
         <button id="upgrade-tempurature" class="hidden">Upgrade Fusion Tempurature (Cost: 10000 Tritium)</button><br/>
         <button id="upgrade-flux" class="hidden">Upgrade Neutron Flux (Cost: 10000 Protons)</button>
-        <button id="prestige" class="hidden">Reset for a small bonus (x1 Game Speed)</button>
+        <button id="prestige" class="enabled hidden">Reset for a small bonus (x1 Game Speed)</button>
     </div>
 
     <script>
@@ -60,7 +65,7 @@
         let hydrogen2 = 0;
         let hydrogen3 = 0;
         let helium3 = 0;
-        let speed = 1;
+        let speed = 10;
 
         let fluxUnlocked = false;
         let deuteriumUnlocked = false;
@@ -182,7 +187,7 @@
                 upgradeFlux.classList.remove('hidden');
                 fluxUnlocked = true;
             }
-
+            
             if (flux > 1 && !deuteriumUnlocked) {
                 hydrogenIsotopes.classList.remove('hidden');
                 deuteriumUnlocked = true
@@ -197,6 +202,27 @@
                 prestige.classList.remove('hidden')
                 prestigeUnlocked = true;
             }
+
+            // Gray out the upgrade button if we don't have enough energy
+            if (energy >= upgradeCost) {
+                upgradeButton.classList.add('enabled');
+            } else {
+                upgradeButton.classList.remove('enabled');
+            }
+
+            // Gray out the upgrade button if we don't have enough protons
+            if (protons >= fluxCost) {
+                upgradeFlux.classList.add('enabled');
+            } else {
+                upgradeFlux.classList.remove('enabled');
+            }
+
+            // Gray out the upgrade button if we don't have enough hydrogen3
+            if (hydrogen3 >= tempCost) {
+                upgradeTemp.classList.add('enabled');
+            } else {
+                upgradeTemp.classList.remove('enabled');
+            }            
         }
 
         setInterval(() => {
