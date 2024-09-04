@@ -43,6 +43,7 @@
         <p>Neutrons: <span id="neutron-count">0</span></p>
         <p>Protons: <span id="proton-count">0</span></p>
         <div id="hydrogen-isotopes" class="hidden">
+            <button id="fusion-reactor" class="enabled">1H + n -> 2H</button>
             <p>Deuterium: <span id="hydrogen2-count">0</span></p>
             <p>Tritium: <span id="hydrogen3-count">0</span></p>
             <p>Helium-3: <span id="helium3-count">0</span></p>
@@ -83,30 +84,53 @@
         let fluxCost = 10000;
         let tempCost = 10000;
 
+        let reactionType = 0
+        let reactionMax = 0;
+
         const energyCount = document.getElementById('energy-count');
         const neutronCount = document.getElementById('neutron-count');
         const protonCount = document.getElementById('proton-count');
-        const hydrogenIsotopes = document.getElementById('hydrogen-isotopes')
+
+        const fusionChoice = document.getElementById('fusion-reactor');
+
+        const hydrogenIsotopes = document.getElementById('hydrogen-isotopes');
         const hydrogen2Count = document.getElementById('hydrogen2-count');
         const hydrogen3Count = document.getElementById('hydrogen3-count');
         const helium3Count = document.getElementById('helium3-count');
+
         const neutronsPerSecondDisplay = document.getElementById('neutrons-per-second');
         const betaDecayRateDisplay = document.getElementById('beta-decay-rate');
-        const neutronFlux = document.getElementById('neutron-flux')
-        const TempuratureAMT = document.getElementById('tempurature')
-        const upgradeButton = document.getElementById('upgrade-stream');
+        const neutronFlux = document.getElementById('neutron-flux');
+        const TempuratureAMT = document.getElementById('tempurature');
+
+        const upgradeStream = document.getElementById('upgrade-stream');
         const upgradeFlux = document.getElementById('upgrade-flux');
         const upgradeTemp = document.getElementById('upgrade-tempurature');
         const prestige = document.getElementById('prestige');
 
         const BARN = 10 ** -24
 
-        upgradeButton.addEventListener('click', () => {
+        fusionChoice.addEventListener('click', () => {
+            reactionType += 1
+            if (reactionType > reactionMax) {
+                reactionType = 0
+            }
+
+            fusionChoice.textContent = [
+                '0',
+                '1: 1H + n -> 2H',
+                '2: 2H + n -> 3H',
+                '3: 1H + 2H -> 3He'
+            ][reactionType]
+
+        })
+
+        upgradeStream.addEventListener('click', () => {
             while (energy >= upgradeCost) {
                 energy -= upgradeCost;
                 neutronsPerSecond = Math.floor(neutronsPerSecond * 2.5);
                 upgradeCost = Math.floor(upgradeCost * 4);
-                upgradeButton.textContent = `Upgrade Neutron Stream (Cost: ${upgradeCost}MeV)`;
+                upgradeStream.textContent = `Upgrade Neutron Stream (Cost: ${upgradeCost}MeV)`;
                 updateDisplay();
             }
         });
@@ -162,7 +186,7 @@
                 fluxCost = 10000;
                 tempCost = 10000;
 
-                upgradeButton.textContent = `Upgrade Neutron Stream (Cost: ${upgradeCost}MeV)`;
+                upgradeStream.textContent = `Upgrade Neutron Stream (Cost: ${upgradeCost}MeV)`;
                 upgradeFlux.textContent = `Upgrade Neutron Flux (Cost: ${fluxCost} Protons)`;
                 upgradeTemp.textContent = `Upgrade Fusion Tempurature (Cost: ${tempCost} Tritium)`;
 
@@ -190,7 +214,8 @@
             
             if (flux > 1 && !deuteriumUnlocked) {
                 hydrogenIsotopes.classList.remove('hidden');
-                deuteriumUnlocked = true
+                reactionMax = 3;
+                deuteriumUnlocked = true;
             }
 
             if (hydrogen3 >= 1000 && !tempUnlocked) {
@@ -205,9 +230,9 @@
 
             // Gray out the upgrade button if we don't have enough energy
             if (energy >= upgradeCost) {
-                upgradeButton.classList.add('enabled');
+                upgradeStream.classList.add('enabled');
             } else {
-                upgradeButton.classList.remove('enabled');
+                upgradeStream.classList.remove('enabled');
             }
 
             // Gray out the upgrade button if we don't have enough protons
@@ -244,11 +269,12 @@
             let reactionRate = Math.min(crossSection * flux * protons * speed, protons * 0.9, neutrons * 0.9);
             hydrogen2Formation = reactionRate
             semi = reactionRate % 1
-            reactionRate = Math.floor(reactionRate) + (Math.random() < semi ? 1 : 0)
+            reactionRate = (Math.floor(reactionRate) + (Math.random() < semi ? 1 : 0)) * (reactionType == 1)
             protons -= reactionRate;
             neutrons -= reactionRate;
             hydrogen2 += reactionRate;
             energy += reactionRate * 2.224;
+            console.log(reactionRate)
 
 
             //Calculate neutron capture for tritium
@@ -256,7 +282,7 @@
             reactionRate = Math.min(crossSection * flux * hydrogen2 * speed, hydrogen2 * 0.9, neutrons * 0.9);
             hydrogen3Formation = reactionRate
             semi = reactionRate % 1
-            reactionRate = Math.floor(reactionRate) + (Math.random() < semi ? 1 : 0)
+            reactionRate = (Math.floor(reactionRate) + (Math.random() < semi ? 1 : 0))  * (reactionType == 2)
             hydrogen2 -= reactionRate;
             neutrons -= reactionRate;
             hydrogen3 += reactionRate;
@@ -279,7 +305,7 @@
             reactionRate = protons * hydrogen2 * crossSection * thermalVelocity * (10000 ** 2);
             helium3Formation += reactionRate
             semi = reactionRate % 1;
-            reactionRate = Math.min(Math.floor(reactionRate) + (Math.random() < semi ? 1 : 0), protons * 0.9, hydrogen2 * 0.9)
+            reactionRate = Math.min(Math.floor(reactionRate) + (Math.random() < semi ? 1 : 0), protons * 0.9, hydrogen2 * 0.9)  * (reactionType == 3)
             helium3 += reactionRate;
             protons -= reactionRate;
             hydrogen2 -= reactionRate;
