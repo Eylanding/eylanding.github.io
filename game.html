@@ -55,7 +55,9 @@
         <button id="upgrade-stream">Upgrade Neutron Stream (Cost: 1 MeV)</button>
         <button id="upgrade-tempurature" class="hidden">Upgrade Fusion Tempurature (Cost: 10000 Tritium)</button><br/>
         <button id="upgrade-flux" class="hidden">Upgrade Neutron Flux (Cost: 10000 Protons)</button>
-        <button id="prestige" class="enabled hidden">Reset for a small bonus (x1 Game Speed)</button>
+        <button id="prestige" class="enabled hidden">Reset for a small bonus (x1 Game Speed)</button><br/>
+        <button id="save-game" class="enabled">Save</button>
+        <button id="load-game" class="enabled">Load</button>
     </div>
 
     <script>
@@ -108,7 +110,153 @@
         const upgradeTemp = document.getElementById('upgrade-tempurature');
         const prestige = document.getElementById('prestige');
 
-        const BARN = 10 ** -24
+        const saveButton = document.getElementById('save-game');
+        const loadButton = document.getElementById('load-game');
+
+        const BARN = 10 ** -24;
+
+        function saveGame() {
+            const gameState = {
+                energy : energy,
+                neutrons : neutrons,
+                protons : protons,
+                hydrogen2 : hydrogen2,
+                hydrogen3 : hydrogen3,
+                helium3 : helium3,
+            
+                baseNeutronsPerSecond : baseNeutronsPerSecond,
+
+                neutronsPerSecond : neutronsPerSecond,
+                baseNeutronsPerSecond : baseNeutronsPerSecond,
+                flux : flux,
+                temp : temp,
+
+                upgradeCost : upgradeCost,
+                fluxCost : fluxCost,
+                tempCost : tempCost,
+
+                reactionMax : reactionMax,
+
+                reactionType : reactionType,
+                lastSaveTime : Date.now()
+            }
+            localStorage.setItem('idleGameSave', JSON.stringify(gameState));
+        }
+
+        function calculateOfflineProgress(offlineTime) {
+
+            const deltaTime = offlineTime / 1000
+
+            if (true) {
+
+                speed = deltaTime
+                // Generate new neutrons
+                let newNeutrons = neutronsPerSecond * speed;
+                neutrons += newNeutrons;
+
+                // Calculate beta decay
+                let decayingNeutrons = Math.min(neutrons * betaDecayRate / 10 * speed, neutrons * 0.9);
+                protonFormation = decayingNeutrons
+                let semi = decayingNeutrons % 1;
+                decayingNeutrons = Math.floor(decayingNeutrons) + (Math.random() < semi ? 1 : 0)
+                neutrons -= decayingNeutrons;
+                protons += decayingNeutrons;
+                energy += decayingNeutrons * 0.782343;
+
+                //Calculate neutron capture for protium
+                let crossSection = 0.33 * BARN
+                let reactionRate = Math.min(crossSection * flux * protons * speed, protons * 0.9, neutrons * 0.9);
+                hydrogen2Formation = reactionRate
+                semi = reactionRate % 1
+                reactionRate = (Math.floor(reactionRate) + (Math.random() < semi ? 1 : 0)) * (reactionType == 1)
+                protons -= reactionRate;
+                neutrons -= reactionRate;
+                hydrogen2 += reactionRate;
+                energy += reactionRate * 2.224;
+
+
+                //Calculate neutron capture for tritium
+                crossSection = 0.000519 * BARN
+                reactionRate = Math.min(crossSection * flux * hydrogen2 * speed, hydrogen2 * 0.9, neutrons * 0.9);
+                hydrogen3Formation = reactionRate
+                semi = reactionRate % 1
+                reactionRate = (Math.floor(reactionRate) + (Math.random() < semi ? 1 : 0))  * (reactionType == 2)
+                hydrogen2 -= reactionRate;
+                neutrons -= reactionRate;
+                hydrogen3 += reactionRate;
+                energy += reactionRate * 6.257;
+
+                //Calculate beta decay for tritium
+                let decayingTritium = Math.min(hydrogen3 * tritiumDecayRate / 10 * speed, hydrogen3 * 0.9);
+                helium3Formation = decayingTritium
+                semi = decayingTritium % 1;
+                decayingTritium = Math.floor(decayingTritium) + (Math.random() < semi ? 1 : 0)
+                hydrogen3 -= decayingTritium;
+                helium3 += decayingTritium;
+                energy += decayingTritium * 0.01863;
+
+                //Calculate Protium Duterium fusion
+                k = 1.38 * 10 ** -23;
+                mu = 1.12 * 10 ** -27;
+                let thermalVelocity = Math.sqrt(8*k*temp / Math.PI / mu);
+                crossSection = 10 ** -5 * BARN;
+                reactionRate = protons * hydrogen2 * crossSection * thermalVelocity * (10000 ** 2);
+                helium3Formation += reactionRate
+                semi = reactionRate % 1;
+                reactionRate = Math.min(Math.floor(reactionRate) + (Math.random() < semi ? 1 : 0), protons * 0.9, hydrogen2 * 0.9)  * (reactionType == 3)
+                helium3 += reactionRate;
+                protons -= reactionRate;
+                hydrogen2 -= reactionRate;
+
+                speed = 1
+            }
+
+        }
+
+        function loadGame() {
+            const savedGame = localStorage.getItem('idleGameSave');
+            if (savedGame) {
+                const gameState = JSON.parse(savedGame);
+                energy = gameState.energy;
+                neutrons = gameState.neutrons;
+                protons = gameState.protons;
+                hydrogen2 = gameState.hydrogen2;
+                hydrogen3 = gameState.hydrogen3;
+                helium3 = gameState.helium3;
+            
+                baseNeutronsPerSecond = gameState.baseNeutronsPerSecond;
+
+                fluxUnlocked = false;
+                deuteriumUnlocked = false;
+                tempUnlocked = false;
+                prestigeUnlocked = false;
+
+                neutronsPerSecond = gameState.neutronsPerSecond;
+                baseNeutronsPerSecond = gameState.baseNeutronsPerSecond;
+                flux = gameState.flux,
+                temp = gameState.temp,
+
+                upgradeCost = gameState.upgradeCost;
+                fluxCost = gameState.fluxCost;
+                tempCost = gameState.tempCost;
+
+                reactionMax = gameState.reactionMax;
+
+                reactionType = gameState.reactionType;
+
+                console.log(gameState)
+                
+                // Calculate offline progress
+                const currentTime = Date.now();
+                const offlineTime = currentTime - gameState.lastSaveTime;
+                calculateOfflineProgress(offlineTime);
+                updateDisplay()
+                upgradeStream.textContent = `Upgrade Neutron Stream (Cost: ${upgradeCost}MeV)`;
+                upgradeFlux.textContent = `Upgrade Neutron Flux (Cost: ${fluxCost} Protons)`;
+                upgradeTemp.textContent = `Upgrade Fusion Tempurature (Cost: ${tempCost} Tritium)`;
+            }
+        }
+
 
         fusionChoice.addEventListener('click', () => {
             reactionType += 1
@@ -153,6 +301,14 @@
                 upgradeTemp.textContent = `Upgrade Fusion Tempurature (Cost: ${tempCost} Tritium)`;
                 updateDisplay();
             }
+        });
+
+        saveButton.addEventListener('click', () => {
+            saveGame()
+        });
+
+        loadButton.addEventListener('click', () => {
+            loadGame()
         });
 
         prestige.addEventListener('click', () => {
@@ -274,7 +430,6 @@
             neutrons -= reactionRate;
             hydrogen2 += reactionRate;
             energy += reactionRate * 2.224;
-            console.log(reactionRate)
 
 
             //Calculate neutron capture for tritium
