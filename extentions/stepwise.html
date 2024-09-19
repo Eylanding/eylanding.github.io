@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../index.css">
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <title>Home - Expidle Simplified guide</title>
+    </head>
+    <body>
+        <header style="padding-left: 5%;">
+            <a href="../index.html"><h1>Exponential Idle Simplified Guides</h1></a>
+
+            <ol class="nav_bar">
+                <li><a href="../0-2000.html">0-2000</a></li>
+                <li><a href="../IntroToGrad.html">Intro to Grad</a></li>
+                <li><a href="../2000-5000.html">2000-5000</a></li>
+                <li><a href="../Theories-1-to-4.html">T1-4</a></li>
+                <li><a href="../Theories-5-to-7.html">T5-7</a></li>
+                <li><a href="../Theory-8-and-R9.html">T8 & R9</a></li>
+                <li><a href="../Theory-9-to-endgame.html">T9 to Endgame</a></li>
+                <li><a href="../Custom-theories.html">Custom theories</a></li>
+                <li><a href="extentions.html">Extentions</a></li>
+            </ol>
+            <ol class="nav_bar">
+                <li><b>Stepwise variables</b></li>
+                <li><a href="milestones.html">Milestone swapping</a></li>
+                <li>Custom Theories Dev</li>
+            </ol>
+
+        </header>
+        <div class="padded">
+
+            <p>All variables in Exponential Idle Theories can be classified into 3 types: Direct Multiplication Variables, Stepwise Variables and Linear
+            Variables. Which type of variable a given variable is can be mostly determined simply by looking at it. If it is in the form \(b^L\) it is a Direct
+            Multiplication Variable, but if it is just a number by itself, then it is a Stepwise Variable or a Linear variable</p>
+            <p>In order to tell the difference between stepwise and linear variables there are a few indicators:</p>
+            <ol>
+                <li>Stepwise variables are almost always integers</li>
+                <li>Linear variables are almost always very small (&lt1e6)</li>
+                <li>Stepwise variables often have subscript (like \(q_1\)) which linear variables are often by themselves (like \(n\))</li>
+                <li>Linear variable increase, believe it or not, linearly. If it's not growing linearly it's not linear</li>
+            </ol>
+            <p>However, there indicators are not perfect. \(c_1\) in FP grows linearly up to 100, and even though it stays an integer, the linear growth and
+            has a low value (it only growns by 1 per level keeping it small), it is actually a stepwise variable (it has an unusually high step length)</p>
+            <p>For example:</p>
+            <ul>
+                <li>\(c_1 = 2^{52}\) - Direct Multi</li>
+                <li>\(q_1 = 1.67e91\) - Probrably stepwise</li>
+                <li>\(r_2 = 7.4^{81}\) - Direct multi</li>
+                <li>\(s = 0.25\) - Probrably linear</li>
+            </ul>
+            <p>All variables have the same cost model (exponential), the difference between stepwise and direct multi variables is what happens when you buy
+                an upgrade</p>
+
+            <h2>Direct multiplication variables</h2>
+            <p>Direct multi variables are very simple. When you buy an upgrade, what happens is exactly what you expect to happen. The index in increased by one,
+            raising it's value by a factor of it's base</p>
+
+            <h2>Stepwise Variables</h2>
+            <p>Stepwise variables ar more complicated than Direct Multi Variables. It is impossible to know how a stepwise variable will increase just by looking
+            at it, one needs to examine the code in order to know how it will increase. Stepwise variables can be described with 3 numbers, their initial value
+            (I), their step length (S) and their base power (B)</p>
+            <p><i>Note that "initial value (I)" is not commonly used, as due to the nature of the game it does not actually affect any strategy, so it is usually
+            ignored. Furthermore, it does not have a name in code - "initial value" is just a term I personally use</i></p>
+            <p>A stepwise variable starts with a value of 0. Every time you upgrade it, it will increase by I, it's initial increment. Every S levels, the amount it
+            increases per level increases by a factor of B</p>
+            <p>This is easier explained with an example. Let's create a variable \(c_1\). This variables will have an initial of 1, a base of 2, and a step of 10.
+            At level 0 it has a value of 0. Every upgrade it increases by I, which is 1. so at level 1 it has a value of 1, at level 2 it has a value of 2, and so
+            on. At level 10 it has a value of 10, but something else happens. It's step length is 10, so now the amount it increases per level increases by a
+            factor of B, in this case doubling. now it increases by 2 per level. At level 11 our variable now hold a value of 12, up to a value of 30 at level 20,
+            where it doubles again, and increases by 4 now per level</p>
+            <table>
+                <tr><th>Level</th><th>Value</th><th>Level</th><th>Value</th><th>Level</th><th>Value</th></tr>
+                <tr><th>0    </th><th>0    </th><th>10   </th><th>10   </th><th>20   </th><th>30   </th></tr>
+                <tr><th>1    </th><th>1    </th><th>11   </th><th>12   </th><th>21   </th><th>34   </th></tr>
+                <tr><th>2    </th><th>2    </th><th>12   </th><th>14   </th><th>22   </th><th>38   </th></tr>
+                <tr><th>3    </th><th>3    </th><th>13   </th><th>16   </th><th>23   </th><th>42   </th></tr>
+                <tr><th>4    </th><th>4    </th><th>14   </th><th>18   </th><th>24   </th><th>46   </th></tr>
+                <tr><th>5    </th><th>5    </th><th>15   </th><th>20   </th><th>25   </th><th>50   </th></tr>
+                <tr><th>6    </th><th>6    </th><th>16   </th><th>22   </th><th>26   </th><th>54   </th></tr>
+                <tr><th>7    </th><th>7    </th><th>17   </th><th>24   </th><th>27   </th><th>58   </th></tr>
+                <tr><th>8    </th><th>8    </th><th>18   </th><th>26   </th><th>28   </th><th>62   </th></tr>
+                <tr><th>9    </th><th>9    </th><th>19   </th><th>28   </th><th>29   </th><th>66   </th></tr>
+            </table>
+            <h3>Nomenclature</h3>
+            <p>As before, in an attempt for a better explanation, I made my own nomenclature (sorry about that). Here is the universally accepted nomenclature</p>
+            <p>When talking about stepwise variables, one usually uses 2 numbers to describe it: its base and its step. It is written like this (B, S)</p>
+            <p>for example, the variable is described before is a (2, 10) stepwise variable</p>
+            <p>Whilst the inital value of a stepwsie variable affect the theory and could affect variable competition, when variable are multiplied together - as
+            they are in most theories, the intial value can be factored out and ignored. The inital increment value does not increase how much a variable
+            increases per level as a percentage. For example, (2,10) with an inital of one goes 1, (+100%) 2, (+50%) 3; and the same variable with an initial of
+            10 goes 10, (+100%) 20, (+50%) 30. Different numbers, same percentage difference</p>
+
+            <h3>What stepwise variables am I working with?</h3>
+            <p>The easiest way to determine what stepwise variable you are working with is to look into the code. The code of all main and official custom
+            theories are at ConicGames' github. Main theories are found in the SDK
+            <a href="https://github.com/conicgames/theory-sdk/tree/main/samples">here</a>
+            and official custom theories are found
+            <a href="https://github.com/conicgames/custom-theories/tree/main/official">here</a></p>
+            <p>In ALL official custom theories, all stepwise variables are (2, 10) stepwise variables. Furthermore, there are no linear variables</p>
+
+            <h3>Basic stepwise variable strategy</h3>
+            <p>(2, 10) stepwise variables increase by on average 7% per upgrade, and in all listed strats on this website are bought at a 10x ratio to doubling
+            variables (direct multi variables with a base of 2). However, due to the nature of stepwise variables, sometimes it is wise not to follow this ratio.
+            </p>
+            <p>First of all, stepwise variables work differently at the very beginning. The first upgrade is usually free and required, as it moves it from 0 to
+            1. Very early upgrades are usually unusually powerful. For example, the level 3 -> 4 upgrade increases it by 33%, much more than the 7% average
+            increase. More important though is the non smooth nature of stepwise power functions</p>
+            <p>Stepwise power functions have a jump at each step length. This jump means that just after getting the increase to their amount per level they are
+            stronger. For example, a (2, 10) stepwise variable would be slightly stronger just after each multiple of 10, 10 -> 11 is stornger than 9 -> 10</p>
+            <img src="images/stepwise.png" style="width: 250px; height: 250px;">
+            <p><i>s(x) is the (2, 10) stepwise power function. Red: \(s(x)\), Blue: \(100\left(\frac{b\left(x+1\right)}{b\left(x\right)}-1\right)\), i.e. the
+            amount s(x) increases when you buy an upgrade starting from upgrade x, as a percentage</i></p>
+            <p>In this graph the blue line represents approximately how much s(x) increases after buying a level, start from level x. As you can see this spike
+            at multiples of 10 (or more generally multiples of S) and goes down from there. From this, one can see that stepwise variables are more power right a
+            multiple of S and weakest rgiht before it</p>
+            <p>With this knowledge one can adjust their strategy. For (2, 10) stepwise variables specifically, the recommended ratio to buy them (usually 10)
+            relative to a
+            doubling variable lower just after a multiple of 10 and higher just before one. For example, having \(c_1\) and \(c_2\) be stepwise and doubling
+            variables respectively, if \(c_1\) is level 341 and costs 4.86e94 and \(c_2\) is level 57 and costs 3.91e95, we would usually save for \(c_2\), but
+            in this case, because \(c_1\) is just after a multiple of 10, one should actually buy \(c_1\) first.
+            <p>More specifically, the ratio is 5x at a multiple of 10 increasing to 10x at 5 more then a multiple of 10, and 15x at 9 more than a multiple of 
+            10.</p>
+
+            <h2>Linear Variables</h2>
+            <p>They increase by a set amount per level. woa</p>
+
+           
+        </div>
+    </body>
+</html>
