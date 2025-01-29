@@ -82,7 +82,7 @@
             <p>Each theory has milestones which speed up progress. You can always respec milestones and shuffle them around, so you can experiment as much as
             you wish. Some milestones provide instant benefits, whilst others can take longer the bear fruit. Some milestones are stronger than others</p>
 
-            <p>You do not have to "complete" a theory to move on to the next one, nor do you have to stop a theroy when you get all milestones. Play whiever
+            <p>You do not have to "complete" a theory to move on to the next one, nor do you have to stop a theory when you get all milestones. Play whichever
             theory is fastest</p>
 
             <h3>How to read the milestone route:</h3>
@@ -91,7 +91,7 @@
 
             <p>Here is an example distribution: 0/1/0 -> 1/1/0/0 -> 0/0/3 -> 1/1/0/1 -> 1/1/3/1</p>
 
-            <p>This means you should start by buying the 2nd milestone, then get the first milestone, which unlockes the 4th milestone. Then, when you get 3
+            <p>This means you should start by buying the 2nd milestone, then get the first milestone, which unlocks the 4th milestone. Then, when you get 3
             milestones, respec your milestones and put them in the 3rd milestone, later, you should respec those milestones out of the 3rd milestone and put
             them in the 1st, 2nd, and 4th milestones. Finally, the next 3 milestones should go into the 3rd milestone</p>
 
@@ -122,13 +122,13 @@
 
             <h3>Other:</h3>
                 <ul>
-                    <li>I'm calculating what my ρdot should be and it's not matching up! Remember, you have to include your pub multi in this calculation</li>
+                    <li>I'm calculating what my \(\dot{\rho}\) should be and it's not matching up! Remember, you have to include your pub multi in this calculation</li>
                     <li>What does \(\dot{\rho}\) mean? Explained in T2 overview, even though it's briefly in T1, \(\rho\) increases by \(\dot{\rho}\) every
                         second</li>
                 </ul>
 
             <!--RECURRANCE RELATIONS-->
-            <h2>Theory 1 - Reccurance Relations</h2>
+            <h2>Theory 1 - Recurrence Relations</h2>
             <ul>
                 <li><b>Expected time:</b> 2 - 6 days</li>
                 <li><b>Local Grad Route:</b> 5k -> 5.2k -> 5.6k -> 5.8k -> 6k</li>
@@ -149,7 +149,7 @@
                 the previous (\(\rho_{n-1}\)).</p>
 
                 <p>You can think of it like this: every second, \(\rho\) increases by \(q_1q_2\) times everything on the right of \(\rho_{n-1}\). So, without any
-                milestones, \(\rho\) increases by \(q_1q_2c_1c_2 (\times p_{ubmulti})\) every second.</p>
+                milestones, \(\rho\) increases by \(q_1q_2c_1c_2 (\times pubmulti)\) every second.</p>
 
                 <p>After getting a few milestones, you may notice that your current value of \(\rho\) is in the bit that tells you how much \(\rho\) is going to increase.
                 (for example, the \(c_3 \rho_{n-2}^{0.3}\)) This means the current* value of rho impacts how much it is going to increase in the next
@@ -157,7 +157,7 @@
 
                 <p><i>*it's actually the value of \(\rho\) 2 ticks or \(\frac{1}{q_1q_2}\) seconds ago, but it shouldn't matter</i></p>
             <h3>Optimal publication multiplier:</h3>
-                <p>t1's pub multi has no best fit, as it fluctuates alot, but here is known:</p>
+                <p>t1's pub multi has no best fit, as it fluctuates a lot, but here is known:</p>
                 <ul>
                     <li>4 - 6 to start</li>
                     <li>3 - 4 between e100 and e150</li>
@@ -249,7 +249,7 @@
             milestones. </p>
 
             <p>These strats are created because new variable milestones give a long term boost, whilst exponents give a short term boost. Thus, swapping the
-             exponents for the short term boost allows you to take advantage of both types of milestones. For the follwowing strategies, you will Autobuy all.
+             exponents for the short term boost allows you to take advantage of both types of milestones. For the following strategies, you will Autobuy all.
             The milestone swapping strategies are:</p>
 
             <h4>T2QS</h4>
@@ -397,7 +397,7 @@
                 <li>1 - 1e75: T4C12d</li>
                 <li>1e75 - 1e275 T4C456dC12rcvMS</li>
             </ul>
-            <p>If you are unable to publish at the ideal pubmulti, and end up publishing with a higher pub multi (6+), you should do strategy T4C456 intsead from 
+            <p>If you are unable to publish at the ideal pub multi, and end up publishing with a higher pub multi (6+), you should do strategy T4C456 intsead from 
             1e25 to 1e75</p>
             <h4>Strategy T4C12d</h4>
             <table>

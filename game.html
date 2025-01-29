@@ -381,6 +381,7 @@
             if (temp > 1 && !prestigeUnlocked) {
                 prestige.classList.remove('hidden')
                 prestigeUnlocked = true;
+            }
             // Gray out the upgrade button if we don't have enough energy
             if (energy >= upgradeCost) {
                 upgradeStream.classList.add('enabled');

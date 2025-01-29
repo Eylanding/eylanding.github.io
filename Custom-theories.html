@@ -21,7 +21,7 @@
                 <li><a href="Theory-8-and-R9.html">T8 & R9</a></li>
                 <li><a href="Theory-9-to-endgame.html">T9 to Endgame</a></li>
                 <li><b>Custom theories</b></li>
-                <li><a href="extentions/extentions.html">Extentions</a></li>
+                <li><a href="extentions/extentions.html">Extensions</a></li>
             </ol>
 
         </header>
@@ -30,7 +30,7 @@
             <p><i>Previous: <a href="Theory-9-to-endgame.html">Theory 9 to Endgame</a></i></p>
 
             <h2>PLEASE READ <a href="index.html">GENERAL GUIDE</a> PAGE BEFORE READING THIS</h2>
-            <h2>WIP THIS INFORMATION IS NOT PROOFREAD AND MAY BE INNACURATE</h2>
+            <h2>WIP THIS INFORMATION IS NOT PROOFREAD AND MAY BE INACCURATE</h2>
             <p><i>
                 Disclaimer: This is a simplified version of the guide. The guide will skip over things, and is not completely
                 optimal. Click <a href="https://exponential-idle-guides.netlify.app/">here</a> for a more polished, in-depth, and optimal guide.
@@ -74,8 +74,8 @@
                 </table>
                 <p>\(c_1\) and \(n\) affect \(\dot{\rho}\) differently over time</p>
                 <table>
-                    <tr><td>\(c_1\)</td><td>Initially 50% increase in q. Decreases to 0 over time. Negligable after 1e400</td></tr>
-                    <tr><td>\(n\)</td><td>Initially 50% increase in q. Increaces to 4x over time. Almost 4x after 1e400</td></tr>
+                    <tr><td>\(c_1\)</td><td>Initially 50% increase in q. Decreases to 0 over time. Negligible after 1e400</td></tr>
+                    <tr><td>\(n\)</td><td>Initially 50% increase in q. Increases to 4x over time. Almost 4x after 1e400</td></tr>
                 </table>
 
             <h3>Optimal publication multiplier:</h3>
@@ -135,7 +135,7 @@
                 <p>SL is based of a variation of stirlings approximation for e. Stirlings approximation is an expression that approaches e and x approches
                 infinity:</p>
                 <p>\(lim_{x \rightarrow \infty} \frac{x}{\sqrt[x]{x!}} = e\)</p>
-                <p>In the theory \(\frac{x}{\sqrt[x]{x!}}\) is represetned the the symbol \(\gamma\)</p>
+                <p>In the theory \(\frac{x}{\sqrt[x]{x!}}\) is represented the the symbol \(\gamma\)</p>
                 <p>Essentially, the higher x is, the closer \(\gamma\) is to e</p>
                 <p>Stirlings approximation is linear, that is, doubling x, makes \(\gamma\) twice as close to e</p>
                 <p>Approximations like this are often used to calculate the value of e by plugging in larger and larger values for x</p>
@@ -147,7 +147,7 @@
                 <blockquote>\(\dot{\rho_3} = b_1b_2\)</blockquote>
                 <blockquote>\(a_3 = 2\)</blockquote>
                 <p>The first equation shows that \(\dot{\rho_1}\) is affected by \(\rho_2\) (half effectiveness) and how close \(\gamma\) is to e<br/>
-                Half effectiveness means that quarupling \(\rho_2\) only doubles \(\rho_1\).</p>
+                Half effectiveness means that quadrupling \(\rho_2\) only doubles \(\rho_1\).</p>
                 <p>The 2nd equation is stirlings approximation, and shows us that the closeness of gamma to e is proportional to \(\rho_3\)</p>
                 <p>The next equations are simple and show that \(a_{12}\) increases \(\rho_2\) and \(b_{12}\) increases \(\rho_3\)</p>
                 <p>Interestingly, \(\dot{\rho_2}\) is DECREASED by \(a_3\) and \(\rho_3\), meaning to increase \(\rho_2\) you should decrease those</p>
@@ -155,7 +155,7 @@
 
                 <p>Overall the effectiveness of each variable is</p>
                 <table>
-                    <tr><td>\(a_1\)</td><td>Increases \(\dot{\rho_2}\) by approx 52%, though due to the square root this is only a 26% inclease in \(\rho_1\)</td></tr>
+                    <tr><td>\(a_1\)</td><td>Increases \(\dot{\rho_2}\) by approx 52%, though due to the square root this is only a 26% increase in \(\rho_1\)</td></tr>
                     <tr><td>\(a_2\)</td><td>Increases \(\dot{\rho_2}\) by 2x</td></tr>
                     <tr><td>\(b_1\)</td><td>Increases \(\dot{\rho_3}\) by  approx 60%</td></tr>
                     <tr><td>\(b_2\)</td><td>Increases \(\dot{\rho_3}\) by 2x</td></tr>
@@ -230,12 +230,12 @@
             <p>EF is based of eulers formula: \(e^{i\theta} = cos(\theta) + i sin(\theta)\), where \(i = \sqrt{-1}\), the imaginary unit<br/>
             This means that as you increase θ, \(e^{i\theta}\) spirals around the origin (0, 0), always keeping a distance of 1. (and an angle of θ radians)</p>
             <p>For those who don't know, a complex number is a number in the form a + bi. I won't fully explain complex number here, but it is in essence a 2d
-            number, in the form a + bi incread of (x, y). if we set z = a + bi, then Re(z) = a, and Im(z) = b.</p>
-            <p>If you imagine the unit circle centered at the origin, then the value \(e^{i\theta}\) can be thought of a point 1 unit away fro mthe origin and
+            number, in the form a + bi instead of (x, y). if we set z = a + bi, then Re(z) = a, and Im(z) = b.</p>
+            <p>If you imagine the unit circle centered at the origin, then the value \(e^{i\theta}\) can be thought of a point 1 unit away from the origin and
             \(\theta\) radians around the circle</p>
             <p>This formula will be used to generate 2 currencies, R and I, which are used to increase \(rho\).</p>
-            <p>The equations in the theory have already expanded out eulers formula, and will be understandable if you have a good grasp of trigenometry, even if 
-            you don't understan complex numbers</p>
+            <p>The equations in the theory have already expanded out eulers formula, and will be understandable if you have a good grasp of trigonometry, even if 
+            you don't understand complex numbers</p>
             <p>Note that this theory's rho to tau rate is uniquely 1.6, this means that one must only reach 375 rho to max it out, and that tau increase 4 times
             faster with respect to rho, making this theory faster then it may seem when compared to the other CT's. This theory can feel extremely slow compared
             to other theories but it is actually one of the fastest</p>
@@ -274,8 +274,8 @@
             <h3>Stategy:</h3>
             <p>EF strategy involves d strats with variable's that cost \(\rho\), and balancing between b/c upgrades and \(a_2/a_3\) upgrades with variable that cost R/I.
             Always buy \(\dot{t}\) as soon as you can</p>
-            <p>The idea with R and I are as follows: b/c upgrades increase R and I growth, but not \(\rho\). Early on, this is good becasue we need R and I to 
-            buy \(a_{23}\), but later into the pub they are less valuble, as their bonus takes a while to actually take effect. Therefore, later into the pub,
+            <p>The idea with R and I are as follows: b/c upgrades increase R and I growth, but not \(\rho\). Early on, this is good because we need R and I to 
+            buy \(a_{23}\), but later into the pub they are less valuable, as their bonus takes a while to actually take effect. Therefore, later into the pub,
             we should buy b/c upgrades less</p>
 
             <h4>EFAInoMod</h4>
@@ -320,7 +320,7 @@
             </ul>
 
             <h3>CSR2 overview:</h3>
-            <p>CSR2 is based on a reccurence relation that computes sqrt(2), which is the following 2 sequences:</p>
+            <p>CSR2 is based on a recurrence relation that computes sqrt(2), which is the following 2 sequences:</p>
             <ul>
                 <li>The N sequence which goes: 1, 3, 7, 17, 41, 99...</li>
                 <li>The D sequence which goes: 1, 2, 5, 12, 29, 70...</li>
@@ -328,7 +328,7 @@
             <p>Where the next term (\(N_m\)) is the previous term (\(N_{m-1}\)) times 2 plus the term before that (\(N_{m-2}\)), for both N and D, that is</p>
             <blockquote>\((N/D)_m = 2(N/D)_{m-1} + (N/D)_{m-2}\)</blockquote>
             <p>Interestingly, if we take the quotient of corresponding terms in both series (\(\frac{N_m}{D_m}\)) (like 1/1, 3/2, 7/5, 17/12 ect.) as we get
-            further along, it approaches \(\sqrt{2}\). Essentially, as m approaches infinity, (\(\frac{N_m}{D_m}\)) approachs \(\sqrt{2}\)</p>
+            further along, it approaches \(\sqrt{2}\). Essentially, as m approaches infinity, (\(\frac{N_m}{D_m}\)) approaches \(\sqrt{2}\)</p>
 
             <h3>Equation Breakdown</h3>
             <blockquote>\(\dot{\rho} = q_1q_2q\)</blockquote>
@@ -337,22 +337,22 @@
             <blockquote>\(D_m = 2D_{m-1} + D_{m-2}, D_0 = 1, D_1 = 2\)</blockquote>
             <blockquote>\(m = n + log_2(c_2)\)</blockquote>
             <p>The first line is the main equation, which shows that to increase ρ you want to increase q1, q2, and q</p>
-            <p>The second line is the equation for q, ehich shows that increase q you want to increase c1, c2, and get \(\frac{N_m}{D_m}\) closer to
+            <p>The second line is the equation for q, which shows that increase q you want to increase c1, c2, and get \(\frac{N_m}{D_m}\) closer to
             \(\sqrt{2}\)</p>
             <p>The third line and forth line is the recurrence relation described above, which shows to get \(\frac{N_m}{D_m}\) closer to \(\sqrt{2}\), you want
             to increase m.</p>
             <p>The fifth line is self explanatory</p>
-            <p>Therefore, \(q_{12}\) affect \(\rho\) directly and \(c_{12}\) and \(n\) affects q directly (and by extention \(\rho\) indirectly)</p>
+            <p>Therefore, \(q_{12}\) affect \(\rho\) directly and \(c_{12}\) and \(n\) affects q directly (and by extension \(\rho\) indirectly)</p>
             <p>And thus we have the variable breakdown:</p>
             <table>
                 <tr><td>\(q_1\)</td><td>Increases \(\dot{\rho}\) by approx. 7%</td></tr>
                 <tr><td>\(q_2\)</td><td>Increases \(\dot{\rho}\) by 2x</td></tr>
                 <tr><td>\(c_1\)</td><td>Increases \(\dot{q}\) by approx. 7%</td></tr>
                 <tr><td>\(n\)  </td><td>Increases \(\dot{q}\) by 6x</td></tr>
-                <tr><td>\(c_2\)</td><td>Increases \(\dot{q}\) by 22x!! (wtih full milestones)</td></tr>
+                <tr><td>\(c_2\)</td><td>Increases \(\dot{q}\) by 22x!! (with full milestones)</td></tr>
             </table>
             <p>Without full milestones \(c_2\) increases \(\dot{q}\) by about 11.5x</p>
-            <p>An increase in \(\dot{q}\) corresponds to an equivelent increase in \(\dot{\rho}\) over time</p>
+            <p>An increase in \(\dot{q}\) corresponds to an equivalent increase in \(\dot{\rho}\) over time</p>
             
 
             <h3>Optimal publication multiplier:</h3>
@@ -360,7 +360,7 @@
 
             <h3>Strategies</h3>
             <p>CSR2's strat is pretty simple, really heavy d strats. Because of the large variable disparity, doing active strats is especially beneficial</p>
-            <h4>CSR2d+</h4>
+            <h4>CSR2d</h4>
             <table>
                 <tr><td>\(q_1\)</td><td>10x cheaper then \(min(q_2, n, c_2)\)</td></tr>
                 <tr><td>\(q_2\)</td><td>Always buy unless similar to \(n\) or \(c_2\)</td></tr>
@@ -389,7 +389,7 @@
             </ul>
 
             <h3>FI Overview</h3>
-            <p>FI is based on the idea of a fractional integral. For example, half intgrating a function twice is the same as regular integrating it once</p>
+            <p>FI is based on the idea of a fractional integral. For example, half integrating a function twice is the same as regular integrating it once</p>
             <p>The actual definition of a fractional integral is complicated but unimportant. The idea that is that it is a smooth way to interpolate from 
             a function (it's 0th integral) to its integral (or 1st integral). For example, the 0.01th integral of a function is very similar to the unchanged
             function, and the 0.99th integral is very similar to it's regular integral</p>
@@ -419,23 +419,23 @@
             <p>This main equation shows that \(\dot{\rho}\) is proportional to t, r, and \(\sqrt[\pi]q\)</p>
             <p>After the main equation changes it is proportional to t, r, m, n, and \(\sqrt[\pi]{(\int g)(q/\pi)}\)</p>
             <p>Now, g is always a polynomial, so to approximate the integral g(x) we can take the highest exponent in the polynomial and increase it by one to
-            make a new, very simple polynomial. This of course, is not a very good approximation, it ignores coeficcients, but the exponent is the thing tha
+            make a new, very simple polynomial. This of course, is not a very good approximation, it ignores coefficients, but the exponent is the thing tha
             matters here. For example, the integral of the Milestone 0 equation can be thought of as \(x^5\), so after milestone 0, rho is proportional to
             \(\sqrt[\pi]{q^5}\) or \(q^{5/\pi} \approx q^{1.59}\) ignoring coefficients</p>
             <p>The fact that this exponent is higher then one, means tht q's affect on \(\dot{\rho}\) is greater then other variables</p>
             <p>The 2nd line is the equation for \(\dot{r}\). This equation shows that \(\dot{r}\) is proportional to how close the 2 integrals are.</p>
             <p>One integral is a normal integral, but the other is a fractional integral. As shown before, as the fraction approaches 1, the two integrals
             get closer together. Thus, as \(\lambda\) approaches one, the fractional integral approaches the normal integral, and \(\dot{r}\) increases</p>
-            <p>The \(\lambda\) equations are all equations that converge to 1. The first equation adds 1/2 then 1/4 then 1/8. Each succesive addition moves
+            <p>The \(\lambda\) equations are all equations that converge to 1. The first equation adds 1/2 then 1/4 then 1/8. Each successive addition moves
             half the remaining distance to 1, and slowly converges on it. The next equations do the same time, but instead of half the distance it's 2/3 or 3/4</p>
             <p>And thus, we can determine the strengths of each variable</p>
             <table>
-                <tr><td>\(\dot{t}\)</td><td>Inreases \(\dot{t}\) by 0.25 each level, max 1</td></tr>
-                <tr><td>\(q_1\)</td><td>Inreases \(\dot{q}\) by approx. 18% (50x every 23 levels)</td></tr>
-                <tr><td>\(q_2\)</td><td>Inreases \(\dot{q}\) by 2x</td></tr>
-                <tr><td>\(K\)</td><td>Inreases \(\dot{r}\) by 2x, 3x, or 4x depending on milestones</td></tr>
-                <tr><td>\(m\)</td><td>Inreases \(\dot{\rho}\) by 1.5x</td></tr>
-                <tr><td>\(m\)</td><td>Inreases \(\dot{\rho}\) by approx 10% (3x every 11 levels)</td></tr>
+                <tr><td>\(\dot{t}\)</td><td>Increases \(\dot{t}\) by 0.25 each level, max 1</td></tr>
+                <tr><td>\(q_1\)</td><td>Increases \(\dot{q}\) by approx. 18% (50x every 23 levels)</td></tr>
+                <tr><td>\(q_2\)</td><td>Increases \(\dot{q}\) by 2x</td></tr>
+                <tr><td>\(K\)</td><td>Increases \(\dot{r}\) by 2x, 3x, or 4x depending on milestones</td></tr>
+                <tr><td>\(m\)</td><td>Increases \(\dot{\rho}\) by 1.5x</td></tr>
+                <tr><td>\(m\)</td><td>Increases \(\dot{\rho}\) by approx 10% (3x every 11 levels)</td></tr>
             </table>
 
             <h3>Strategy</h3>
@@ -447,7 +447,7 @@
             variables to actually grow \(\rho\). The reason this works is that the benefit of having \(q_1\) milestones (i.e. high q) remain even after you
             swap out of them</p>
             <p>To perform MS you want to swap between the normal milestone route given about, and prioritising the \(q_1\) exponent milestone. The best way
-            to descrbie it is that when your swapping your milestones, max out \(q_1\) exponent, then put you remaining milestones in the normal route. However,
+            to describe it is that when your swapping your milestones, max out \(q_1\) exponent, then put you remaining milestones in the normal route. However,
             ALWAYS prioritise perma level locked upgrades over other upgrades. The buy order is \(q_1\) exp → perma level locked milestones → other milestones.
             Of course, if the milestone resets q, i.e. the g(x) milestone, don't respec it, just keep it bought</p>
             <h4>FId</h4>
@@ -463,14 +463,14 @@
 
             <h2>Fractal Patterns - FP</h2>
             <ul>
-                <li><b>Sim time to completion:</b> 103 days (theoriesed to be lower, sub 100)</li>
+                <li><b>Sim time to completion:</b> 103 days (theorised to be lower, sub 100)</li>
                 <li><b>Dev: </b> XLII</li>
                 <li><b>Milestone route:</b> 2 → 2/2 → 2/2/3 → 2/2/3/1 → 2/2/3/1/1 → 2/2/3/1/1/1</li>
                 <li><b>One sentence description:</b> TBA</li>
             </ul>
 
             <h3>FP Overview</h3>
-            <p>So you thought FI was complex? FP is based upon the growth of 3 fractals: The toothpick sequence, the Ulam-Warbuton callular automata and
+            <p>So you thought FI was complex? FP is based upon the growth of 3 fractals: The toothpick sequence, the Ulam-Warbuton cellular automata and
             Sierpinski's triangle. Each fractal contributes to the main equation in their own way.</p>
             <p>The toothpick sequence is a fractal about toothpicks. Imagine a toothpick in 2d space with a length of 2 units. Every timestep, At each end of
             the toothpick add another toothpick, perpendicular to the original, with the midpoint of the new toothpick at the end of the old toothpick.
@@ -480,10 +480,10 @@
             <img src="images/Toothpick.png">
             <p>The Ulam-Warbuton cellular automaton is a fractal that is made for a cellular automata (like Conways game of life). The rule is this. Imagine
             a 2x2 infinite grid of cells, with one cell ON and the others all OFF. every time step, each OFF cell is turned ON if and only if it is
-            neighbors (orthoginally, i.e. no diagonals) with exactly one ON cell. \(U_n\) rperesents the number of ON cells after \(n\) timesteps</p>
+            neighbors (orthogonally, i.e. no diagonals) with exactly one ON cell. \(U_n\) represents the number of ON cells after \(n\) timesteps</p>
             <img src="images/Ulam Warbuton.png">
-            <p>Sierpinski's triangle is a very well known fractal. If you are not already familiar with it, start with an equalateral triangle. Then, subdivide 
-            it into 4 smaller, congruent equalateral triangles, and remove the middle one. This process is shown below. \(S_n\) represents how many triangles
+            <p>Sierpinski's triangle is a very well known fractal. If you are not already familiar with it, start with an equilateral triangle. Then, subdivide 
+            it into 4 smaller, congruent equilateral triangles, and remove the middle one. This process is shown below. \(S_n\) represents how many triangles
             there are after \(n\) timesteps</p>
             <img src="images/Siepinski.png">
 
@@ -502,7 +502,7 @@
             <p>The third equation shows how r increases. \(log(n)\) is quite stable and only changes very slowly form 1 at the start to like 3 at the vary end of
             the theory. The \(S_{\lfloor \sqrt{n} \rfloor}\) part means that there is a jump by about 3x every time n hits a perfect square
             (or \(3^{2.8} \approx 21.6\))x after the milestone</p>
-            <p>The forth equation describes A. Whilst the equation seems complicated, especially with \(\frac{T_{q_2}}{U_{q_2}}\) which seems to require understnading
+            <p>The forth equation describes A. Whilst the equation seems complicated, especially with \(\frac{T_{q_2}}{U_{q_2}}\) which seems to require understanding
             how the fractal patterns work, it is actually rather simple. Every \(q_2\) upgrade, A increases by 4x</p>
             <p>Thus we have the variable breakdown</p>
             <table>
@@ -518,7 +518,7 @@
             <p>So FP is complicated. This is because of something called <b>stepwise variables</b>. These are variables who's increase changes. A more in depth
             description will be written soon, but for now you are just going to have to accept my random numbers. This is what causes the complexity in
             \(c_1\), \(q_1\), and \(r_1\). This isn't too hard to explain but might be a bit beyond the scope of these guides, as of now. Stepwise variables are
-            actually in every theory but this guide has been stubboornly ignoring them up until now, where FP uses stpewise variables in a different way, making
+            actually in every theory but this guide has been stubbornly ignoring them up until now, where FP uses stepwise variables in a different way, making
             their effect much more pronounced</p>
             <p>In the case of \(n\), it's power is connected with the fractal patterns, which are inherently very complicated. It's very strong early game but it
             dies quite quickly. Pre e95, n is very important. Values of n close to a power of 2 provides a big boost, and in between values are not amazing but still
@@ -564,7 +564,7 @@
             <p>Approximately, the end of a publication at about 1e900, each swap should take about 4 hours. You can use that as an anchor to estimate other times</p>
             <p>I have an alternate description which is more rigid</p>
             <ol>
-                <li>Wait for a \(q_2\) or \(s\) purcahse</li>
+                <li>Wait for a \(q_2\) or \(s\) purchase</li>
                 <li>Determine the ratio between \(\dot{rho}\) and the cost of your lowest doubling upgrade (Those listed as always buy on the strategy).<br/>
                 <i>for example, if \(\dot{\rho}\) is 1e100, and the lowest doubling upgrade is \(c_2\) for 1e102, the ratio is 100</i></li>
                 <li>Swap to s, and wait till the ratio of \(\dot{q}\) and \(q\) is 1 to 2 times the ratio determined earlier</li>
@@ -572,11 +572,6 @@
                 <li>Repeat</li>
             </ol>
             <p class="important">WARNING: This strategy is UNTESTED and may be very inefficient. Make sure to use common sense as well.</p>
-
-
-
-
-
 
             <h2>Riemann Zeta Function - RZ</h2>
             <ul>
@@ -587,7 +582,7 @@
             </ul>
 
             <h3>RZ Overview</h3>
-            <p>RZ is based around the Riemann Zeta Function, a famous mathmatical function, that is connected to the famous (or rather
+            <p>RZ is based around the Riemann Zeta Function, a famous mathematical function, that is connected to the famous (or rather
             infamous) Riemann hypothesis. This function is predicted to only output a value of zero at negative multiples of 2, and for
             numbers in the form \(\frac{1}{2} + ti\) where \(i = \sqrt{-1}\), which is the value being passed into the Riemann Zeta
             function in the main equation.
@@ -599,8 +594,8 @@
             <blockquote>$$\dot{\rho} = \frac{tc_1c_2w_1}{|\zeta(\frac{1}{2} + ti)|/2^b + 10^{-2}}$$</blockquote>
             <blockquote>$$\dot{\delta}=w_1w_2w_3 \times |\zeta'(\frac{1}{2} + it)|^b$$</blockquote>
             <blockquote>$$\zeta(s) = \sum^\infty_{n=1}n^{-s}$$</blockquote>
-            <p>Here we see that \(\dot{\rho}\) is propotional to \(c_1c_2w_1t\). The presence of the zeta function in the
-            denominator creates these spikes at zero. Notable, increacing b increaces \(\dot{\rho}\) EXCEPT when \(\zeta(...)\) = 0 where
+            <p>Here we see that \(\dot{\rho}\) is proportional to \(c_1c_2w_1t\). The presence of the zeta function in the
+            denominator creates these spikes at zero. Notable, increasing b increases \(\dot{\rho}\) EXCEPT when \(\zeta(...)\) = 0 where
             the 0.01 term outcompetes.</p>
             <p>For \(\delta\), it is proportional to \(w_1w_2w_3\) as well as the derivative of the zeta function. Also, it is effected
             by b, giving it multiple uses. Also, the only use of \(\delta\) as a currency is to purchase \(w_1\)</p>
@@ -613,8 +608,8 @@
                 <tr><td>\(w_1\)    </td><td>Increases \(\dot{\delta}\) by TBA</td></tr>
                 <tr><td>\(w_2\)    </td><td>Increases \(\dot{q}\) by 2x</td></tr>
                 <tr><td>\(w_3\)    </td><td>Increases \(\dot{r}\) by 2x</td></tr>
-                <tr><td>\(b\)      </td><td>Hard to describe. Increaces \(\dot{\rho}\) by a bit and \(\dot{\delta}\) by alot
-                                        (2-4x depdning on \(\zeta'\))</td></tr>
+                <tr><td>\(b\)      </td><td>Hard to describe. Increases \(\dot{\rho}\) by a bit and \(\dot{\delta}\) by alot
+                                        (2-4x depending on \(\zeta'\))</td></tr>
             </table>
 
 
@@ -642,7 +637,7 @@
             <p>If the strategy includes BH, set BH to auto-activate at the given t</p>
             <p>If the strategy includes values of \(c_{12}\), deactivate \(c_{12}\) when they have reached that level</p>
             <p>If the strategy includes MS, swap from using the \(w_2\) milestone to \(c_1\) exponent at the indicated rho</p>
-            <p>If the strategy is RZSpiralSwap, don't do it unless you like hyper-active strats for a negligable to non-existent gain</p>
+            <p>If the strategy is RZSpiralSwap, don't do it unless you like hyper-active strats for a negligible to non-existent gain</p>
 
 
         </div>
