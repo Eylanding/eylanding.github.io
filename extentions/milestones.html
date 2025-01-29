@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../index.css">
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <title>Home - Expidle Simplified guide</title>
+    </head>
+    <body>
+        <header style="padding-left: 5%;">
+            <a href="../index.html"><h1>Exponential Idle Simplified Guides</h1></a>
+
+            <ol class="nav_bar">
+                <li><a href="../0-2000.html">0-2000</a></li>
+                <li><a href="../IntroToGrad.html">Intro to Grad</a></li>
+                <li><a href="../2000-5000.html">2000-5000</a></li>
+                <li><a href="../Theories-1-to-4.html">T1-4</a></li>
+                <li><a href="../Theories-5-to-7.html">T5-7</a></li>
+                <li><a href="../Theory-8-and-R9.html">T8 & R9</a></li>
+                <li><a href="../Theory-9-to-endgame.html">T9 to Endgame</a></li>
+                <li><a href="../Custom-theories.html">Custom theories</a></li>
+                <li><a href="extentions.html">Extentions</a></li>
+            </ol>
+            <ol class="nav_bar">
+                <li><a href="stepwise.html">Stepwise variables</a></li>
+                <li><b>Milestone swappin</b></li>
+                <li>Custom Theories Dev</li>
+            </ol>
+
+        </header>
+        <div class="padded">
+            <p>Milestone swapping is a very powerful strategy. It was initially discovered as an exploit in theory 2, where it could be used to massively speed
+            up pre-all milestones.</p>
+            <p>Milestone swapping theories exist in all theories where:</p>
+            <ol>
+                <li>There exists a cumulative variable (like q in T4)</li>
+                <li>There exists a milestone that buffs growth for said cumulative variables</li>
+                <li>There exists a milestone that buffs rhodot or a different cumulative variable</li>
+            </ol>
+            <p>This principle behind milestone swapping is as such: Milestones that buff growth for cumulative variables can be useds to build up said cumulative
+            variable and then respecced to get the bonus of a different variable AND keep the build up of said cumulative variable that was obtained from using
+            the milestone previously. This allows you to make use of both milestones.</p>
+            <p>The idea is that the benefits of using a cumulative milestone (i.e. high q/r/insert cumulative variable here) remain even after repesccing said
+            milestone</p>
+
+            <h2>Nomenclature</h2>
+            <p>Milestone swapping is often abbreviated to MS</p>
+            <p>Stacking q refers to waiting for q to grow with milestones in q</p>
+            <p>Informally written strategies usually use this - after buying \(q_2\) stack q until q triples</p>
+
+            <h2>Example</h2>
+            <p>I find an extreme example works best. Let's examine this hypothetical theory:</p>
+            <blockquote>\(\dot{\rho} = q\)</blockquote>
+            <blockquote>\(\dot{q} = 1\)</blockquote>
+            <p>Milestones</p>
+            <ol>
+                <li>\(\uparrow\) \(\dot{\rho}\) by x1e100</li>
+                <li>\(\uparrow\) \(\dot{q}\) by x1e200</li>
+            </ol>
+            <p>In this example you have only 1 milestone. If you put the milestone into milestone 1, you'd get that x1e100 boost to \(\dot{\rho}\) and reach
+            something like 100q for 1e105 \(\rho\)</p>
+            <p>If you put the milestone into milestone 2, you'd get that x1e100 boost to \(\dot{q}\) and reach something like 1e202q for about 1e205 \(\rho\)</p>
+            <p>So it seems you should use the 2nd milestone. BUT there is another option. If you use the 2nd milestone to get that 1e202q but then SWAP to the
+            first milestone, you'd keep the high q AND get the 1e100 boost to \(\rho\) for a total of about 1e305 \(\rho\)</p>
+            <p>This is the basis of milestone swapping</p>
+
+            <h2>Case Study: T2</h2>
+            <p>Theory 2 is the perfect example of MS Strategies as there are no variable buying strategies and has multiple cumulative variables. Let's recap
+            how T2MS works again</p>
+            <h4>T2MS</h4>
+            <ul>
+                <li>1 -> 2 -> 3 -> 4 (40s)</li>
+                <li>3 -> 4 -> 1 -> 2 (10s)</li>
+                <li>2 -> 1 -> 3 -> 4 (40s)</li>
+                <li>3 -> 4 -> 2 -> 1 (10s)</li>
+                <li>Repeat</li>
+            </ul>
+            <p>For the T2 milestones, 1 boosts q, 2 boosts r, and 3 & 4 boost \(\rho\)</p>
+            <p>Milestone strength is 1 > 2 > 3 > 4</p>
+            <p>For this strat we are trying to simultaneously increase q, r, and \(\rho\). This is not as simple as our example, as in our example, we'd stack q
+            for a bit, and then swap to \(\rho\), preumably before publishing. For this theory, more \(\rho\) allows us to purchase more q and r upgrades,
+            giving us a boost to \(\dot{q}\) and \(\dot{r}\) that we need to swap back into to utilise. This strategy starts by building q, than swaps to \(\rho\) to
+            make use of the stacked q. Then swap to r, than back to \(\rho\) to make use of it. This cycle is repeated throught, until you finish the publication.</p>
+        </div>
+    </body>
+</html>

@@ -30,7 +30,6 @@
         .hidden{
             display: none;
         }
-
         .enabled {
             color:#000;
         }
@@ -85,7 +84,6 @@
         let upgradeCost = 1;
         let fluxCost = 10000;
         let tempCost = 10000;
-
         let reactionType = 0
         let reactionMax = 0;
 
@@ -342,6 +340,7 @@
                 fluxCost = 10000;
                 tempCost = 10000;
 
+
                 upgradeStream.textContent = `Upgrade Neutron Stream (Cost: ${upgradeCost}MeV)`;
                 upgradeFlux.textContent = `Upgrade Neutron Flux (Cost: ${fluxCost} Protons)`;
                 upgradeTemp.textContent = `Upgrade Fusion Tempurature (Cost: ${tempCost} Tritium)`;
@@ -382,8 +381,6 @@
             if (temp > 1 && !prestigeUnlocked) {
                 prestige.classList.remove('hidden')
                 prestigeUnlocked = true;
-            }
-
             // Gray out the upgrade button if we don't have enough energy
             if (energy >= upgradeCost) {
                 upgradeStream.classList.add('enabled');
@@ -461,6 +458,7 @@
             helium3Formation += reactionRate
             semi = reactionRate % 1;
             reactionRate = Math.min(Math.floor(reactionRate) + (Math.random() < semi ? 1 : 0), protons * 0.9, hydrogen2 * 0.9)  * (reactionType == 3)
+
             helium3 += reactionRate;
             protons -= reactionRate;
             hydrogen2 -= reactionRate;
