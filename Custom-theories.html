@@ -586,10 +586,35 @@
             </ul>
 
             <h3>RZ Overview</h3>
-            <p>TBA</p>
+            <p>RZ is based around the Riemann Zeta Function, a famous mathmatical function, that is connected to the famous (or rather
+            infamous) Riemann hypothesis. This function is predicted to only output a value of zero at negative multiples of 2, and for
+            numbers in the form \(\frac{1}{2} + ti\) where \(i = \sqrt{-1}\), which is the value being passed into the Riemann Zeta
+            function in the main equation.
+            As you can see in the graph, the Riemann Zeta function is very chaotic (not using the formal definition) and varies wildly.
+            Because the function is in the denominator, rhodot spikes massively at \(\zeta(t) = 0\)
+            </p>
 
             <h3>Equation breakdown</h3>
-            <p>TBA</p>
+            <blockquote>$$\dot{\rho} = \frac{tc_1c_2w_1}{|\zeta(\frac{1}{2} + ti)|/2^b + 10^{-2}}$$</blockquote>
+            <blockquote>$$\dot{\delta}=w_1w_2w_3 \times |\zeta'(\frac{1}{2} + it)|^b$$</blockquote>
+            <blockquote>$$\zeta(s) = \sum^\infty_{n=1}n^{-s}$$</blockquote>
+            <p>Here we see that \(\dot{\rho}\) is propotional to \(c_1c_2w_1t\). The presence of the zeta function in the
+            denominator creates these spikes at zero. Notable, increacing b increaces \(\dot{\rho}\) EXCEPT when \(\zeta(...)\) = 0 where
+            the 0.01 term outcompetes.</p>
+            <p>For \(\delta\), it is proportional to \(w_1w_2w_3\) as well as the derivative of the zeta function. Also, it is effected
+            by b, giving it multiple uses. Also, the only use of \(\delta\) as a currency is to purchase \(w_1\)</p>
+            <p>The final equation gives the Riemann Zeta function, although it is not the equation used in code (trust me you don't want)
+            to be given what the code actually does. </p>
+            <p>And thus the variable breakdown</p>
+            <table>
+                <tr><td>\(c_1\)    </td><td>Increases \(\dot{\rho}\) by TBA</1></td></tr>
+                <tr><td>\(c_2\)    </td><td>Increases \(\dot{\rho}\) by 2x</td></tr>
+                <tr><td>\(w_1\)    </td><td>Increases \(\dot{\delta}\) by TBA</td></tr>
+                <tr><td>\(w_2\)    </td><td>Increases \(\dot{q}\) by 2x</td></tr>
+                <tr><td>\(w_3\)    </td><td>Increases \(\dot{r}\) by 2x</td></tr>
+                <tr><td>\(b\)      </td><td>Hard to describe. Increaces \(\dot{\rho}\) by a bit and \(\dot{\delta}\) by alot
+                                        (2-4x depdning on \(\zeta'\))</td></tr>
+            </table>
 
 
             <h3>Strategy</h3>
@@ -606,9 +631,9 @@
             </table>
             <h4>RZd</h4>
             <table>
-                <tr><td>\(c_1\)    </td><td>When \(\frac{1}{10}\) of \(c_2\)     </td></tr>
+                <tr><td>\(c_1\)    </td><td>When \(\frac{1}{4}\) of \(c_2\)     </td></tr>
                 <tr><td>\(c_2\)    </td><td style="color: green;">Always buy   </td></tr>
-                <tr><td>\(w_1\)    </td><td>When \(\frac{1}{10}\) of \(w_2\)     </td></tr>
+                <tr><td>\(w_1\)    </td><td>When \(\frac{1}{4}\) of \(w_2\)     </td></tr>
                 <tr><td>\(w_2\)    </td><td style="color: green;">Always buy   </td></tr>
                 <tr><td>\(w_3\)    </td><td style="color: green;">Always buy   </td></tr>
                 <tr><td>\(b\)      </td><td style="color: green;">Always buy   </td></tr>
