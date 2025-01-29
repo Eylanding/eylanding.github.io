@@ -35,6 +35,10 @@
                 Disclaimer: This is a simplified version of the guide. The guide will skip over things, and is not completely
                 optimal. Click <a href="https://exponential-idle-guides.netlify.app/">here</a> for a more polished, in-depth, and optimal guide.
             </i></p>
+            <p><i>
+                When discussion strategy, this section may use more jargon then the rest of the guide. If you are confused, please check
+                out the discord server and ask.
+            </i></p>
 
 
             <!--WSP-->
@@ -356,16 +360,14 @@
 
             <h3>Strategies</h3>
             <p>CSR2's strat is pretty simple, really heavy d strats. Because of the large variable disparity, doing active strats is especially beneficial</p>
-            <p>This is not the normal CSR2d recommended by the guide but I believe mine is slightly better. This is the only strat in this guide that is actually better</p>
             <h4>CSR2d+</h4>
             <table>
                 <tr><td>\(q_1\)</td><td>10x cheaper then \(min(q_2, n, c_2)\)</td></tr>
-                <tr><td>\(q_2\)</td><td>1.9x cheaper then \(min(n, c_2)\)</td></tr>
+                <tr><td>\(q_2\)</td><td>Always buy unless similar to \(n\) or \(c_2\)</td></tr>
                 <tr><td>\(q_1\)</td><td>10x cheaper then \(min(q_2, n, c_2)\)</td></tr>
-                <tr><td>\(n\)</td><td>1.11x cheaper then \(c_2\)</td></tr>
+                <tr><td>\(n\)</td><td>Always buy unless similar to \(c_2\)</td></tr>
                 <tr><td>\(c_2\)</td><td style="color: green;">Always buy</td></tr>
             </table>
-            <p>note that autobuying \(q_2\) and \(n\) is almost the same. In fact, that is the strat recommended by the guide</p>
             <p>There is a MS strat for CSR2. You can do CSR2XL x.xx explained 
             <a href="https://exponential-idle-guides.netlify.app/guides/theory-strategies/#csr2xl-xxx">here</a> or you can just do one swap at the end of your
             pub, which is swapping form the usual milestone route of "0/1/0 -> 0/1/2 -> 3/1/2" to "3/0 -> 3/1/0 -> 3/1/2" at the end of your pub, wait a bit, and
@@ -412,7 +414,7 @@
                 <tr><td>Before K term</td><td>$$\frac{1}{2}$$</td></tr>
                 <tr><td>Milestone 0  </td><td>$$\sum_{i=0}^{K}\frac{1}{2^i}$$</td></tr>
                 <tr><td>Milestone 1  </td><td>$$\sum_{i=0}^{K}\frac{2}{3^i}$$</td></tr>
-                <tr><td>Milestone 2  </td><td>$$\sum_{i=0}^{K}\frac{3}{4^i}$$/td></tr>
+                <tr><td>Milestone 2  </td><td>$$\sum_{i=0}^{K}\frac{3}{4^i}$$</tr>
             </table>   
             <p>This main equation shows that \(\dot{\rho}\) is proportional to t, r, and \(\sqrt[\pi]q\)</p>
             <p>After the main equation changes it is proportional to t, r, m, n, and \(\sqrt[\pi]{(\int g)(q/\pi)}\)</p>
@@ -570,6 +572,77 @@
                 <li>Repeat</li>
             </ol>
             <p class="important">WARNING: This strategy is UNTESTED and may be very inefficient. Make sure to use common sense as well.</p>
+
+
+
+
+
+
+            <h2>Riemann Zeta Function - RZ</h2>
+            <ul>
+                <li><b>Sim time to completion:</b> TBD</li>
+                <li><b>Dev: </b> Propfeds, Eylanding, MarticMC (idea)</li>
+                <li><b>Milestone route:</b> TBA</li>
+                <li><b>One sentence description:</b> TBA</li>
+            </ul>
+
+            <h3>RZ Overview</h3>
+            <p>RZ is based around the Riemann Zeta Function, a famous mathmatical function, that is connected to the famous (or rather
+            infamous) Riemann hypothesis. This function is predicted to only output a value of zero at negative multiples of 2, and for
+            numbers in the form \(\frac{1}{2} + ti\) where \(i = \sqrt{-1}\), which is the value being passed into the Riemann Zeta
+            function in the main equation.
+            As you can see in the graph, the Riemann Zeta function is very chaotic (not using the formal definition) and varies wildly.
+            Because the function is in the denominator, rhodot spikes massively at \(\zeta(t) = 0\)
+            </p>
+
+            <h3>Equation breakdown</h3>
+            <blockquote>$$\dot{\rho} = \frac{tc_1c_2w_1}{|\zeta(\frac{1}{2} + ti)|/2^b + 10^{-2}}$$</blockquote>
+            <blockquote>$$\dot{\delta}=w_1w_2w_3 \times |\zeta'(\frac{1}{2} + it)|^b$$</blockquote>
+            <blockquote>$$\zeta(s) = \sum^\infty_{n=1}n^{-s}$$</blockquote>
+            <p>Here we see that \(\dot{\rho}\) is propotional to \(c_1c_2w_1t\). The presence of the zeta function in the
+            denominator creates these spikes at zero. Notable, increacing b increaces \(\dot{\rho}\) EXCEPT when \(\zeta(...)\) = 0 where
+            the 0.01 term outcompetes.</p>
+            <p>For \(\delta\), it is proportional to \(w_1w_2w_3\) as well as the derivative of the zeta function. Also, it is effected
+            by b, giving it multiple uses. Also, the only use of \(\delta\) as a currency is to purchase \(w_1\)</p>
+            <p>The final equation gives the Riemann Zeta function, although it is not the equation used in code (trust me you don't want)
+            to be given what the code actually does. </p>
+            <p>And thus the variable breakdown</p>
+            <table>
+                <tr><td>\(c_1\)    </td><td>Increases \(\dot{\rho}\) by TBA</1></td></tr>
+                <tr><td>\(c_2\)    </td><td>Increases \(\dot{\rho}\) by 2x</td></tr>
+                <tr><td>\(w_1\)    </td><td>Increases \(\dot{\delta}\) by TBA</td></tr>
+                <tr><td>\(w_2\)    </td><td>Increases \(\dot{q}\) by 2x</td></tr>
+                <tr><td>\(w_3\)    </td><td>Increases \(\dot{r}\) by 2x</td></tr>
+                <tr><td>\(b\)      </td><td>Hard to describe. Increaces \(\dot{\rho}\) by a bit and \(\dot{\delta}\) by alot
+                                        (2-4x depdning on \(\zeta'\))</td></tr>
+            </table>
+
+
+            <h3>Strategy</h3>
+            <p> Strategy is RZ is relatively simples, with classic doubling strats and coasting for \(c_{12}\) (possible for other
+            variables as well in future). The main point is when to activate the black hole after unlocking it</p>
+            <h4>RZ</h4>
+            <table>
+                <tr><td>\(c_1\)    </td><td style="color: green;">Always buy   </td></tr>
+                <tr><td>\(c_2\)    </td><td style="color: green;">Always buy   </td></tr>
+                <tr><td>\(w_1\)    </td><td style="color: green;">Always buy   </td></tr>
+                <tr><td>\(w_2\)    </td><td style="color: green;">Always buy   </td></tr>
+                <tr><td>\(w_3\)    </td><td style="color: green;">Always buy   </td></tr>
+                <tr><td>\(b\)      </td><td style="color: green;">Always buy   </td></tr>
+            </table>
+            <h4>RZd</h4>
+            <table>
+                <tr><td>\(c_1\)    </td><td>When \(\frac{1}{4}\) of \(c_2\)     </td></tr>
+                <tr><td>\(c_2\)    </td><td style="color: green;">Always buy   </td></tr>
+                <tr><td>\(w_1\)    </td><td>When \(\frac{1}{4}\) of \(w_2\)     </td></tr>
+                <tr><td>\(w_2\)    </td><td style="color: green;">Always buy   </td></tr>
+                <tr><td>\(w_3\)    </td><td style="color: green;">Always buy   </td></tr>
+                <tr><td>\(b\)      </td><td style="color: green;">Always buy   </td></tr>
+            </table>
+            <p>If the strategy includes BH, set BH to auto-activate at the given t</p>
+            <p>If the strategy includes values of \(c_{12}\), deactivate \(c_{12}\) when they have reached that level</p>
+            <p>If the strategy includes MS, swap from using the \(w_2\) milestone to \(c_1\) exponent at the indicated rho</p>
+            <p>If the strategy is RZSpiralSwap, don't do it unless you like hyper-active strats for a negligable to non-existent gain</p>
 
 
         </div>
