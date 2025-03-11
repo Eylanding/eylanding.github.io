@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../index.css">
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <title>Custom Theories - Expidle Simplified guide</title>
+    </head>
+    <body>
+
+       <header style="padding-left: 5%;">
+            <a href="index.html"><h1>Exponential Idle Simplified Guides</h1></a>
+
+            <ol class="nav_bar">
+                <li><a href="../0-2000.html">0-2000</a></li>
+                <li><a href="../IntroToGrad.html">Intro to Grad</a></li>
+                <li><a href="../2000-5000.html">2000-5000</a></li>
+                <li><a href="../Theories-1-to-4.html">T1-4</a></li>
+                <li><a href="../Theories-5-to-7.html">T5-7</a></li>
+                <li><a href="../Theory-8-and-R9.html">T8 & R9</a></li>
+                <li><a href="../Theory-9-to-endgame.html">T9 to Endgame</a></li>
+                <li><b>Custom theories</b></li>
+                <li><a href="../extentions/extentions.html">Extensions</a></li>
+            </ol>
+            <ol class="nav_bar">
+                <li><a href="wsp.html">WSP</a></li>
+                <li><a href="sl.html">SL</a></li>
+                <li><a href=csr2.html> CSR2</a></li>
+            </ol>
+
+        </header>
+        <div class="padded">
+
+            <p><i>Previous: <a href="../Theory-9-to-endgame.html">Theory 9 to Endgame</a></i></p>
+
+            <h2>PLEASE READ <a href="../index.html">GENERAL GUIDE</a> PAGE BEFORE READING THIS</h2>
+            <h2>WIP THIS INFORMATION IS NOT PROOFREAD AND MAY BE INACCURATE</h2>
+            <p><i>
+                Disclaimer: This is a simplified version of the guide. The guide will skip over things, and is not completely
+                optimal. Click <a href="https://exponential-idle-guides.netlify.app/">here</a> for a more polished, in-depth, and optimal guide.
+            </i></p>
+            <p><i>
+                When discussion strategy, this section may use more jargon then the rest of the guide. If you are confused, please check
+                out the discord server and ask.
+            </i></p>
+
+            <h2>Eulers Formula (EF)</h2>
+            <ul>
+                <li><b>Sim time to completion:</b> 132 days</li>
+                <li><b>Dev:</b> Snaeky and peanut</li>
+                <li><b>Milestone route:</b> 2/0 → 2/3/0 → 2/3/5/0 → 2/3/5/2/0 → 2/3/5/2/2</li>
+                <li><b>One sentence description:</b> TBA</li>
+            </ul>
+
+            <h3>EF overview:</h3>
+            <p>EF is based of eulers formula: \(e^{i\theta} = cos(\theta) + i sin(\theta)\), where \(i = \sqrt{-1}\), the imaginary unit<br/>
+            This means that as you increase θ, \(e^{i\theta}\) spirals around the origin (0, 0), always keeping a distance of 1. (and an angle of θ radians)</p>
+            <p>For those who don't know, a complex number is a number in the form a + bi. I won't fully explain complex number here, but it is in essence a 2d
+            number, in the form a + bi instead of (x, y). if we set z = a + bi, then Re(z) = a, and Im(z) = b.</p>
+            <p>If you imagine the unit circle centered at the origin, then the value \(e^{i\theta}\) can be thought of a point 1 unit away from the origin and
+            \(\theta\) radians around the circle</p>
+            <p>This formula will be used to generate 2 currencies, R and I, which are used to increase \(rho\).</p>
+            <p>The equations in the theory have already expanded out eulers formula, and will be understandable if you have a good grasp of trigonometry, even if 
+            you don't understand complex numbers</p>
+            <p>Note that this theory's rho to tau rate is uniquely 1.6, this means that one must only reach 375 rho to max it out, and that tau increase 4 times
+            faster with respect to rho, making this theory faster then it may seem when compared to the other CT's. This theory can feel extremely slow compared
+            to other theories but it is actually one of the fastest</p>
+
+            <h3>Equation breakdown</h3>
+            <blockquote>\(\dot{\rho} = a_1a_2a_3 \sqrt{tq^2 + R^2 + I^2}\)</blockquote>
+            <blockquote>\(G(t) = g_r + g_i\)</blockquote>
+            <blockquote>\(g_r = b_1b_2cos(t), g_i = c_1c_2sin(t)\)</blockquote>
+            <blockquote>\(\dot{q} = q_1q_2\)</blockquote>
+            <blockquote>\(\dot{R} = (g_r)^2, \dot{I} = -(g_i)^2\)</blockquote>
+            <p>The first line is the main equation, which shows that to increase \(\rho\) you want to increase \(a_1\), \(a_2\), \(a_3\), t, and q (R and I are
+            effectively meaningless due to \(tq^2\) out competing them)<br/>
+            The second line is the graph, G(t) is the graph drawn on screen<br/>
+            The third line is Eulers formula, describing how \(g_r\) and \(g_i\) behave. Note that because they are squared below, negative values are fine<br/>
+            The forth line simple describes q<br/>
+            And the fifth line describes how R and I grow, based on the square of \(g_r\) and \(g_i\)</p>
+            <p>Note that even though R and I are meaningless in the main equation, they are used to buy \(b_{12}\), \(c_{12}\), and \(a_{23}\), making them quite
+            important</p>
+            <p>And thus we have the variable breakdown:</p>
+            <table>
+                <tr><td>\(\dot{t}\)</td><td>Increases \(\dot{t}\) by +0.25 (max 1)</td></tr>
+                <tr><td>\(q_1\)</td><td>Increases \(\dot{q}\) by approx 7%</td></tr>
+                <tr><td>\(q_2\)</td><td>Increases \(\dot{q}\) by 2x</td></tr>
+                <tr><td>\(b_1\)</td><td>Increases \(\dot{R}\) by approx 14%</td></tr>
+                <tr><td>\(b_2\)</td><td>Increases \(\dot{R}\) by approx 21%</td></tr>
+                <tr><td>\(c_1\)</td><td>Increases \(\dot{I}\) by approx 20%</td></tr>
+                <tr><td>\(c_2\)</td><td>Increases \(\dot{I}\) by approx 21%</td></tr>
+                <tr><td>\(a_1\)</td><td>Increases \(\dot{\rho}\) by 2x</td></tr>
+                <tr><td>\(a_2\)</td><td>Increases \(\dot{\rho}\) by 2x, costs R</td></tr>
+                <tr><td>\(a_3\)</td><td>Increases \(\dot{\rho}\) by 2x, costs I</td></tr>
+            </table>
+
+            <h3>Optimal publication multiplier:</h3>
+            <p>TBA</p>
+
+            <h3>Stategy:</h3>
+            <p>EF strategy involves d strats with variable's that cost \(\rho\), and balancing between b/c upgrades and \(a_2/a_3\) upgrades with variable that cost R/I.
+            Always buy \(\dot{t}\) as soon as you can</p>
+            <p>The idea with R and I are as follows: b/c upgrades increase R and I growth, but not \(\rho\). Early on, this is good because we need R and I to 
+            buy \(a_{23}\), but later into the pub they are less valuable, as their bonus takes a while to actually take effect. Therefore, later into the pub,
+            we should buy b/c upgrades less</p>
+
+            <h4>EFAInoMod</h4>
+
+            <table>
+                <tr><th>var    </th><th>Recovery                             </th><th>Tau gain                             </th></tr>
+                <tr><td>\(q_1\)</td><td>When \(\frac{1}{15}\) of \(q_2\) cost</td><td>When \(\frac{1}{15}\) of \(q_2\) cost</td></tr>
+                <tr><td>\(q_2\)</td><td style="color: green;">Always buy   </td><td style="color: green;">Always buy   </td></tr>
+                <tr><td>\(b_1\)</td><td style="color: green;">Always buy   </td><td>When \(\frac{1}{5}\) of \(a_2\) cost </td></tr>
+                <tr><td>\(b_2\)</td><td style="color: green;">Always buy   </td><td>When \(\frac{1}{5}\) of \(a_2\) cost </td></tr>
+                <tr><td>\(c_1\)</td><td style="color: green;">Always buy   </td><td>When \(\frac{1}{5}\) of \(a_3\) cost </td></tr>
+                <tr><td>\(c_2\)</td><td style="color: green;">Always buy   </td><td>When \(\frac{1}{5}\) of \(a_3\) cost </td></tr>
+                <tr><td>\(a_1\)</td><td>When \(\frac{1}{10}\) of \(q_2\) cost</td><td>When \(\frac{1}{10}\) of \(q_2\) cost</td></tr>
+                <tr><td>\(a_2\)</td><td style="color: green;">Always buy   </td><td style="color: green;">Always buy   </td></tr>
+                <tr><td>\(a_3\)</td><td style="color: green;">Always buy   </td><td style="color: green;">Always buy   </td></tr>
+            </table>
+
+            <p>The idle strat is EFSNAX not Autobuy All</p>
+            <h4>EFSNAX</h4>
+            <p>✔️ - Always buy, ❌ - Never buy</p>
+            <table>
+                <tr><th>var</th><th>Recovery</th><th>Tau gain</th></tr>
+                <tr><td>\(q_1\)</td><td>✔️</td><td>❌</td></tr>
+                <tr><td>\(q_2\)</td><td>✔️</td><td>✔️</td></tr>
+                <tr><td>\(b_1\)</td><td>✔️</td><td>❌</td></tr>
+                <tr><td>\(b_2\)</td><td>✔️</td><td>❌</td></tr>
+                <tr><td>\(c_1\)</td><td>✔️</td><td>❌</td></tr>
+                <tr><td>\(c_2\)</td><td>✔️</td><td>❌</td></tr>
+                <tr><td>\(a_1\)</td><td>✔️</td><td>✔️</td></tr>
+                <tr><td>\(a_2\)</td><td>✔️</td><td>✔️</td></tr>
+                <tr><td>\(a_3\)</td><td>✔️</td><td>✔️</td></tr>
+            </table>
+
+
+        </div>
+    </body>
+</html>

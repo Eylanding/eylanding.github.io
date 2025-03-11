@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../index.css">
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <title>Custom Theories - Expidle Simplified guide</title>
+    </head>
+    <body>
+
+       <header style="padding-left: 5%;">
+            <a href="index.html"><h1>Exponential Idle Simplified Guides</h1></a>
+
+            <ol class="nav_bar">
+                <li><a href="../0-2000.html">0-2000</a></li>
+                <li><a href="../IntroToGrad.html">Intro to Grad</a></li>
+                <li><a href="../2000-5000.html">2000-5000</a></li>
+                <li><a href="../Theories-1-to-4.html">T1-4</a></li>
+                <li><a href="../Theories-5-to-7.html">T5-7</a></li>
+                <li><a href="../Theory-8-and-R9.html">T8 & R9</a></li>
+                <li><a href="../Theory-9-to-endgame.html">T9 to Endgame</a></li>
+                <li><b>Custom theories</b></li>
+                <li><a href="../extentions/extentions.html">Extensions</a></li>
+            </ol>
+            <ol class="nav_bar">
+                <li><a href="wsp.html">WSP</a></li>
+                <li><a href="sl.html">SL</a></li>
+                <li><a href="ef.html">EF</a></li>
+                <li><a href=csr2.html> CSR2</a></li>
+                <li><a href="fi.html">FI</a></li>
+                <li><a href="fp.html">FP</a></li>
+                <li><a href="rz.html">RZ</a></li>
+            </ol>
+
+        </header>
+        <div class="padded">
+
+            <p><i>Previous: <a href="../Theory-9-to-endgame.html">Theory 9 to Endgame</a></i></p>
+
+            <h2>PLEASE READ <a href="../index.html">GENERAL GUIDE</a> PAGE BEFORE READING THIS</h2>
+            <h2>WIP THIS INFORMATION IS NOT PROOFREAD AND MAY BE INACCURATE</h2>
+            <p><i>
+                Disclaimer: This is a simplified version of the guide. The guide will skip over things, and is not completely
+                optimal. Click <a href="https://exponential-idle-guides.netlify.app/">here</a> for a more polished, in-depth, and optimal guide.
+            </i></p>
+            <p><i>
+                When discussion strategy, this section may use more jargon then the rest of the guide. If you are confused, please check
+                out the discord server and ask.
+            </i></p>
+            
+            <h2>Riemann Zeta Function - RZ</h2>
+            <ul>
+                <li><b>Sim time to completion:</b> TBD</li>
+                <li><b>Dev: </b> Propfeds, Eylanding, MartinMC (idea)</li>
+                <li><b>Milestone route:</b> TBA</li>
+                <li><b>One sentence description:</b> TBA</li>
+            </ul>
+
+            <h3>RZ Overview</h3>
+            <p>RZ is based around the Riemann Zeta Function, a famous mathematical function, that is connected to the famous (or rather
+            infamous) Riemann hypothesis. This function is predicted to only output a value of zero at negative multiples of 2, and for
+            numbers in the form \(\frac{1}{2} + ti\) where \(i = \sqrt{-1}\), which is the value being passed into the Riemann Zeta
+            function in the main equation.
+            As you can see in the graph, the Riemann Zeta function is very chaotic (not using the formal definition) and varies wildly.
+            Because the function is in the denominator, rhodot spikes massively at \(\zeta(t) = 0\)
+            </p>
+
+            <h3>Equation breakdown</h3>
+            <blockquote>$$\dot{\rho} = \frac{tc_1c_2w_1}{|\zeta(\frac{1}{2} + ti)|/2^b + 10^{-2}}$$</blockquote>
+            <blockquote>$$\dot{\delta}=w_1w_2w_3 \times |\zeta'(\frac{1}{2} + it)|^b$$</blockquote>
+            <blockquote>$$\zeta(s) = \sum^\infty_{n=1}n^{-s}$$</blockquote>
+            <p>Here we see that \(\dot{\rho}\) is proportional to \(c_1c_2w_1t\). The presence of the zeta function in the
+            denominator creates these spikes at zero. Notable, increasing b increases \(\dot{\rho}\) EXCEPT when \(\zeta(...)\) = 0 where
+            the 0.01 term outcompetes.</p>
+            <p>For \(\delta\), it is proportional to \(w_1w_2w_3\) as well as the derivative of the zeta function. Also, it is effected
+            by b, giving it multiple uses. Also, the only use of \(\delta\) as a currency is to purchase \(w_1\)</p>
+            <p>The final equation gives the Riemann Zeta function, although it is not the equation used in code (trust me you don't want)
+            to be given what the code actually does. </p>
+            <p>And thus the variable breakdown</p>
+            <table>
+                <tr><td>\(c_1\)    </td><td>Increases \(\dot{\rho}\) by TBA</1></td></tr>
+                <tr><td>\(c_2\)    </td><td>Increases \(\dot{\rho}\) by 2x</td></tr>
+                <tr><td>\(w_1\)    </td><td>Increases \(\dot{\delta}\) by TBA</td></tr>
+                <tr><td>\(w_2\)    </td><td>Increases \(\dot{\delta}\) by 2x</td></tr>
+                <tr><td>\(w_3\)    </td><td>Increases \(\dot{\delta}\) by 2x</td></tr>
+                <tr><td>\(b\)      </td><td>Hard to describe. Increases \(\dot{\rho}\) by a bit and \(\dot{\delta}\) by alot
+                                        (2-4x depending on \(\zeta'\))</td></tr>
+            </table>
+
+
+            <h3>Strategy</h3>
+            <p> Strategy in RZ is relatively simples, with classic doubling strats and coasting for \(c_{12}\) (possible for other
+            variables as well in future). The main point is when to activate the black hole after unlocking it</p>
+            <h4>RZ</h4>
+            <table>
+                <tr><td>\(c_1\)    </td><td style="color: green;">Always buy   </td></tr>
+                <tr><td>\(c_2\)    </td><td style="color: green;">Always buy   </td></tr>
+                <tr><td>\(w_1\)    </td><td style="color: green;">Always buy   </td></tr>
+                <tr><td>\(w_2\)    </td><td style="color: green;">Always buy   </td></tr>
+                <tr><td>\(w_3\)    </td><td style="color: green;">Always buy   </td></tr>
+                <tr><td>\(b\)      </td><td style="color: green;">Always buy   </td></tr>
+            </table>
+            <h4>RZd</h4>
+            <table>
+                <tr><td>\(c_1\)    </td><td>When \(\frac{1}{6}\) of \(c_2\)     </td></tr>
+                <tr><td>\(c_2\)    </td><td style="color: green;">Always buy   </td></tr>
+                <tr><td>\(w_1\)    </td><td>When \(\frac{1}{6}\) of \(w_2\)     </td></tr>
+                <tr><td>\(w_2\)    </td><td style="color: green;">Always buy   </td></tr>
+                <tr><td>\(w_3\)    </td><td style="color: green;">Always buy   </td></tr>
+                <tr><td>\(b\)      </td><td style="color: green;">Always buy   </td></tr>
+            </table>
+            <p>If the strategy includes BH, set BH to auto-activate at the given t</p>
+            <p>If the strategy includes values of \(c_{12}\), deactivate \(c_{12}\) when they have reached that level</p>
+            <p>If the strategy includes MS, swap from using the \(w_2\) milestone to \(c_1\) exponent at the indicated rho</p>
+            <p>If the strategy is RZSpiralSwap, don't do it unless you like hyper-active strats for a negligible to non-existent gain</p>
+
+            <h3>t Lookup Table</h3>
+            <p>The below is a table of common good values of t to activate BH at. This was found using the theory sim. The rho values given are estimates only.
+                This table is not intended to be a substitute to the theory sim and should not be used as such. For best results, we always recommend using 
+                theory simulator. There is overlap. The rho ranges are ranges where the target t may show up as the given t.
+            </p>
+            <table>
+                <tr><td>\(\rho\)     </td><td>t     </td><td>\(\rho\)       </td><td>t      </td><td>\(\rho\)       </td><td>t      </td></tr>
+                <tr><td>1e600 - 1e625</td><td>263.57</td><td>1e775 - 1e840  </td><td>978.77 </td><td>1e1065 - 1e1070</td><td>2139.38</td></tr>
+                <tr><td>1e625 - 1e640</td><td>353.49</td><td>1e800 - 1e850  </td><td>1115.07</td><td>1e1070 - 1e1090</td><td>2864.91</td></tr>
+                <tr><td>1e640 - 1e660</td><td>388.85</td><td>1e805 - 1e880  </td><td>1287.41</td><td>1e1090 - 1e1300</td><td>3797.85\(^{[1]}\)</td></tr>
+                <tr><td>1e660 - 1e675</td><td>462.07</td><td>1e875 - 1e875  </td><td>1413.84</td><td>1e1300 - 1e1425</td><td>5856.09\(^{[2]}\)</td></tr>
+                <tr><td>1e675 - 1e700</td><td>498.58</td><td>1e880 - 1e920  </td><td>1686.42</td><td>1e1425 - 1e1475</td><td>6554.19\(^{[3]}\)</td></tr>
+                <tr><td>1e700 - 1e705</td><td>606.38</td><td>1e920 - 1e970  </td><td>2139.38</td><td>1e1475 - 1e1500</td><td>11575.53</td></tr>
+                <tr><td>1e705 - 1e755</td><td>679.74</td><td>1e965 - 1e1000 </td><td>2864.91</td><td> </td><td> </td></tr>
+                <tr><td>1e755 - 1e770</td><td>834.65</td><td>1e1000 - 1e1065</td><td>3797.85</td><td> </td><td> </td></tr>
+            </table>
+            <p>
+                \(^{[1]}\) Occasionally 5856.09 and 5438.49<br/>
+                \(^{[2]}\) Occasionally 6554.19 especially at 1400-1410<br/>
+                \(^{[3]}\) Occasionally 11575.53 and 7623.42
+            </p>
+
+
+        </div>
+    </body>
+</html>

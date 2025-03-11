@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../index.css">
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <title>Custom Theories - Expidle Simplified guide</title>
+    </head>
+    <body>
+
+       <header style="padding-left: 5%;">
+            <a href="index.html"><h1>Exponential Idle Simplified Guides</h1></a>
+
+            <ol class="nav_bar">
+                <li><a href="../0-2000.html">0-2000</a></li>
+                <li><a href="../IntroToGrad.html">Intro to Grad</a></li>
+                <li><a href="../2000-5000.html">2000-5000</a></li>
+                <li><a href="../Theories-1-to-4.html">T1-4</a></li>
+                <li><a href="../Theories-5-to-7.html">T5-7</a></li>
+                <li><a href="../Theory-8-and-R9.html">T8 & R9</a></li>
+                <li><a href="../Theory-9-to-endgame.html">T9 to Endgame</a></li>
+                <li><b>Custom theories</b></li>
+                <li><a href="../extentions/extentions.html">Extensions</a></li>
+            </ol>
+            <ol class="nav_bar">
+                <li><a href="wsp.html">WSP</a></li>
+                <li><a href="sl.html">SL</a></li>
+                <li><a href="ef.html">EF</a></li>
+                <li><a href=csr2.html> CSR2</a></li>
+                <li><a href="fi.html">FI</a></li>
+            </ol>
+
+        </header>
+        <div class="padded">
+
+            <p><i>Previous: <a href="../Theory-9-to-endgame.html">Theory 9 to Endgame</a></i></p>
+
+            <h2>PLEASE READ <a href="../index.html">GENERAL GUIDE</a> PAGE BEFORE READING THIS</h2>
+            <h2>WIP THIS INFORMATION IS NOT PROOFREAD AND MAY BE INACCURATE</h2>
+            <p><i>
+                Disclaimer: This is a simplified version of the guide. The guide will skip over things, and is not completely
+                optimal. Click <a href="https://exponential-idle-guides.netlify.app/">here</a> for a more polished, in-depth, and optimal guide.
+            </i></p>
+            <p><i>
+                When discussion strategy, this section may use more jargon then the rest of the guide. If you are confused, please check
+                out the discord server and ask.
+            </i></p>
+
+
+
+            <h2>Fractional Integration - FI</h2>
+            <p class="important">WARNING: THIS CUSTOM THEORY IS QUITE NEW. STRATEGIES MAY BE INCORRECT AND EVERYTHING IS SUBJECT TO CHANGE. DO NOT
+                TAKE WITH HIGH CONFIDENCE</p>
+            <ul>
+                <li><b>Sim time to completion:</b> 264 days</li>
+                <li><b>Dev: </b> Snaeky, Gen, XLII</li>
+                <li><b>Milestone route:</b> 1 → 1/1 → 1/1/0/1 → 1/1/0/2 → <span class="red">1/1/0/1/1</span> → 1/1/0/2/1 → 1/1/1/2/1 →
+                <span class="red">1/1/0/2/1/1</span> → 1/1/1/2/1/1 → <span class="red">1/1/0/2/2/1</span> → 1/1/1/2/2/1	→ 1/1/2/2/2/1 →
+                <span class="red">1/1/1/2/2/2</span> → 1/1/2/2/2/2 → 1/1/3/2/2/2 → <span class="red">1/1/2/2/3/2</span> → 1/1/3/2/3/2</i></li>
+                <li><i><span class="red">Coloured</span> milestones are milestones you move into from perma levels</i></li>
+                <li><b>One sentence description:</b> TBA</li>
+            </ul>
+
+            <h3>FI Overview</h3>
+            <p>FI is based on the idea of a fractional integral. For example, half integrating a function twice is the same as regular integrating it once</p>
+            <p>The actual definition of a fractional integral is complicated but unimportant. The idea that is that it is a smooth way to interpolate from 
+            a function (it's 0th integral) to its integral (or 1st integral). For example, the 0.01th integral of a function is very similar to the unchanged
+            function, and the 0.99th integral is very similar to it's regular integral</p>
+            <p>A good explanation of the fraction integral can be found on
+            <a href="https://www.youtube.com/watch?v=2dwQUUDt5Is&t=1326s"> this youtube video</a></p>
+            <p>Typically, a fractional integral is notated using this notation: \(_{\lambda}\int f(x)dx\), where \(\lambda\) is the fraction.<br/>
+            For example, \(_{\frac{1}{2}}\int f(x) dx\) is the half integral of f(x)</p>
+
+            <h3>Equation breakdown</h3>
+            <blockquote>$$\dot{\rho} = tr\sqrt[\pi]{q/\pi} \rightarrow \dot{\rho} = trmn\sqrt[\pi]{\int_0^{q/\pi}g(x)dx}$$</blockquote>
+            <blockquote>$$\dot{r} = (\int_0^{\pi}g(x)dx - _{\lambda}\int_0^{\pi}g(x)dx)^{-1}$$</blockquote>
+            <blockquote>$$\dot{q} = q_1q_2$$</blockquote>
+            <h4>g(x) eq</h4>
+            <table>
+                <tr><td>Milestone 0</td><td>$$1 - \frac{x^2}{2!} + \frac{x^4}{4!}$$</td></tr>
+                <tr><td>Milestone 1</td><td>$$1 - \frac{x^3}{3!} + \frac{x^5}{5!}$$</td></tr>
+                <tr><td>Milestone 2</td><td>$$\frac{x + \frac{x^2}{2} + \frac{x^3}{3} + \frac{x^4}{4} + \frac{x^5}{5}}{ln(10)}$$</td></tr>
+                <tr><td>Milestone 3</td><td>$$1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \frac{x^5}{5!}$$</td></tr>
+            </table>
+            <h4>\(\lambda\) eq</h4>
+            <table>
+                <tr><td>Before K term</td><td>$$\frac{1}{2}$$</td></tr>
+                <tr><td>Milestone 0  </td><td>$$\sum_{i=0}^{K}\frac{1}{2^i}$$</td></tr>
+                <tr><td>Milestone 1  </td><td>$$\sum_{i=0}^{K}\frac{2}{3^i}$$</td></tr>
+                <tr><td>Milestone 2  </td><td>$$\sum_{i=0}^{K}\frac{3}{4^i}$$</tr>
+            </table>   
+            <p>This main equation shows that \(\dot{\rho}\) is proportional to t, r, and \(\sqrt[\pi]q\)</p>
+            <p>After the main equation changes it is proportional to t, r, m, n, and \(\sqrt[\pi]{(\int g)(q/\pi)}\)</p>
+            <p>Now, g is always a polynomial, so to approximate the integral g(x) we can take the highest exponent in the polynomial and increase it by one to
+            make a new, very simple polynomial. This of course, is not a very good approximation, it ignores coefficients, but the exponent is the thing tha
+            matters here. For example, the integral of the Milestone 0 equation can be thought of as \(x^5\), so after milestone 0, rho is proportional to
+            \(\sqrt[\pi]{q^5}\) or \(q^{5/\pi} \approx q^{1.59}\) ignoring coefficients</p>
+            <p>The fact that this exponent is higher then one, means tht q's affect on \(\dot{\rho}\) is greater then other variables</p>
+            <p>The 2nd line is the equation for \(\dot{r}\). This equation shows that \(\dot{r}\) is proportional to how close the 2 integrals are.</p>
+            <p>One integral is a normal integral, but the other is a fractional integral. As shown before, as the fraction approaches 1, the two integrals
+            get closer together. Thus, as \(\lambda\) approaches one, the fractional integral approaches the normal integral, and \(\dot{r}\) increases</p>
+            <p>The \(\lambda\) equations are all equations that converge to 1. The first equation adds 1/2 then 1/4 then 1/8. Each successive addition moves
+            half the remaining distance to 1, and slowly converges on it. The next equations do the same time, but instead of half the distance it's 2/3 or 3/4</p>
+            <p>And thus, we can determine the strengths of each variable</p>
+            <table>
+                <tr><td>\(\dot{t}\)</td><td>Increases \(\dot{t}\) by 0.25 each level, max 1</td></tr>
+                <tr><td>\(q_1\)</td><td>Increases \(\dot{q}\) by approx. 18% (50x every 23 levels)</td></tr>
+                <tr><td>\(q_2\)</td><td>Increases \(\dot{q}\) by 2x</td></tr>
+                <tr><td>\(K\)</td><td>Increases \(\dot{r}\) by 2x, 3x, or 4x depending on milestones</td></tr>
+                <tr><td>\(m\)</td><td>Increases \(\dot{\rho}\) by 1.5x</td></tr>
+                <tr><td>\(m\)</td><td>Increases \(\dot{\rho}\) by approx 10% (3x every 11 levels)</td></tr>
+            </table>
+
+            <h3>Strategy</h3>
+            <p class="important">The theory is very new, so the strategies are not fully developed. These strategies are unoptimised and subject to change</p>
+            <p>FI, having many time dependant variables, is a relatively idle theory, so autobuy all isn't too bad. FI, whilst having some of thw most complicated
+            equations, really just has d strats and some basic MS (I say basic MS it's still kinda hard).</p>
+            <p>Like many other theories, FI has a milestone swapping strat. The \(q_1\) exp milestones increase q gain, and the m and n variable milestones
+            increase \(\dot{\rho}\). The way milestone swapping works is that every so often you swap to \(q_1\) exp to build up q, and then swap to  m and n
+            variables to actually grow \(\rho\). The reason this works is that the benefit of having \(q_1\) milestones (i.e. high q) remain even after you
+            swap out of them</p>
+            <p>To perform MS you want to swap between the normal milestone route given about, and prioritising the \(q_1\) exponent milestone. The best way
+            to describe it is that when your swapping your milestones, max out \(q_1\) exponent, then put you remaining milestones in the normal route. However,
+            ALWAYS prioritise perma level locked upgrades over other upgrades. The buy order is \(q_1\) exp → perma level locked milestones → other milestones.
+            Of course, if the milestone resets q, i.e. the g(x) milestone, don't respec it, just keep it bought</p>
+            <h4>FId</h4>
+            <p>Again, this strat is subject to change</p>
+            <table>
+                <tr><td>\(q_1\)</td><td>Buy at \(\frac{1}{10}\) of \(min(q_2, K, m)\)</td></tr>
+                <tr><td>\(q_2\)</td><td style="color: green;">Always buy   </td></tr>
+                <tr><td>\(K\)  </td><td style="color: green;">Always buy   </td></tr>
+                <tr><td>\(m\)  </td><td style="color: green;">Always buy   </td></tr>
+                <tr><td>\(m\)  </td><td>Buy at \(\frac{1}{10}\) of \(min(q_2, K, m)\)</td></tr>
+            </table>
+
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../index.css">
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <title>Custom Theories - Expidle Simplified guide</title>
+    </head>
+    <body>
+
+       <header style="padding-left: 5%;">
+            <a href="index.html"><h1>Exponential Idle Simplified Guides</h1></a>
+
+            <ol class="nav_bar">
+                <li><a href="../0-2000.html">0-2000</a></li>
+                <li><a href="../IntroToGrad.html">Intro to Grad</a></li>
+                <li><a href="../2000-5000.html">2000-5000</a></li>
+                <li><a href="../Theories-1-to-4.html">T1-4</a></li>
+                <li><a href="../Theories-5-to-7.html">T5-7</a></li>
+                <li><a href="../Theory-8-and-R9.html">T8 & R9</a></li>
+                <li><a href="../Theory-9-to-endgame.html">T9 to Endgame</a></li>
+                <li><a href="Custom-theories.html">Custom theories</a></li>
+                <li><a href="../extentions/extentions.html">Extensions</a></li>
+            </ol>
+            <ol class="nav_bar">
+                <li><a href="wsp.html">WSP</a></li>
+                <li><a href=milestones.html> Milestone swapping</a></li>
+            </ol>
+
+        </header>
+        <div class="padded">
+
+            <p><i>Previous: <a href="Theory-9-to-endgame.html">Theory 9 to Endgame</a></i></p>
+
+            <h2>PLEASE READ <a href="index.html">GENERAL GUIDE</a> PAGE BEFORE READING THIS</h2>
+            <h2>WIP THIS INFORMATION IS NOT PROOFREAD AND MAY BE INACCURATE</h2>
+            <p><i>
+                Disclaimer: This is a simplified version of the guide. The guide will skip over things, and is not completely
+                optimal. Click <a href="https://exponential-idle-guides.netlify.app/">here</a> for a more polished, in-depth, and optimal guide.
+            </i></p>
+            <p><i>
+                When discussion strategy, this section may use more jargon then the rest of the guide. If you are confused, please check
+                out the discord server and ask.
+            </i></p>
+
+
+            <!--WSP-->
+            <h2>Weierstraß sine product (WSP)</h2>
+            <ul>
+                <li><b>Sim time to completion:</b> 4 years and 333 days</li>
+                <li><b>Dev:</b> Xelaroc</li>
+                <li><b>Milestone route:</b> 0/0/3 → 0/1/3 → 4/1/3</li>
+                <li><b>One sentence description:</b> TBA</li>
+            </ul>
+            <h3>WSP overview:</h3>
+                <p>WSP is based of of Weierstrass' sine approximation: \(s_n(x) = x \Pi_{k=1}^n(1 - (\frac{x}{k\pi})^2)\).<br/>
+                As n goes to infinity, sn(x) approaches sin(x)</p>
+                <p>However, \(s_n(x)\) is quite inaccurate, and for large values of x, \(s_n(x)\) is much larger/smaller then sin(x), even for large values of n.<br/>
+                Essentially, as x gets bigger, \(s_n(x) / sin(x)\) gets bigger, very fast, even for large values of n</p>
+                <p>This theory exploits this inaccuracy, and uses it to increase \(\rho\)</p>
+
+            <h3>Equation breakdown</h3>
+                <blockquote>\(\dot{\rho} = q_1q_2q\)</blockquote>
+                <blockquote>\(\dot{q} = c_2\frac{s_n(\chi)}{sin(\chi)}\)</blockquote>
+                <blockquote>\(\chi = \pi \frac{c_1n}{c_1 + n / 3^3} + 1\)</blockquote>
+                <p>These equation shows that to increase \(\rho\) you want to increase q</p>
+                <p>To increase q you want to increase \(s_n(\chi) / sin(\chi)\), which is the stirling approximation from earlier.
+                Thus to increase \(s_n(\chi) / sin(\chi)\), you want to increase \(\chi\).</p>
+                <p>The third line shows how to increase \(\chi\)</p>
+                <p>And thus we have the variable breakdown:</p>
+                <table>
+                    <tr><td>\(q_1\)</td><td>Increases \(\dot{\rho}\) directly by approx 7%</td></tr>
+                    <tr><td>\(q_2\)</td><td>Increases \(\dot{\rho}\) directly by 2x</td></tr>
+                    <tr><td>\(c_1\)</td><td>Increases \(\chi\) (affect changes over time)</td></tr>
+                    <tr><td>\(n\)</td><td>Increases \(\chi\) (affect changes over time)</td></tr>
+                    <tr><td>\(c_2\)</td><td>Increases \(\dot{q}\) by 2x</td></tr>
+                </table>
+                <p>\(c_1\) and \(n\) affect \(\dot{\rho}\) differently over time</p>
+                <table>
+                    <tr><td>\(c_1\)</td><td>Initially 50% increase in q. Decreases to 0 over time. Negligible after 1e400</td></tr>
+                    <tr><td>\(n\)</td><td>Initially 50% increase in q. Increases to 4x over time. Almost 4x after 1e400</td></tr>
+                </table>
+
+            <h3>Optimal publication multiplier:</h3>
+                <ul>
+                    <li>0 - e50: 2 - 4</li>
+                    <li>e50 - e75: 5 - 7</li>
+                    <li>e75+: ~8</li>
+                </ul>
+
+            <h3>Strategies:</h3>
+                <p>The best strategy for WSP is always WSPdStopC1. This strategy changes to accommodate that changing power of \(c_1\) and \(n\). However, to
+                simplify, I have a different strat written here: WSPdStopC1noMod. This is not a mainstream strat, so people may not know what you're talking
+                about and the sim will not recommend it. The sim will recommend WSPdStopC1 instead.<br/>
+                <a href="https://exponential-idle-guides.netlify.app/guides/theory-strategies/#wspdstopc1">WSPdStopC1</a></p>
+
+                <h4>WSPdStopC1noMod</h4>
+
+                <table>
+                    <tr><th>var    </th><th>First 15s                         </th><th>Rest of pub                                                      </th></tr>
+                    <tr><td>\(q_1\)</td><td style="color: green;">Always buy</td><td>When cost is \(\frac{1}{10}\) of \(min(q_2, n, c_2) cost\)       </td></tr>
+                    <tr><td>\(q_2\)</td><td style="color: green;">Always buy</td><td style="color: green;">Always buy</td></tr>
+                    <tr><td>\(c_1\)</td><td style="color: green;">Always buy</td><td>When cost is \(c_1\) ratio cheaper then \(min(q_2, n, c_2) cost\)</td></tr>
+                    <tr><td>\(n\)  </td><td style="color: green;">Always buy</td><td style="color: green;">Always buy</td></tr>
+                    <tr><td>\(c_2\)</td><td style="color: green;">Always buy</td><td style="color: green;">Always buy</td></tr>
+                </table>
+                <p>\(c_1\) ratio</p>
+                <ul>
+                    <li>0 - e25 \(\rho\): 1</li>
+                    <li>e25 - e40 \(\rho\): 3</li>
+                    <li>e40 - e200 \(\rho\): 10</li>
+                    <li>e200 - e400 \(\rho\): 50</li>
+                    <li>e400 - e700 \(\rho\): 1000</li>
+                    <li>e700+: Don't buy c1 more then 15 seconds into the publication</li>
+                </ul>
+
+                <p>The idle strat for WSPdStopC1 is WSPStopC1 (no d), which is slightly different from just autobuying all except those listed as never buy</p>
+                <p>✔️ - Always buy, ❌ - Never buy</p>
+                <h3>WSPStopC1</h3>
+                <table>
+                    <tr><th>var    </th><th>First 15s                         </th><th>Rest of pub                                                      </th></tr>
+                    <tr><td>\(q_1\)</td><td>✔️</td><td>✔️</td></tr>
+                    <tr><td>\(q_2\)</td><td>✔️</td><td>✔️</td></tr>
+                    <tr><td>\(c_1\)</td><td>✔️</td><td>❌ unless \(\rho\) &lt 1e450 in which case ✔️</td></tr>
+                    <tr><td>\(n\)  </td><td>✔️</td><td>✔️</td></tr>
+                    <tr><td>\(c_2\)</td><td>✔️</td><td>✔️</td></tr>
+                </table>
+        </div>
+    </body>
+</html>

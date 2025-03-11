@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../index.css">
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <title>Custom Theories - Expidle Simplified guide</title>
+    </head>
+    <body>
+
+       <header style="padding-left: 5%;">
+            <a href="index.html"><h1>Exponential Idle Simplified Guides</h1></a>
+
+            <ol class="nav_bar">
+                <li><a href="../0-2000.html">0-2000</a></li>
+                <li><a href="../IntroToGrad.html">Intro to Grad</a></li>
+                <li><a href="../2000-5000.html">2000-5000</a></li>
+                <li><a href="../Theories-1-to-4.html">T1-4</a></li>
+                <li><a href="../Theories-5-to-7.html">T5-7</a></li>
+                <li><a href="../Theory-8-and-R9.html">T8 & R9</a></li>
+                <li><a href="../Theory-9-to-endgame.html">T9 to Endgame</a></li>
+                <li><b>Custom theories</b></li>
+                <li><a href="../extentions/extentions.html">Extensions</a></li>
+            </ol>
+            <ol class="nav_bar">
+                <li><a href="wsp.html">WSP</a></li>
+                <li><a href="sl.html">SL</a></li>
+                <li><a href=csr2.html> CSR2</a></li>
+            </ol>
+
+        </header>
+        <div class="padded">
+
+            <p><i>Previous: <a href="../Theory-9-to-endgame.html">Theory 9 to Endgame</a></i></p>
+
+            <h2>PLEASE READ <a href="../index.html">GENERAL GUIDE</a> PAGE BEFORE READING THIS</h2>
+            <h2>WIP THIS INFORMATION IS NOT PROOFREAD AND MAY BE INACCURATE</h2>
+            <p><i>
+                Disclaimer: This is a simplified version of the guide. The guide will skip over things, and is not completely
+                optimal. Click <a href="https://exponential-idle-guides.netlify.app/">here</a> for a more polished, in-depth, and optimal guide.
+            </i></p>
+            <p><i>
+                When discussion strategy, this section may use more jargon then the rest of the guide. If you are confused, please check
+                out the discord server and ask.
+            </i></p>
+
+            <!--T2-->
+            <h2>Sequential Limits (SL)</h2>
+            <ul>
+                <li><b>Sim time to completion:</b> 288 days</li>
+                <li><b>Dev:</b> Ellipsis</li>
+                <li><b>Milestone route:</b> 0/0/0/2 → 0/0/2/2 → 3/0/2/2 → 3/5/2/2</i></li>
+                <li><b>One sentence description:</b> TBA</li>
+            </ul>
+            <h3>SL overview:</h3>
+                <p>SL is based of a variation of stirlings approximation for e. Stirlings approximation is an expression that approaches e and x approches
+                infinity:</p>
+                <p>\(lim_{x \rightarrow \infty} \frac{x}{\sqrt[x]{x!}} = e\)</p>
+                <p>In the theory \(\frac{x}{\sqrt[x]{x!}}\) is represented the the symbol \(\gamma\)</p>
+                <p>Essentially, the higher x is, the closer \(\gamma\) is to e</p>
+                <p>Stirlings approximation is linear, that is, doubling x, makes \(\gamma\) twice as close to e</p>
+                <p>Approximations like this are often used to calculate the value of e by plugging in larger and larger values for x</p>
+
+            <h3>Equation breakdown</h3>
+                <blockquote>\(\dot{\rho_1} = \frac{\sqrt{\rho_2}}{e - \gamma}\)</blockquote>
+                <blockquote>\(\gamma = \frac{\rho_3}{\sqrt[\rho_3]{\rho_3!}}\)</blockquote>
+                <blockquote>\(\dot{\rho_2} = a_1a_2a_3^{-ln(\rho_3)}\)</blockquote>
+                <blockquote>\(\dot{\rho_3} = b_1b_2\)</blockquote>
+                <blockquote>\(a_3 = 2\)</blockquote>
+                <p>The first equation shows that \(\dot{\rho_1}\) is affected by \(\rho_2\) (half effectiveness) and how close \(\gamma\) is to e<br/>
+                Half effectiveness means that quadrupling \(\rho_2\) only doubles \(\rho_1\).</p>
+                <p>The 2nd equation is stirlings approximation, and shows us that the closeness of gamma to e is proportional to \(\rho_3\)</p>
+                <p>The next equations are simple and show that \(a_{12}\) increases \(\rho_2\) and \(b_{12}\) increases \(\rho_3\)</p>
+                <p>Interestingly, \(\dot{\rho_2}\) is DECREASED by \(a_3\) and \(\rho_3\), meaning to increase \(\rho_2\) you should decrease those</p>
+                <p>The final equation shows the value of \(a_3\) which can be lowered through milestones</p>
+
+                <p>Overall the effectiveness of each variable is</p>
+                <table>
+                    <tr><td>\(a_1\)</td><td>Increases \(\dot{\rho_2}\) by approx 52%, though due to the square root this is only a 26% increase in \(\rho_1\)</td></tr>
+                    <tr><td>\(a_2\)</td><td>Increases \(\dot{\rho_2}\) by 2x</td></tr>
+                    <tr><td>\(b_1\)</td><td>Increases \(\dot{\rho_3}\) by  approx 60%</td></tr>
+                    <tr><td>\(b_2\)</td><td>Increases \(\dot{\rho_3}\) by 2x</td></tr>
+                </table>
+
+            <h3>Optimal publication multiplier:</h3>
+            <ul>
+                <li>0 - e90: 5 - 8</li>
+                <li>e90 - e200: 9 - 9.5</li>
+                <li>e200-e300: 6 - 8</li>
+                <li>e300+: 7.5 - 8.5</li>
+            </ul>
+
+            <h3>Strategies:</h3>
+            <p>every variable does not affect \(\rho_1\) directly, affecting either \(\rho_2\) or \(\rho_3\), which usually takes a while to build up. Therefore, near
+            the end of a publication, you should stop buying them, because by the time the upgrades have built up, you've past the optimal pub multi. Thus we
+            have the strat SLStopAd. I would like to remove the Mod part for simplicity, but I am afraid I may make the start unviable. Therefore I have
+            decided NOT to list the active strat (SL is super idle anyway), as the speed gain from SLStopAd is rarely enough to justify using over the idle
+            strat SLStopA.</p>
+            <p><a href="https://exponential-idle-guides.netlify.app/guides/theory-strategies/#slstopad">SLStopAd</a></p>
+            <h4>SLStopA</h4>
+            <p>✔️ - Always buy, ❌ - Never buy</p>
+            <table>
+                <tr><th>var    </th><th>Pub multi &lt 4.5</th><th>Pub multi 4.5 - 6</th><th>Pub multi > 6</th></tr>
+                <tr><td>\(a_1\)</td><td>✔️                </td><td>❌               </td><td>❌            </td></tr>
+                <tr><td>\(a_2\)</td><td>✔️                </td><td>❌               </td><td>❌            </td></tr>
+                <tr><td>\(b_1\)</td><td>✔️                </td><td>✔️                </td><td>❌            </td></tr>
+                <tr><td>\(b_2\)</td><td>✔️                </td><td>✔️                </td><td>❌            </td></tr>
+            </table>
+            <p>SL has a MS strat as well. This MS strat is quite difficult, however, without manual buying it might be not too bad. It's also good at get some
+            MS practice in, <s>and if I have to suffer SLMS you all do too</s>. Therefore I have decided to include SLMS here as well (again, SLMSd is not
+            included)</p>
+            <h4>SLMS</h4>
+            <p class="important">SLMS is a DIFFICULT strat to perform. If you find it overly difficult, please feel free to ignore this section</p>
+            <table>
+                <tr><td>State 1</td><td>\(4 \rightarrow 3 \rightarrow 1 \rightarrow 2\) (prioritieses \(\rho_3\))</td>
+                <tr><td>State 2</td><td>\(2 \rightarrow 1 \rightarrow 4 \rightarrow 3\) (prioritieses \(\rho_2\))</td>
+                <tr><td>State 3</td><td>\(1 \rightarrow 2 \rightarrow 4 \rightarrow 3\) (prioritieses \(\rho_1\))</td>
+            </table>
+            <p>This notation tells you the priority order to buy milestones. For example \(4 \rightarrow 3 \rightarrow 1 \rightarrow 2\) means to max out the 4th
+            milestone (from the top) then the 3rd then the 1st then the 2nd</p>
+            <table>
+                <tr><th>\(\rho\)      </th><th>State 1</th><th>State 2</th><th>State 3</th></tr>
+                <tr><td>1e25 - 1e50  </td><td>5      </td><td>4      </td><td>1      </td></tr>
+                <tr><td>1e50 - 1e75  </td><td>7      </td><td>6      </td><td>1      </td></tr>
+                <tr><td>1e75 - 1e100 </td><td>12     </td><td>10     </td><td>1      </td></tr>
+                <tr><td>1e100 - 1e150</td><td>20     </td><td>15     </td><td>1      </td></tr>
+                <tr><td>1e150 - 1e175</td><td>8      </td><td>6      </td><td>1      </td></tr>
+                <tr><td>1e175 - 1e200</td><td>1.5    </td><td>1      </td><td>SKIP   </td></tr>
+                <tr><td>1e200 - 1e275</td><td>3      </td><td>SKIP   </td><td>1      </td></tr>
+                <tr><td>1e275 - 1e300</td><td>2      </td><td>SKIP   </td><td>1      </td></tr>
+            </table>
+            <p>This table tells you when to swap to each state. Start in state 1 and read the number in the box (I'm calling it "n"). When your \(\rho_1\)
+            reaches "n" times less then the next \(b_{12}\) upgrade, swap to State 2. Now you have a new "n". When your \(\rho_1\) again reaches "n" times less
+            then the next \(b_{12}\) upgrade with the new "n", swap to State 3 (note that for one of the stages there is no swapping to state 3.). Finally, when
+            you can afford and buy the upgrade, or your \(\rho\) drops back down due to another upgrade, swap back to State 1</p>
+            <p>For variable purcahse, follow the SLStopA strat. Therefore you don't have to worry about variables and just focus on the MS. If you want to take a
+            break, just leave it in state 1 and come back. Any amount of active play is beneficial</p>
+            <p>This strategy is over 2x faster then SLStopA, so I suggest doing it if you can. Plus, it's more fun then just waiting</p>
+
+
+        </div>
+    </body>
+</html>
