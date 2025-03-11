@@ -639,6 +639,28 @@
             <p>If the strategy includes MS, swap from using the \(w_2\) milestone to \(c_1\) exponent at the indicated rho</p>
             <p>If the strategy is RZSpiralSwap, don't do it unless you like hyper-active strats for a negligible to non-existent gain</p>
 
+            <h3>t Lookup Table</h3>
+            <p>The below is a table of common good values of t to activate BH at. This was found using the theory sim. The rho values given are estimates only.
+                This table is not intended to be a substitute to the theory sim and should not be used as such. For best results, we always recommend using 
+                theory simulator. There is overlap. The rho ranges are ranges where the target t may show up as the given t.
+            </p>
+            <table>
+                <tr><td>\(\rho\)     </td><td>t     </td><td>\(\rho\)       </td><td>t      </td><td>\(\rho\)       </td><td>t      </td></tr>
+                <tr><td>1e600 - 1e625</td><td>263.57</td><td>1e775 - 1e840  </td><td>978.77 </td><td>1e1065 - 1e1070</td><td>2139.38</td></tr>
+                <tr><td>1e625 - 1e640</td><td>353.49</td><td>1e800 - 1e850  </td><td>1115.07</td><td>1e1070 - 1e1090</td><td>2864.91</td></tr>
+                <tr><td>1e640 - 1e660</td><td>388.85</td><td>1e805 - 1e880  </td><td>1287.41</td><td>1e1090 - 1e1300</td><td>3797.85\(^{[1]}\)</td></tr>
+                <tr><td>1e660 - 1e675</td><td>462.07</td><td>1e875 - 1e875  </td><td>1413.84</td><td>1e1300 - 1e1425</td><td>5856.09\(^{[2]}\)</td></tr>
+                <tr><td>1e675 - 1e700</td><td>498.58</td><td>1e880 - 1e920  </td><td>1686.42</td><td>1e1425 - 1e1475</td><td>6554.19\(^{[3]}\)</td></tr>
+                <tr><td>1e700 - 1e705</td><td>606.38</td><td>1e920 - 1e970  </td><td>2139.38</td><td>1e1475 - 1e1500</td><td>11575.53</td></tr>
+                <tr><td>1e705 - 1e755</td><td>679.74</td><td>1e965 - 1e1000 </td><td>2864.91</td><td> </td><td> </td></tr>
+                <tr><td>1e755 - 1e770</td><td>834.65</td><td>1e1000 - 1e1065</td><td>3797.85</td><td> </td><td> </td></tr>
+            </table>
+            <p>
+                \(^{[1]}\) Occasionally 5856.09 and 5438.49<br/>
+                \(^{[2]}\) Occasionally 6554.19 especially at 1400-1410<br/>
+                \(^{[3]}\) Occasionally 11575.53 and 7623.42
+            </p>
+
 
         </div>
     </body>
