@@ -60,9 +60,13 @@
             </ul>
             <h3>WSP overview:</h3>
                 <p>WSP is based of of Weierstrass' sine approximation: \(s_n(x) = x \Pi_{k=1}^n(1 - (\frac{x}{k\pi})^2)\).<br/>
-                As n goes to infinity, sn(x) approaches sin(x)</p>
+                The product looks scary but it simply defines a function \(s_n\) that approximates sine. The higher \(n\) values you pass into it, the better the
+                approximation it. Essentially, as n goes to infinity, \(s_n(x)\) approaches sin(x)</p>
                 <p>However, \(s_n(x)\) is quite inaccurate, and for large values of x, \(s_n(x)\) is much larger/smaller then sin(x), even for large values of n.<br/>
+                for instance, 
                 Essentially, as x gets bigger, \(s_n(x) / sin(x)\) gets bigger, very fast, even for large values of n</p>
+                <img src="images/s_100.png", width="250px", height="auto", style="max-width: 100%;">
+                <p><i>red: sin(x), blue: \(s_{100}(x)\)</i></p>
                 <p>This theory exploits this inaccuracy, and uses it to increase \(\rho\)</p>
 
             <h3>Equation breakdown</h3>
@@ -71,8 +75,10 @@
                 <blockquote>\(\chi = \pi \frac{c_1n}{c_1 + n / 3^3} + 1\)</blockquote>
                 <p>These equation shows that to increase \(\rho\) you want to increase q</p>
                 <p>To increase q you want to increase \(s_n(\chi) / sin(\chi)\), which is the stirling approximation from earlier.
-                Thus to increase \(s_n(\chi) / sin(\chi)\), you want to increase \(\chi\).</p>
-                <p>The third line shows how to increase \(\chi\)</p>
+                Thus to increase \(s_n(\chi) / sin(\chi)\), you want to increase \(\chi\), and decrease n</p>
+                <p>The third line shows how to increase \(\chi\). It is based off of n and \(c_1\). Generally, the boost to \(\chi\) you get from increasing n
+                outweighs that decrease in \(s_n(\chi) / sin(\chi)\) increasing n would cause. Therefore, n is overall positive</p>
+                <p>\(c_1\) lategame out-competes n in the denominator, meaning over time it gets weaker and weaker compared to n\(^{[why?]}\)</p>
                 <p>And thus we have the variable breakdown:</p>
                 <table>
                     <tr><td>\(q_1\)</td><td>Increases \(\dot{\rho}\) directly by approx 7%</td></tr>
