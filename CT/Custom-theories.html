@@ -62,9 +62,43 @@
             </ul>
             <p>
                 The complexity ratings given is a rating on how approachable each CT is. For example basic theory \(\dot{\rho} = c_1c_2\) would be given a rating of
-                1/10. Complexity rating takes into account both difficulty of comprehending the math, and difficulty of executing the strats. Difficulty of
+                1/5. Complexity rating takes into account both difficulty of comprehending the math, and difficulty of executing the strats. Difficulty of
                 execution is NOT activity. A theory that requires you to press a button every 5 minutes is very easy to execute, but also very active
             </p>
+            <p>The following table is a guide only</p>
+
+            <table>
+                <tr>
+                    <td>Score</td>
+                    <td>Math description</td>
+                    <td>Execution Description</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Math uses only simple functions (T4)</td>
+                    <td>Mostly/All Idle (EF)</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Math uses more complex functions, but is reducable to a hard rule and can be simplified/ignored (WSP)</td>
+                    <td>Simple d strats. No MS (WSP)</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Math uses more complex functions that must be interacted with. Generally explainable, creates simple progressions (CSR2)</td>
+                    <td>Mod 10 strats, simple MS (T2)</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Math uses more complex functions that must be interacted with, that creates more complex progressions (RZ)</td>
+                    <td>Long step mod 10 strats, complex MS, with more difficult thresholds (FP)</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Math uses very complex functions that must be interacted with. Creates complex progressions (FP)</td>
+                    <td>Esoteric strategy, hard MS (MF)</td>
+                </tr>
+            </table>
 
             <h2>What CT should I push?</h2>
             <p>
@@ -77,6 +111,31 @@
                 Personally, I recommend starting with some lower complexity theories, some good idle theories (to overnight) and ideally some fast early game
                 theories<br/>
                 For those trying to play optimally, CTs are <b>not</b> effected by R9, and thus the greedy method is optimal
+            </p>
+            <h3>CT meta-data table</h3>
+            <p>Execution complexity refers to the complexity of the optimal strategies. Forced Execution complexity includes only non-optional strats + active</p>
+            <p>Math complexity is not what it looks like! Sometimes, theories can look intimidating, but are actually not that bad if you sit and think about it</p>
+            <p>Math complexity also include a bit of a hidden element about how difficult a strat is to DERIVE. This may be based off of hidden factors such as
+            variable cost functions, so math complexity may not reflect the above</p>
+            <p>Activity is how active the theory is considered as a whole. Activity (min) is how active the theory is at it's most idle part</p>
+            <p>Example: SL has this scary looking equation \(\frac{x}{\sqrt[x]{x!}}\). In a vacuum this would be difficult to analyse. However, a quick google
+            search (or guide search) reveals that this is an approximation for the value <b>e</b>, and with a bit of experimentation, one can determine how
+            quickly it converges. Thus, it is given a score of 2, as it is difficult to being with, but can be simplified</p>
+            <table>
+                <tr><td>CT  </td><td>Sim Completion time</td><td>Math Complexity</td><td>Execution Complexity</td><td>Forced Execution Complexity</td><td>Activity\(^{[0]}\)</td></tr>
+                <tr><td>WSP </td><td>4y 333d            </td><td>2              </td><td>2                   </td><td>2                          </td><td>Active            </td></tr>
+                <tr><td>SL  </td><td>288d               </td><td>2              </td><td>4                   </td><td>2                          </td><td>Idle              </td></tr>
+                <tr><td>EF  </td><td>132d               </td><td>2              </td><td>1                   </td><td>1                          </td><td>Idle              </td></tr>
+                <tr><td>CSR2</td><td>1y 73d             </td><td>3              </td><td>4                   </td><td>2                          </td><td>Active            </td></tr>
+                <tr><td>FI  </td><td>264d               </td><td>4\(^{[1]}\)    </td><td>3                   </td><td>2                          </td><td>Active            </td></tr>
+                <tr><td>FP  </td><td>103d               </td><td>5              </td><td>4                   </td><td>3                          </td><td>Active            </td></tr>
+                <tr><td>RZ  </td><td>67d                </td><td>4              </td><td>2                   </td><td>2                          </td><td>Active            </td></tr>
+                <tr><td>MF  </td><td>-                  </td><td>1              </td><td>5                   </td><td>5                          </td><td>Active            </td></tr>
+                <tr><td>BaP </td><td>-                  </td><td>2              </td><td>3                   </td><td>2                          </td><td>Idle              </td></tr>
+            </table>
+            <p>
+                \(^{[0]}\)Many active theories have idle sections, many idle theories have active sections. Do not take as gospel. Considered post full milestones if applicable<br/>
+                \(^{[1]}\)FI's milestone route and milestone effectivity is difficult to derive
             </p>
             <h3>WSP</h3>
             <p>
