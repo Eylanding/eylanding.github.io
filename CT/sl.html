@@ -96,11 +96,11 @@
             </ul>
 
             <h3>Strategies:</h3>
-            <p>every variable does not affect \(\rho_1\) directly, affecting either \(\rho_2\) or \(\rho_3\), which usually takes a while to build up. Therefore, near
+            <p>Every variable does not affect \(\rho_1\) directly, affecting either \(\rho_2\) or \(\rho_3\), which usually takes a while to build up. Therefore, near
             the end of a publication, you should stop buying them, because by the time the upgrades have built up, you've past the optimal pub multi. Thus we
-            have the strat SLStopAd. I would like to remove the Mod part for simplicity, but I am afraid I may make the start unviable. Therefore I have
-            decided NOT to list the active strat (SL is super idle anyway), as the speed gain from SLStopAd is rarely enough to justify using over the idle
-            strat SLStopA.</p>
+            have the strat SLStopAd. I would like to remove the Mod part for simplicity, but I am afraid I may make the start unviable. Therefore, a simplified form,
+            is not included, and the form with mod10 is listed only for notice, as the speed gain from SLStopAd is rarely enough to justify using over the idle
+            strat SLStopA. We recommend only using SLStopA and SLMS</p>
             <p><a href="https://exponential-idle-guides.netlify.app/guides/theory-strategies/#slstopad">SLStopAd</a></p>
             <h4>SLStopA</h4>
             <p>✔️ - Always buy, ❌ - Never buy</p>
@@ -110,6 +110,16 @@
                 <tr><td>\(a_2\)</td><td>✔️                </td><td>❌               </td><td>❌            </td></tr>
                 <tr><td>\(b_1\)</td><td>✔️                </td><td>✔️                </td><td>❌            </td></tr>
                 <tr><td>\(b_2\)</td><td>✔️                </td><td>✔️                </td><td>❌            </td></tr>
+            </table>
+            <h4>SLStopAd</h4>
+            <p>✔️ - Always buy, ❌ - Never buy</p>
+            <p><i>We do not recommend this strategy</i></p>
+            <table>
+                <tr><th>var    </th><th>Pub multi &lt 4.5                                     </th><th>Pub multi 4.5 - 6</th><th>Pub multi > 6</th></tr>
+                <tr><td>\(a_1\)</td><td>if lvl % 3 = 0 ✔️, else at \(\frac{1}{lvl \% 3}\) of a2</td><td>❌               </td><td>❌            </td></tr>
+                <tr><td>\(a_2\)</td><td>✔️                                                     </td><td>❌               </td><td>❌            </td></tr>
+                <tr><td>\(b_1\)</td><td>if lvl % 4 = 0 ✔️, else at \(\frac{1}{lvl \% 4}\) of b2</td><td>✔️                </td><td>❌            </td></tr>
+                <tr><td>\(b_2\)</td><td>✔️                                                     </td><td>✔️                </td><td>❌            </td></tr>
             </table>
             <p>SL has a MS strat as well. This MS strat is quite difficult, however, without manual buying it might be not too bad. It's also good at get some
             MS practice in, <s>and if I have to suffer SLMS you all do too</s>. Therefore I have decided to include SLMS here as well (again, SLMSd is not
@@ -138,8 +148,8 @@
             reaches "n" times less then the next \(b_{12}\) upgrade, swap to State 2. Now you have a new "n". When your \(\rho_1\) again reaches "n" times less
             then the next \(b_{12}\) upgrade with the new "n", swap to State 3 (note that for one of the stages there is no swapping to state 3.). Finally, when
             you can afford and buy the upgrade, or your \(\rho\) drops back down due to another upgrade, swap back to State 1</p>
-            <p>For variable purcahse, follow the SLStopA strat. Therefore you don't have to worry about variables and just focus on the MS. If you want to take a
-            break, just leave it in state 1 and come back. Any amount of active play is beneficial</p>
+            <p>For variable purchase, follow the SLStopA strat. Therefore you don't have to worry about variables and just focus on the MS. If you want to take a
+            break, just leave it in state 1 and come back. Any amount of active play is beneficial. (SLMSd is just the same thing with the SLStopAd strat anyway)</p>
             <p>This strategy is over 2x faster then SLStopA, so I suggest doing it if you can. Plus, it's more fun then just waiting</p>
 
 
