@@ -69,6 +69,8 @@
             <p>The actual definition of a fractional integral is complicated but unimportant. The idea that is that it is a smooth way to interpolate from 
             a function (it's 0th integral) to its integral (or 1st integral). For example, the 0.01th integral of a function is very similar to the unchanged
             function, and the 0.99th integral is very similar to it's regular integral</p>
+            <img src="images/fractional_integral.png">
+            <p><i>red: x, blue: \(\int xdx\), green: \(_{\lambda}\int xdx\) for \(\lambda = [0.25, 0.5, 0.75]\)</i></p>
             <p>A good explanation of the fraction integral can be found on
             <a href="https://www.youtube.com/watch?v=2dwQUUDt5Is&t=1326s"> this youtube video</a></p>
             <p>Typically, a fractional integral is notated using this notation: \(_{\lambda}\int f(x)dx\), where \(\lambda\) is the fraction.<br/>
@@ -80,17 +82,17 @@
             <blockquote>$$\dot{q} = q_1q_2$$</blockquote>
             <h4>g(x) eq</h4>
             <table>
-                <tr><td>Milestone 0</td><td>$$1 - \frac{x^2}{2!} + \frac{x^4}{4!}$$</td></tr>
-                <tr><td>Milestone 1</td><td>$$1 - \frac{x^3}{3!} + \frac{x^5}{5!}$$</td></tr>
+                <tr><td>Milestone 0</td><td>$$1 - \frac{x^2}{2!} + \frac{x^4}{4!}$$                                             </td></tr>
+                <tr><td>Milestone 1</td><td>$$1 - \frac{x^3}{3!} + \frac{x^5}{5!}$$                                             </td></tr>
                 <tr><td>Milestone 2</td><td>$$\frac{x + \frac{x^2}{2} + \frac{x^3}{3} + \frac{x^4}{4} + \frac{x^5}{5}}{ln(10)}$$</td></tr>
-                <tr><td>Milestone 3</td><td>$$1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \frac{x^5}{5!}$$</td></tr>
+                <tr><td>Milestone 3</td><td>$$1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \frac{x^5}{5!}$$       </td></tr>
             </table>
             <h4>\(\lambda\) eq</h4>
             <table>
-                <tr><td>Before K term</td><td>$$\frac{1}{2}$$</td></tr>
+                <tr><td>Before K term</td><td>$$\frac{1}{2}$$                </td></tr>
                 <tr><td>Milestone 0  </td><td>$$\sum_{i=0}^{K}\frac{1}{2^i}$$</td></tr>
                 <tr><td>Milestone 1  </td><td>$$\sum_{i=0}^{K}\frac{2}{3^i}$$</td></tr>
-                <tr><td>Milestone 2  </td><td>$$\sum_{i=0}^{K}\frac{3}{4^i}$$</tr>
+                <tr><td>Milestone 2  </td><td>$$\sum_{i=0}^{K}\frac{3}{4^i}$$</td></tr>
             </table>   
             <p>This main equation shows that \(\dot{\rho}\) is proportional to t, r, and \(\sqrt[\pi]q\)</p>
             <p>After the main equation changes it is proportional to t, r, m, n, and \(\sqrt[\pi]{(\int g)(q/\pi)}\)</p>
