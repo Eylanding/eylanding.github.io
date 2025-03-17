@@ -41,7 +41,7 @@
                 <li>Linear variable increase, believe it or not, linearly. If it's not growing linearly it's not linear</li>
             </ol>
             <p>However, there indicators are not perfect. \(c_1\) in FP grows linearly up to 100, and even though it stays an integer, the linear growth and
-            has a low value (it only growns by 1 per level keeping it small), it is actually a stepwise variable (it has an unusually high step length)</p>
+            has a low value (it only grows by 1 per level keeping it small), it is actually a stepwise variable (it has an unusually high step length)</p>
             <p>For example:</p>
             <ul>
                 <li>\(c_1 = 2^{52}\) - Direct Multi</li>
@@ -57,7 +57,7 @@
             raising it's value by a factor of it's base</p>
 
             <h2>Stepwise Variables</h2>
-            <p>Stepwise variables ar more complicated than Direct Multi Variables. It is impossible to know how a stepwise variable will increase just by looking
+            <p>Stepwise variables are  more complicated than Direct Multi Variables. It is impossible to know how a stepwise variable will increase just by looking
             at it, one needs to examine the code in order to know how it will increase. Stepwise variables can be described with 3 numbers, their initial value
             (I), their step length (S) and their base power (B)</p>
             <p><i>Note that "initial value (I)" is not commonly used, as due to the nature of the game it does not actually affect any strategy, so it is usually
@@ -86,7 +86,7 @@
             <p>As before, in an attempt for a better explanation, I made my own nomenclature (sorry about that). Here is the universally accepted nomenclature</p>
             <p>When talking about stepwise variables, one usually uses 2 numbers to describe it: its base and its step. It is written like this (B, S)</p>
             <p>for example, the variable is described before is a (2, 10) stepwise variable</p>
-            <p>Whilst the inital value of a stepwsie variable affect the theory and could affect variable competition, when variable are multiplied together - as
+            <p>Whilst the inital value of a stepwise variable affect the theory and could affect variable competition, when variable are multiplied together - as
             they are in most theories, the intial value can be factored out and ignored. The inital increment value does not increase how much a variable
             increases per level as a percentage. For example, (2,10) with an inital of one goes 1, (+100%) 2, (+50%) 3; and the same variable with an initial of
             10 goes 10, (+100%) 20, (+50%) 30. Different numbers, same percentage difference</p>
@@ -107,13 +107,13 @@
             1. Very early upgrades are usually unusually powerful. For example, the level 3 -> 4 upgrade increases it by 33%, much more than the 7% average
             increase. More important though is the non smooth nature of stepwise power functions</p>
             <p>Stepwise power functions have a jump at each step length. This jump means that just after getting the increase to their amount per level they are
-            stronger. For example, a (2, 10) stepwise variable would be slightly stronger just after each multiple of 10, 10 -> 11 is stornger than 9 -> 10</p>
+            stronger. For example, a (2, 10) stepwise variable would be slightly stronger just after each multiple of 10, 10 -> 11 is stronger than 9 -> 10</p>
             <img src="images/stepwise.png" style="width: 250px; height: 250px;">
             <p><i>s(x) is the (2, 10) stepwise power function. Red: \(s(x)\), Blue: \(100\left(\frac{b\left(x+1\right)}{b\left(x\right)}-1\right)\), i.e. the
             amount s(x) increases when you buy an upgrade starting from upgrade x, as a percentage</i></p>
             <p>In this graph the blue line represents approximately how much s(x) increases after buying a level, start from level x. As you can see this spike
             at multiples of 10 (or more generally multiples of S) and goes down from there. From this, one can see that stepwise variables are more power right a
-            multiple of S and weakest rgiht before it</p>
+            multiple of S and weakest right before it</p>
             <p>With this knowledge one can adjust their strategy. For (2, 10) stepwise variables specifically, the recommended ratio to buy them (usually 10)
             relative to a
             doubling variable lower just after a multiple of 10 and higher just before one. For example, having \(c_1\) and \(c_2\) be stepwise and doubling
