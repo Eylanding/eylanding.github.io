@@ -59,12 +59,16 @@
                 <li><b>One sentence description:</b> TBA</li>
             </ul>
             <h3>WSP overview:</h3>
-                <p>WSP is based of of Weierstrass' sine approximation: \(s_n(x) = x \Pi_{k=1}^n(1 - (\frac{x}{k\pi})^2)\).<br/>
-                The product looks scary but it simply defines a function \(s_n\) that approximates sine. The higher \(n\) values you pass into it, the better the
-                approximation it. Essentially, as n goes to infinity, \(s_n(x)\) approaches sin(x)</p>
-                <p>However, \(s_n(x)\) is quite inaccurate, and for large values of x, \(s_n(x)\) is much larger/smaller then sin(x), even for large values of n.<br/>
-                for instance, 
-                Essentially, as x gets bigger, \(s_n(x) / sin(x)\) gets bigger, very fast, even for large values of n</p>
+                <p>
+                    WSP is based of of Weierstrass' sine approximation: \(s_n(x) = x \Pi_{k=1}^n(1 - (\frac{x}{k\pi})^2)\).<br/>
+                    The capital pi notation, as in student and tau calculations means to multiply all the terms together, like sigma notation but for
+                    multiplication.<br/>
+                    The product looks scary but it simply defines a function \(s_n\) that approximates sine. The higher \(n\) values you pass into it, the better the
+                    approximation it. Essentially, as n goes to infinity, \(s_n(x)\) approaches sin(x)
+                </p>
+                <p>
+                    However, \(s_n(x)\) is quite inaccurate, and for large values of x, \(s_n(x)\) is much larger/smaller then sin(x), even for large values of n.<br/>
+                    for instance. Essentially, as x gets bigger, \(s_n(x) / sin(x)\) gets bigger, very fast, even for large values of n</p>
                 <img src="images/s_100.png">
                 <p><i>red: sin(x), blue: \(s_{100}(x)\)</i></p>
                 <p>This theory exploits this inaccuracy, and uses it to increase \(\rho\)</p>
