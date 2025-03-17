@@ -122,6 +122,23 @@
             <p>More specifically, the ratio is 5x at a multiple of 10 increasing to 10x at 5 more then a multiple of 10, and 15x at 9 more than a multiple of 
             10.</p>
 
+            <h3>Mod10 strategies</h3>
+            <p>Many strategies make use of this understanding of stepwise variables by changing the ratio you buy depending on where you are in the cycle of These
+            stepwise variables. This is done using the modulo operator \(\%\). Take the above example. \(c_1\) is a (2, 10) stepwise and \(c_2\) is a 2x direct
+            multi variable. The ratio we want to buy it at is 5x when \(c_1\)'s current level = 10, 20, 30 etc. and up to 15x when it's current level is 19, 29,
+            39 etc. Thus, we define the strategy like this</p>
+            <table>
+                <tr><td>\(c_1\)</td><td>Buy at \(\frac{1}{5 + lvl \% 10}\) of \(c_2\)</td></tr>
+                <tr><td>\(c_2\)</td><td style="color: green;">Always buy   </td></tr>
+            </table>
+            <p>
+                This uses a new operation you may not have encounters before, the modulo operator \(\%\).</p>
+            <p>
+                The modulo operator returns the <b>remainder</b> of dividing the first number by the second number. For instance, take \(11 \% 3\). IF we do 11/3, we
+                get 3 remainder 2. This remainder is what the modulo operator returns, so \(11 \% 3 = 2\). Thus, by taking the level of the stepwise variable mod
+                (\(\%\)) it's step length (in this case 10), we get how far into the stepwsie cycle that variable is.
+            </p>
+
             <h2>Linear Variables</h2>
             <p>They increase by a set amount per level. woa</p>
 
