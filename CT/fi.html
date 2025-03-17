@@ -126,14 +126,23 @@
             to describe it is that when your swapping your milestones, max out \(q_1\) exponent, then put you remaining milestones in the normal route. However,
             ALWAYS prioritise perma level locked upgrades over other upgrades. The buy order is \(q_1\) exp → perma level locked milestones → other milestones.
             Of course, if the milestone resets q, i.e. the g(x) milestone, don't respec it, just keep it bought</p>
-            <h4>FId</h4>
-            <p>Again, this strat is subject to change</p>
+            <p>FI is heavily effected by stepwise variables. The variable \(q_1\) has a step length of 21, meaning upgrade 21-22, 42-43 etc. are much stronger.
+            The variable n has a step length of 11</p>
+            <h4>FIdNoMod</h4>
             <table>
                 <tr><td>\(q_1\)</td><td>Buy at \(\frac{1}{10}\) of \(min(q_2, K, m)\)</td></tr>
                 <tr><td>\(q_2\)</td><td style="color: green;">Always buy   </td></tr>
                 <tr><td>\(K\)  </td><td style="color: green;">Always buy   </td></tr>
                 <tr><td>\(m\)  </td><td style="color: green;">Always buy   </td></tr>
-                <tr><td>\(m\)  </td><td>Buy at \(\frac{1}{10}\) of \(min(q_2, K, m)\)</td></tr>
+                <tr><td>\(m\)  </td><td>Buy at \(\frac{1}{5}\) of \(min(q_2, K, m)\)</td></tr>
+            </table>
+            <h4>FId</h4>
+            <table>
+                <tr><td>\(q_1\)</td><td>Buy at \(\frac{1}{1 + lvl \% 23}\) of \(min(q_2, K, m)\)</td></tr>
+                <tr><td>\(q_2\)</td><td style="color: green;">Always buy   </td></tr>
+                <tr><td>\(K\)  </td><td style="color: green;">Always buy   </td></tr>
+                <tr><td>\(m\)  </td><td style="color: green;">Always buy   </td></tr>
+                <tr><td>\(m\)  </td><td>Buy at \(\frac{1}{1 + lvl \% 11}\) of \(min(q_2, K, m)\)</td></tr>
             </table>
 
 
