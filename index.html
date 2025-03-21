@@ -123,10 +123,15 @@
 
             <p>Autosupremacy: </p>
 
-            <blockquote>(d(ln(db / b + 1) / pt) &lt 0)> 3 * tr && db > b&& dpsi + psi > min(min(costUpS(1),costUpS(2)),
-            costUpS(3))&& ln(1 + max(1, log10(sf)) /smooth(max(1, log10(gf)),(st > tr) * ee99)) / max(1, st)
-            &ltsmooth(ln(1 + max(1, log10(sf)) /smooth(max(1, log10(gf)), (st > tr)* ee99)) / max(1, st), (pt >
-            tr) * ee99)</blockquote>
+            <blockquote>dpsi + psi > min(costUpS(1),costUpS(2), costUpS(3))&& (((lf &lt ee48000)&& ((log10(log10(gf)) >=log10(log10(lf))-400)|| ((log10(log10(gf))
+                >=log10(log10(lf)) * 0.8)&& (((dpsi + psi > costUpS(1, 3))|| (dpsi + psi >(costUpS(2) + costUpS(1, 2))))|| ((log10(log10(gf)) >=log10(log10(lf))-
+                10000)&& (dpsi + psi > costUpS(3, 3)))|| ((log10(log10(gf)) >=log10(log10(lf))-4000)&& (dpsi + psi > costUpS(3, 2)))|| ((log10(log10(gf)) >=log10
+                (log10(lf))-1000)&& (dpsi + psi > costUpS(3, 1)))))|| ((log10(log10(gf)) &ltlog10(log10(lf)) * 0.8)&& (timer(d(ln(db / b + 1) / pt) &lt 0)> 3 * tr
+                && db > b&& dpsi + psi > min(costUpS(1),costUpS(2), costUpS(3))&& ln(1 + max(1, log10(sf)) /smooth(max(1, log10(gf)),(st > tr) * ee99)) /max(1, st)
+                &ltsmooth(ln(1 + max(1, log10(sf)) /smooth(max(1, log10(gf)),(st > tr) * ee99)) /max(1, st), (pt > tr) * ee99)))))|| ((lf >= ee48000)&& (((lf &lt
+                ee52000)&& ((costUpS(3) &lt e411&& psi + dpsi > e411)|| (costUpS(3) &lt e531&& psi + dpsi > e531)|| (costUpS(3) &lt e551&& psi + dpsi > e551)))||
+                ((lf &lt ee58000)&& (costUpS(3) &lt e511&& psi + dpsi > e511))))|| ((lf &lt ee75000)&& (costUpS(3) &lt e571&& psi + dpsi > e571))|| (costUpS(1) &lt
+                e52&& psi + dpsi > 4.2e51))</blockquote>
 
             <p>Remember to set your mode to equation</p>
             <p class="important"><b>IMPORTANT! After you input this, do a manual supremacy. Anytime you enter the edit expression field
