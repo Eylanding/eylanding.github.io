@@ -59,12 +59,21 @@
             </ul>
 
             <h3>MF Overview</h3>
+            <p class="important">Without reading this overview, a lot of the equations will seem completely random and nonsensical</p>
             <p>
-                MF is based around the Magnetic Field equations, the equations that govern the motion of a charged particle in the sinusoidal field (TBC)
+                MF is based around the Magnetic Field equations, the equations that govern the motion of a charged particle in the sinusoidal field. This theory
+                simulates the movement of a charged particle with mass \(m\) and charge \(q\) in a solenoid of infinite length with current \(I\) and a
+                density of turns \(\delta\) creating magnetic field \(B\).
+            </p>
+            <p>
+                For this simulation we consider a particle starting at position \(x = 0\), and time \(t_s = 0\), with an initial velocity given by the \(v_i\)
+                purchasable variables. This causes it to move in a helix like pattern with a constant \(x\) velocity and \(\omega\) angular velocity. Because of
+                this, buying \(v_i\) variables will have no effect until the simulation is reset and the new initial velocities can be applied
             </p>
             <p>
                 Furthermore, MF is the first theory to implement a second prestige layer, by having a prestige layer below publications. This new prestige layer
-                adds a whole new dimension to this theory, and when playing this theory, much of the strategy will be based around when to "v reset"
+                is representative of "resetting" the simulating and applying the new \(v_i\) conditions, which does not reset upgrades but does reset the particles
+                \(x\) position by resetting \(t_s\) to 0
             </p>
 
             <h3>Equation breakdown</h3>
@@ -87,7 +96,9 @@
                 particle, setting \(t_s = 0\). For instance: 
                 $$v_x = [v_1v_2 \times 10^{-20}](t_s = 0)$$
                 This question determines that \(v_x = v_1v_2 \times 10^{-20}\). However, purchasing \(v_{12}\) will not have an immediate effect of \(v_x\) - instead
-                it will only update when you reset the particle, and reset \(t_s\).
+                it will only update when you reset the particle, and reset \(t_s\).<br/>
+                As explained in the overview, this is because the \(v_i\) variables represent the initial conditions of the magneti field simulation, and thus have
+                no effect until the simulation is reset
             </p>
             <p>
                 Finally, there is an equation that should look familiar from t5
