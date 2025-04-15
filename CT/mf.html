@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../index.css">
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <title>Custom Theories - Expidle Simplified guide</title>
+    </head>
+    <body>
+
+       <header style="padding-left: 5%;">
+            <a href="../index.html"><h1>Exponential Idle Simplified Guides</h1></a>
+
+            <ol class="nav_bar">
+                <li><a href="../0-2000.html">0-2000</a></li>
+                <li><a href="../IntroToGrad.html">Intro to Grad</a></li>
+                <li><a href="../2000-5000.html">2000-5000</a></li>
+                <li><a href="../Theories-1-to-4.html">T1-4</a></li>
+                <li><a href="../Theories-5-to-7.html">T5-7</a></li>
+                <li><a href="../Theory-8-and-R9.html">T8 & R9</a></li>
+                <li><a href="../Theory-9-to-endgame.html">T9 to Endgame</a></li>
+                <li><a href="Custom-theories.html">Custom Theories</a></li>
+                <li><a href="../extentions/extentions.html">Extensions</a></li>
+            </ol>
+            <ol class="nav_bar">
+                <li><a href="wsp.html">WSP</a></li>
+                <li><a href="sl.html">SL</a></li>
+                <li><a href="ef.html">EF</a></li>
+                <li><a href=csr2.html> CSR2</a></li>
+                <li><a href="fi.html">FI</a></li>
+                <li><a href="fp.html">FP</a></li>
+                <li><a href="rz.html">RZ</a></li>
+                <li><b>MF</b></li>
+            </ol>
+
+        </header>
+        <div class="padded">
+
+            <p><i>Previous: <a href="../Theory-9-to-endgame.html">Theory 9 to Endgame</a></i></p>
+
+            <h2>PLEASE READ <a href="../index.html">GENERAL GUIDE</a> PAGE BEFORE READING THIS</h2>
+            <h2>WIP THIS INFORMATION IS NOT PROOFREAD AND MAY BE INACCURATE</h2>
+            <p><i>
+                Disclaimer: This is a simplified version of the guide. The guide will skip over things, and is not completely
+                optimal. Click <a href="https://exponential-idle-guides.netlify.app/">here</a> for a more polished, in-depth, and optimal guide.
+            </i></p>
+            <p><i>
+                When discussion strategy, this section may use more jargon then the rest of the guide. If you are confused, please check
+                out the discord server and ask.
+            </i></p>
+
+            <h2>Magnetic Fields - MF</h2>
+            <ul>
+                <li><b>Sim time to completion:</b> 189d</li>
+                <li><b>Dev: </b> Mathis S</li>
+                <li><b>Milestone route:</b> 1 -> 1/1 -> 1/1/2... (milestone route fixed)</li>
+                <li><b>One sentence description:</b> A theory with 2 prestige layers</li>
+            </ul>
+
+            <h3>MF Overview</h3>
+            <p>
+                MF is based around the Magnetic Field equations, the equations that govern the motion of a charged particle in the sinusoidal field (TBC)
+            </p>
+            <p>
+                Furthermore, MF is the first theory to implement a second prestige layer, by having a prestige layer below publications. This new prestige layer
+                adds a whole new dimension to this theory, and when playing this theory, much of the strategy will be based around when to "v reset"
+            </p>
+
+            <h3>Equation breakdown</h3>
+            <blockquote>$$\dot{\rho} = Cc_1c_2\omega^{4.1}x^{3.2}v^{1.3}$$</blockquote>
+            <blockquote>$$v = \sqrt{v_x^2 + v_y^2 + v_z^2}$$</blockquote>
+            <blockquote>$$x = v_xt_s$$</blockquote>
+            <blockquote>$$B = \mu_0I\delta$$</blockquote>
+            <blockquote>$$\omega = \frac{q}{m}B$$</blockquote>
+            <blockquote>$$v_x = [v_1v_2 \times 10^{-20}](t_s = 0)$$</blockquote>
+            <blockquote>$$v_y = [v_3v_4 \times 10^{-18}](t_s = 0) \times sin(\delta t_s)$$</blockquote>
+            <blockquote>$$v_z = [v_3v_4 \times 10^{-18}](t_s = 0) \times cos(\delta t_s)$$</blockquote>
+            <blockquote>$$\dot{I} = \frac{a_1}{400}(10^{-15}-\frac{I}{a_2})$$</blockquote>
+            <blockquote>$$m = 1e-3, q = 1.602e-19, \mu_0 = 4\pi \times 10^{-7}$$</blockquote>
+            <p>
+                That's a lot of equations. The most equations I've seen in a custom theory that actually matter. Luckily, most of it is just a bunch of
+                multiplication, so it is not that complex. C is an arbitrary balancing term that changes with milestones
+            </p>
+            <p>
+                Also, you may notice this term: \((t_s = 0)\). This means that this equations is not always true. It "updates" to become true then you reset the
+                particle, setting \(t_s = 0\). For instance: 
+                $$v_x = [v_1v_2 \times 10^{-20}](t_s = 0)$$
+                This question determines that \(v_x = v_1v_2 \times 10^{-20}\). However, purchasing \(v_{12}\) will not have an immediate effect of \(v_x\) - instead
+                it will only update when you reset the particle, and reset \(t_s\).
+            </p>
+            <p>
+                Finally, there is an equation that should look familiar from t5
+                $$\dot{I} = \frac{a_1}{400}(10^{-15} - \frac{I}{a_2})$$
+                This is the logistic function equations we saw in T5, however it some crucial differences:
+                <ol>
+                    <li>\(a_2\) does not appear on the denominator below \(a_1\) as it did in T5. This means \(a_2\) has no negative effect. It only increases the
+                    cap</li>
+                    <li>There is no middle "I" term as there is in T5. This means that instead of the function naturally growing exponentially to the cap, It
+                    instead grows linearly, making it slower, and \(a_1\) more important</li>
+                    <li>The number that the \(\frac{I}{a_2}\) term is subtracted from is \(10^{-15}\), meaning that cap is \(10^{-15}a_2\), not \(a_2\)</li>
+                </ol>
+            </p>
+            <p>With this knowledge, we can simplify the equations</p>
+            <blockquote>$$\dot{\rho} = Cc_1c_2\omega^{4.1}x^{3.2}v^{1.3}$$</blockquote>
+            <blockquote>$$\omega = 4\pi \times 1.602e-23 \times I\delta$$</blockquote>
+            <blockquote>$$\dot{I} = \frac{a_1}{400}(10^{-15} - \frac{I}{a_2})$$</blockquote>
+            <blockquote>$$\dot{x} = v_1v_2(t_s = 0)$$</blockquote>
+            <blockquote>$$v = \sqrt{v_1^2v_2^2 + v_3^2v_4^2}(t_s = 0)$$</blockquote>
+            <p><i>The above is for low \(\omega\) making \(sin(\omega) \approx 0\)</i></p>
+            <p>Or even simpler, assuming continuous particle resets, and merging all constants - a method that allows us the analyse the effect of each variable in
+            a vacuum</p>
+            <blockquote>$$\dot{\rho} = Cc_1c_2I^{4.1}\delta^{4.1}v_1^{3.2}v_2^{3.2}t_s^{3.2}(v_1^2v_2^2 + v_3^2v_4^2)^{0.65}$$</blockquote>
+            <p>And thus the variable breakdown</p>
+            <table>
+                <tr><td>\(c_1\)    </td><td>Increases \(\dot{\rho}\) by TBA</td></tr>
+                <tr><td>\(c_2\)    </td><td>Increases \(\dot{\rho}\) by 2x</td></tr>
+                <tr><td>\(a_1\)    </td><td>Increases \(\dot{I}\) by TBA</td></tr>
+                <tr><td>\(a_2\)    </td><td>Increases I cap by 1.25x, and thus \(\dot{\rho}\) by 2.5x</td></tr>
+                <tr><td>\(\delta\) </td><td>Increases \(\omega\) by 1.1x, and thus \(\dot{\rho}\) by 1.48x</td></tr>
+                <tr><td>\(v_1\)    </td><td>Increases \(\dot{x}\) by TBA (requires reset)</td></tr>
+                <tr><td>\(v_2\)    </td><td>Increases \(\dot{x}\) by 1.3x, and thus \(\dot{\rho}\) by 2.32x over time (requires reset)</td></tr>
+                <tr><td>\(v_1\)    </td><td>Increases \(v\) by TBA (requires reset)</td></tr>
+                <tr><td>\(v_2\)    </td><td>Increases \(v\) by 1.4-1.5x and thus \(\dot{\rho}\) by 1.62x (requires reset)</td></tr>
+            </table>
+
+
+            <h3>Strategy</h3>
+            <p>
+                Strategy in MF revolves around the central question: When should you reset the particle? Resetting the particle as we have seen is a tradeoff between
+                the short term (decreases x immediately) and the long term (higher \(v_{1234}\) = higher x & v later on). Of course, you do not want to reset too
+                often, lest you never let \(t_s\) build, but you also do not want to reset to rarely, and lose out on higher \(v_1234\).
+            </p>
+            <p>
+                No hard and fast strategy has been proven best, and many people do their own way, but I recommend the strategy made by d4Nf6Bg51-0:
+                (No names have been assigned as of yet)
+            </p>
+            <h4>MF Strat 1</h4>
+            <p>
+                Purchase \(v_{1234}\) and reset when:
+                <ul>
+                    <li>next \(v_2\) level costs 1e3 or more less then next \(v_4\) level, and you can afford 2x \(v_2\) and 1x \(v_4\)</li>
+                    <li>next \(v_2\) level costs less then 1e3 less then next \(v_4\) level, and you can afford 1x \(v_2\) and 1x \(v_4\)</li>
+                </ul>
+                Purchase the given amounts of \(v_{24}\) and enough \(v_{13}\) so that the next upgrades cost more then the \(v_{24}\) upgrade costs
+            </p>
+            <h4>Alt: MF Strat 2</h4>
+            <p>
+                Purchase \(v_{1234}\) and reset when:
+                <ul>
+                    <li>next \(v_2\) level costs 1e3 or more less then next \(v_4\) level,  and you can afford 1x \(v_2\)</li>
+                    <li>next \(v_2\) level costs less then 1e3 less then next \(v_4\) level, and you can afford 1x \(v_2\) and 1x \(v_4\)</li>
+                </ul>
+            </p>
+
+            <p>For variable purchasing, you should follow simple doubling strats</p>
+            <h4>MFd</h4>
+            <table>
+                <tr><td>\(c_1\)    </td><td>                        Cost is 10x less then \(min(c_2, a_2)\)</td></tr>
+                <tr><td>\(c_2\)    </td><td style="color: green;">Always buy                             </td></tr>
+                <tr><td>\(\delta\) </td><td>                        Cost is 2x less then \(min(c_2, a_2)\) </td></tr>
+                <tr><td>\(a_1\)    </td><td>                        Cost is 10x less then \(min(c_2, a_2)\)</td></tr>
+                <tr><td>\(a_2\)    </td><td style="color: green;">Always buy                             </td></tr>
+            </table>
+
+
+        </div>
+    </body>
+</html>
