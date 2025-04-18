@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../index.css">
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <title>Custom Theories - Expidle Simplified guide</title>
+    </head>
+    <body>
+
+       <header style="padding-left: 5%;">
+            <a href="../index.html"><h1>Exponential Idle Simplified Guides</h1></a>
+
+            <ol class="nav_bar">
+                <li><a href="../0-2000.html">0-2000</a></li>
+                <li><a href="../IntroToGrad.html">Intro to Grad</a></li>
+                <li><a href="../2000-5000.html">2000-5000</a></li>
+                <li><a href="../Theories-1-to-4.html">T1-4</a></li>
+                <li><a href="../Theories-5-to-7.html">T5-7</a></li>
+                <li><a href="../Theory-8-and-R9.html">T8 & R9</a></li>
+                <li><a href="../Theory-9-to-endgame.html">T9 to Endgame</a></li>
+                <li><a href="Custom-theories.html">Custom Theories</a></li>
+                <li><a href="../extentions/extentions.html">Extensions</a></li>
+            </ol>
+            <ol class="nav_bar">
+                <li><a href="wsp.html">WSP</a></li>
+                <li><a href="sl.html">SL</a></li>
+                <li><a href="ef.html">EF</a></li>
+                <li><a href=csr2.html> CSR2</a></li>
+                <li><a href="fi.html">FI</a></li>
+                <li><a href="fp.html">FP</a></li>
+                <li><a href="rz.html">RZ</a></li>
+                <li><a href="mf.html">MF</a></li>
+                <li><b>BaP</b></li>
+            </ol>
+
+        </header>
+        <div class="padded">
+
+            <p><i>Previous: <a href="../Theory-9-to-endgame.html">Theory 9 to Endgame</a></i></p>
+
+            <h2>PLEASE READ <a href="../index.html">GENERAL GUIDE</a> PAGE BEFORE READING THIS</h2>
+            <h2>WIP THIS INFORMATION IS NOT PROOFREAD AND MAY BE INACCURATE</h2>
+            <p><i>
+                Disclaimer: This is a simplified version of the guide. The guide will skip over things, and is not completely
+                optimal. Click <a href="https://exponential-idle-guides.netlify.app/">here</a> for a more polished, in-depth, and optimal guide.
+            </i></p>
+            <p><i>
+                When discussion strategy, this section may use more jargon then the rest of the guide. If you are confused, please check
+                out the discord server and ask.
+            </i></p>
+
+            <p class="important">Since it was started before the official BaP guide was written, this guide is not yet simplified. Should still be understandable
+                though, it might just need a bit more effort to read. Ironically, if you want to skip the math, and see something simpler, go to the main guide
+            </p>
+
+            <h2>Basil Problem - BaP</h2>
+            <ul>
+                <li><b>Sim time to completion:</b> 151d</li>
+                <li><b>Dev: </b> Python's Koala</li>
+                <li><b>Milestone route:</b> Prioritise a milestones over q milestone. Do MS is possible</li>
+                <li><b>One sentence description:</b> A T2 esque theory with many cumulative and MS</li>
+            </ul>
+
+            <h3>BaP Overview</h3>
+            <p>
+                Basil Problem, abbreviated BaP to differentiate from unofficial CT Bin Packing (BiP), is based around the Basil series:
+                $$\sum_{n=1}^{\infty}\frac{1}{n^2}$$
+                The subject of the famous mathematical Basil Problem which was solver by Euler, who showed the series converged to \(\frac{\pi^2}{6}\). This series
+                converges linearly, with a 2x increase in the number of terms summed corresponding to a 2x decrease in the difference between the sum and
+                \(\frac{\pi^2}{6}\). For example, if the first 10 terms sum are 0.001 away from being perfectly \(\frac{\pi^2}{6}\), then the first 20 terms will be
+                about 0.0005 way from perfectly \(\frac{\pi^2}{6}\)
+            </p>
+            <p>
+                BaP also makes use of many nested cumulative variables, similar to T2. This makes the theory similar to T2 is many regards, with long(ish)
+                publications, MS, and stuff generally taking a long time to happen
+            </p>
+
+            <h3>Equation breakdown</h3>
+            <p>Before first 2 milestones</p>
+            <blockquote>$$\dot{\rho} = (tq_1r)^a$$</blockquote>
+            <blockquote>$$\dot{q_1} = c_2$$</blockquote>
+            <blockquote>$$\dot{r} = \sum_{i=1}^{c_1}\frac{1}{i^2}$$</blockquote>
+            <p>After first 2 milestones</p>
+            <blockquote>$$\dot{\rho} = t(q_1r)^a$$</blockquote>
+            <blockquote>$$\dot{q_i} = c_{i+1}q_{i+1}, 1 \leq i \leq C$$</blockquote>
+            <blockquote>$$\dot{q}_{C+1} = c_{C+2}$$</blockquote>
+            <blockquote>$$\dot{r} = (\sum_{i=c_1}^{\infty}\frac{1}{i^2})^{-1}$$</blockquote>
+            <p>Where \(C\) is a number based on your level of milestone 4</p>
+            <p>
+                Pre-Milestone 1 & 2 the equations should be straight forward. Note that \(c_1\) here is practically pointless, as after only a few upgrade of \(c_1\)
+                you will have reached very near \(\frac{pi^2}{6}\), and no more upgrades will help. From now on, only the post 2 milestones will be discussed
+            </p>
+            <p>
+                These equations can be quite abstracted away from what is actually happening (which is quite simple), as they combine many lines into few for
+                brevity. This first equation determines \(\rho\) with \(a\) and \(t\) being self explanatory.
+            </p>
+            <h4>The \(\dot{r}\) Equation</h4>
+            <p>
+                The equations governing r are also quite simple. The form of the basil problem presented is actually a condensed form of the difference between the
+                first n terms and \(\frac{pi^2}{6}\) that was discussed earlier. This difference cen be modelled with the equation
+                $$(\frac{\pi^2}{6} - \sum_{i=1}^{n}\frac{1}{i^2})^{-1}$$
+                for the first n terms. Here, we take the reciprical of the difference, turning a 2x decrease into a 2x increase, effectively measuring how close this
+                difference is to zero. Re-substituting the Basil Series Identity
+                $$(\sum_{i=1}^{\infty}\frac{1}{i^2} - \sum_{i=1}^{n}\frac{1}{i^2})^{-1}$$
+                Here, notice the first n terms of the series actually cancel. This is more visible if you write the subtraction out in full
+                $$(\frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + ... + \frac{1}{n^2} + \frac{1}{(n+1)^2} + ...)$$
+                $$-(\frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + ... + \frac{1}{n^2})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ $$
+                Thus, our equations can be written as
+                $$(\frac{1}{(n+1)^2} + \frac{1}{(n+2)^2} + ...)^{-1}$$
+                $$(\sum_{i=n+1}^{\infty}\frac{1}{i^2})^{-1}$$
+                Which is the written equation, with \(n + 1 = c_1\)
+            </p>
+            <p>
+                Thus, we can see that the \(\dot{r}\) equation is actually the SAME as the equation for the difference between the first \(c_1\) terms of the
+                basil series and what it converges too, that is \(\frac{\pi^2}{6}\), so one can conclude that increasing \(c_1\) will increase \(\dot{r}\) linearly
+            </p>
+            <p>
+                As an interesting consequence, \(\dot{r} = c_1\) is not a bad approximation
+            </p>
+            <h4>The \(\dot{q}_i\) equations</h4>
+            <blockquote>$$\dot{q_i} = c_{i+1}q_{i+1}, 1 \leq i \leq C$$</blockquote>
+            <blockquote>$$\dot{q}_{C+1} = c_{C+2}$$</blockquote>
+            <p>
+                For these equations, we will expand the notation that has been used to condense the many similar q equations. This first equation can be thought of as
+                repeating this \(\dot{q_i} = c_{i+1}q_{i+1}\) for \(i = 1, 2, 3 ... C\) where C is based on your milestone levels. If we expand it we see
+                $$\dot{q_1} = c_{2}q_{2}$$
+                $$\dot{q_2} = c_{3}q_{3}$$
+                $$...$$
+                $$\dot{q}_C = c_{C+1}q_{C+1}$$
+                $$\dot{q}_{C+1} = c_{C+2}$$
+                I hope this is looking more understandable. We see that each q level increases by the q level BELOW multiplied with the c upgrade with the
+                corresponding subscript to that level, with \(q_1\) being increased by \(q_2\) and \(c_2\) and so on, with your final unlocked level of q only being
+                increased by the purchasable upgrade
+            </p>
+            <p>
+                This is actually the same as the T2 equations, where each q/r level is influenced by the one below it and a purchasable upgrade, only in T2's case
+                the upgrades were baked into the equations.
+            </p>
+            <h4>Variable Breakdown</h4>
+            <table>
+                <tr><td>\(\dot{t}\)</td><td>Increases \(\dot{t}\) by 1, max 5</td></tr>
+                <tr><td>\(c_1\)    </td><td>Increases \(\dot{r}\) by 7% (imagine \(\dot{r} = c_1\) directly). Powerful boost of x1024 every 64 level
+                (due to stepwise variables)</td></tr>
+                <tr><td>\(c_2\)    </td><td>Increases \(\dot{q_1}\) by 2x</td></tr>
+                <tr><td>\(c_3\)    </td><td>Increases \(\dot{q_2}\) by 3x</td></tr>
+                <tr><td>\(c_4\)    </td><td>Increases \(\dot{q_3}\) by 4x</td></tr>
+                <tr><td>\(c_5\)    </td><td>Increases \(\dot{q_4}\) by 5x</td></tr>
+                <tr><td>\(c_6\)    </td><td>Increases \(\dot{q_5}\) by 6x</td></tr>
+                <tr><td>\(c_7\)    </td><td>Increases \(\dot{q_6}\) by 7x</td></tr>
+                <tr><td>\(c_8\)    </td><td>Increases \(\dot{q_7}\) by 8x</td></tr>
+                <tr><td>\(c_9\)    </td><td>Increases \(\dot{q_8}\) by 9x</td></tr>
+                <tr><td>\(c_{10}\) </td><td>Increases \(\dot{q_9}\) by 10x</td></tr>
+            </table>
+
+
+            <h3>Strategy</h3>
+            <p>
+                Being very T2 like, the best strategy is BaP is often autobuy all with some MS. The a milestones increase \(\dot{\rho}\) and the q milestones give
+                you a new layer of q. For milestone swapping, you want to swap into the \(q_i\) milestone, and wait for \(q_i\) and \(q_{i-1}\) to increase for
+                a while, before swapping back into \(a\) milestones. As there are large gaps between \(c_i\) upgrades for later i (3/4+), you will generally only
+                need to do this swap few or one time per pub. Furthermore, the waiting times are much longer. Whilst T2 has cycles of 50s, BaP will have cycles
+                measured in hours. The exact timing bast is unknown
+            </p>
+            <p>
+                Furthermore, BaP has Doubling Chasing and chasing \(c_1\) boosts. As \(c_1\) get's a huge x1024 boost every 64 levels, if you are close to a boost
+                (divide by 64 and find the remainder to determine how close you are. If you get something like 56 you are clos) then you should autobuy \(c_1\) to
+                reach it. When you are not chasing a boost, you should buy \(c_1\) at \(c_1 \% 64 / 2\) less then other variables
+            </p>
+            <p>Go from Autobuy All to Never Buy Anything (full coast) at around 25x lower then you desired pub multi, which is 1e26 \(\rho\)</p>
+
+        </div>
+    </body>
+</html>
