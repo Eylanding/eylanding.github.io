@@ -55,7 +55,7 @@
                 though, it might just need a bit more effort to read. Ironically, if you want to skip the math, and see something simpler, go to the main guide
             </p>
 
-            <h2>Basil Problem - BaP</h2>
+            <h2>Basel Problem - BaP</h2>
             <ul>
                 <li><b>Sim time to completion:</b> 151d</li>
                 <li><b>Dev: </b> Python's Koala</li>
@@ -65,9 +65,9 @@
 
             <h3>BaP Overview</h3>
             <p>
-                Basil Problem, abbreviated BaP to differentiate from unofficial CT Bin Packing (BiP), is based around the Basil series:
+                Basel Problem, abbreviated BaP to differentiate from unofficial CT Bin Packing (BiP), is based around the Basel series:
                 $$\sum_{n=1}^{\infty}\frac{1}{n^2}$$
-                The subject of the famous mathematical Basil Problem which was solver by Euler, who showed the series converged to \(\frac{\pi^2}{6}\). This series
+                The subject of the famous mathematical Basel Problem which was solver by Euler, who showed the series converged to \(\frac{\pi^2}{6}\). This series
                 converges linearly, with a 2x increase in the number of terms summed corresponding to a 2x decrease in the difference between the sum and
                 \(\frac{\pi^2}{6}\). For example, if the first 10 terms sum are 0.001 away from being perfectly \(\frac{\pi^2}{6}\), then the first 20 terms will be
                 about 0.0005 way from perfectly \(\frac{\pi^2}{6}\)
@@ -102,7 +102,7 @@
                 first n terms and \(\frac{pi^2}{6}\) that was discussed earlier. This difference cen be modelled with the equation
                 $$(\frac{\pi^2}{6} - \sum_{i=1}^{n}\frac{1}{i^2})^{-1}$$
                 for the first n terms. Here, we take the reciprical of the difference, turning a 2x decrease into a 2x increase, effectively measuring how close this
-                difference is to zero. Re-substituting the Basil Series Identity
+                difference is to zero. Re-substituting the Basel Series Identity
                 $$(\sum_{i=1}^{\infty}\frac{1}{i^2} - \sum_{i=1}^{n}\frac{1}{i^2})^{-1}$$
                 Here, notice the first n terms of the series actually cancel. This is more visible if you write the subtraction out in full
                 $$(\frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + ... + \frac{1}{n^2} + \frac{1}{(n+1)^2} + ...)$$
