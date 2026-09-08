@@ -109,14 +109,17 @@
             should not buy \(c_1\)</p>
 
             <h3>Levels of activeness</h3>
+            <p>Theories are either active or idle. The below are the 3 types of play you can do</p>
             <ul>
                 <li>Active: Actively playing the game, performing active strats</li>
                 <li>Idle: Can check in to publish the theory every so often (best is like 10 - 20 mins but can be longer)</li>
                 <li>Overnight: Not checking the game for over many hours</li>
             </ul>
+            <p>These are based not only on the active/idle ratio, but also on how forgiving a theory is to going over the optimal publication point, and how long
+            the publications are.</p>
             <p>Note that even though these levels of activeness are given, it is almost always to play a new theory a good amount (~1e100 tau) although if you
             don't reach that when you unlock the next theory MOVE ON</p>
-            <p>It as always best to use the <a href="https://tredec.github.io/sim-3.0/">theory simulator</a> to find out what theory to push.</p>
+            <p>It as always best to use the <a href="https://exponential-developers.github.io/sim-3.0/">theory simulator</a> to find out what theory to push.</p>
             <p>For info on the thoery sim read <a href="https://exponential-idle-guides.netlify.app/guides/theory-sim/">here</a></p>
 
 
@@ -129,350 +132,370 @@
 
             <!--RECURRANCE RELATIONS-->
             <h2>Theory 5 - Logistic Function</h2>
-            <ul>
-                <li><b>Expected time:</b> 3 - 7 days, however T5 is terrible idle so it can take WAY longer</li>
-                <li><b>Local Grad Route:</b> 9k -> 9.4k -> 9.8k -> 10k</li>
-                <li><b>Stuck?</b> Read the General Info</li>
-                <li><b>Milestone route:</b> 0/1/0 -> 3/1/0 -> 3/1/2</li>
-                <li><b><s>One</s>Two sentence description:</b> Very interesting theory. Be careful, though it's necessary to buy, c2 can take more than it give.</li>
-            </ul>
-            <h3>T5 overview:</h3>
-                <p>T5 is based off of a logistic function. A logistic function is a function that grows slowly at the start, speeds up, and then slows down again
-                as it converges to some value, called it's "cap". below is the graph of a logistic function. When the value of the logistic function is far below
-                the cap, the growth is exponential, and then as it approaches the cap is slows down exponentially, never quite reaching it</p>
-
-                <img src="images/LogisticFunc.png">
-
-            <h3>Equation Breakdown</h3>
-            <blockquote>\(\dot{\rho} = q_1q_2q\)</blockquote>
-            <blockquote>\(\dot{q} = (\frac{c_1}{c_2})q(1 - \frac{q}{c_2})\)</blockquote>
-            <p>After \(c_3\) unlock</p>
-            <blockquote>\(\dot{q} = (\frac{c_1}{c_2})q(c_3 - \frac{q}{c_2})\)</blockquote>
-            <p>This first section is a simple equation. Increase \(q_1\), \(q_2\), and \(q\) to increase \(\rho\). The interesting part of these equations is the
-            \(\dot{q} = (\frac{c_1}{c_2})q(c_3 - \frac{q}{c_2})\) part. This part can be split into 3 sections that are multiplied together:</p>
-            <ul>
-                <li>\((\frac{c_1}{c_2})\): This means that increasing c1 increases q growth and increasing c2 decreases q.</li>
-                <li>q: This means that increasing q increases qdot. This is the "speeds up in the middle" part of a logistic function. Furthermore, this is
-                what makes it look exponential when it is far from the cap, as having the derivative of a function be a proportional to itself is a key property of
-                exponential functions</li>
-                <li>\(c_3 - \frac{q}{c_2}\): This is the "cap" that q has. As q increases, this section tends towards zero, slowing down q growth,
-                and equals zero when \(q = c_2c_3\), stopping q growth, as the 3 terms are multiplied together. Thus q can never increase past \(c_2c_3\), capping
-                q.</li>
-            </ul>
-            <p>From this one can understand what each variable does, and how q works:</p>
-            <ul>
-                <li>\(q_1\) increases rhodot when bought (~7% increase)</li>
-                <li>\(q_2\) doubles rhodot when bought</li>
-                <li>\(c_1\) increases q growth speed when bought</li>
-                <li>\(c_2\) doubles q cap when bought, but halves q growth speed</li>
-                <li>\(c_3\) doubles q cap when bought</li>
-            </ul>
-            <p>q increases slowly, then speeds up until it reaches (about) half it's cap and then slows down as it approaches it's cap, never surpassing it.</p>
-            <p>T5 is also the second fastest theory in endgame</p>
-
-            <h3>Bicycle analogy</h3>
-
-            <p>Written by Playspout</p>
-            <p>Think of buy­ing \(c_1\) as throt­tling on the bi­cycle faster. Buy­ing \(c_2\) is sim­ilar to shift­ing the bi­cycle gear up by 1 gear. If all we do is buy
-                \(c_1\) and never \(c_2\), then we’re stuck in gear 1 forever and make no pro­gress. However, if all we do is buy \(c_2\) and never \(c_1\), then
-                this is sim­ilar to try­ing to ride from highest gear from 0 speed, which we know takes a long time and a lot of ef­fort. There­fore us­ing the bi­cycle
-                ana­logy, we should buy \(c_2\) only when we have the speed to sup­port it; not too early and not too late. Fur­ther­more, later in the pub­lic­a­tion, we
-                should buy only 1 level of \(c_2\) at a time. We should buy \(c_1\) only right after buy­ing \(c_2\) (shift­ing up gear).When de­cid­ing when to buy
-                \(c_1\), \(c_2\), think of \(c_1\) as throt­tling a bi­cycle, and \(c_2\) as shift­ing up gear by 1 level.</p>
-
-
-            <h3>Optimal publication multiplier:</h3>
-                <p>t1's pub multi has no best fit, as it fluctuates a lot, but here is known:</p>
                 <ul>
-                    <li>around 3 until 1e25</li>
-                    <li>6 - 10 until max milestones</li>
-                    <li>Use the theory sim after that</li>
+                    <li><b>Expected time:</b> 3 - 7 days, however T5 is terrible idle so it can take WAY longer</li>
+                    <li><b>Local Grad Route:</b> 9k -> 9.4k -> 9.8k -> 10k</li>
+                    <li><b>Stuck?</b> Read the General Info</li>
+                    <li><b>Milestone route:</b> 0/1/0 -> 3/1/0 -> 3/1/2</li>
+                    <li><b>Activity:</b> Very Active (3.4)</li>
                 </ul>
-            <h3>Theory pushing</h3>
-                <ul>
-                    <li>Active: T5</li>
-                    <li>Idle: T5 EXCEPT recovery must be done active, if in recovery do T34 until 1e150 on both then T2</li>
-                    <li>Overnight: T2 until 1e400 then T4</li>
-                </ul>
-            <h3>Strategies:</h3>
-                <p>Because of the drawbacks of \(c_2\), T5 benefits the most from active play. Manual \(c_2\) buying is almost mandatory when doing T5</p>
-                <p class="important">Warning: do NOT overnight this theory. It has terrible decay past a good pub multi, and will not give good results.</p>
-                <p>All strategies revolve around increasing q as fast as possible, with doubling strats for \(q_{12}\). Before learning strats one must understand
-                manual \(c_2\) buying during recovery</p>
-                <h4>Manual \(c_2\) purchase during recovery</h4>
-                <ul>
-                    <li>Autobuy everything except \(c_2\)</li>
-                    <li>Set buy amount to x1 or x10 if over 1e150</li>
-                    <li>If q is capped (i.e. not changing) buy \(c_2\) (when \(c_2\) purchases slow down set it to x1 if it was set to x10)</li>
-                    <li><i>Note: You will have to spam it early in recovery just make sure not to spam it too much</i></li>
-                    <li>At e5 from recovery you can safely autobuy \(c_2\)</li>
-                </ul>
-                <p>Remember to untick \(c_2\) autobuy at the end of a publication before you click publish!</p>
-                <h4>Alt. Manual \(c_2\) purchase during recovery</h4>
-                <p class="important">This strategy is NOT recommended, and may cause this section to last longer than expected</p>
-                <p>You can set your buy amount to xmax instead of x1 or x10. This means that after every \(c_2\) purchase, the downside of \(c_2\) will cause
-                q to not move for a while. For this strategy, instead of spamming \(c_2\) buy a round of it. Wait a while and buy it again. This means you could
-                almost semi-idle it, buy not quite, as it is still pretty active (check every minute)</p>
+                <h3>T5 overview:</h3>
+                    <p>T5 is based off of a logistic function. A logistic function is a function that grows slowly at the start, speeds up, and then slows down again
+                    as it converges to some value, called it's "cap". below is the graph of a logistic function. When the value of the logistic function is far below
+                    the cap, the growth is exponential, and then as it approaches the cap is slows down exponentially, never quite reaching it</p>
+                    <p>Logistic functions have the general form \(\dot{q}=kq(c-q)\). In this form, \(c\) represents the cap or maximum value that can be achieved.
+                    Notice how at \(q = c\) the \(c-q\) part of the equation goes to 0, and thus so does \(\dot{q}\) as a whole. We can also notice the \(q\) in the
+                    \(\dot{q}\) equation itself, meaning its growth rate is proportional to itself. Thus, the behavour can be determined. First \(q\) begins to grow
+                    exponentially, as it speeds up as it increases. However, when it reaches the cap, it starts to slow down as the rightmost part tends to 0, never
+                    surpassing it. \(k\) determines how fast this growth happens</p>
+                    <p>In the T5 equation, the rightmost part is \((c_3 - \frac{q}{c_2})\). This means both \(c_3\) and \(c_2\) increase the cap -- notice it goes to
+                    0 at \(q = c_2c_3\), but c_3 also increases the maximum value this section can attain. The \(k\) part of this is \(\frac{c_1}{c_2}\) meaning that
+                    whilst \(c_1\) speeds it up, it does not increase the cap, and whilst \(c_2\) increases the cap, it actually slows it down! This is the main
+                    tension in T5</p>
 
-                <p>After manual buying \(c_2\) there are different strategies for what you do after. This strategies are seperated by activity. T5AI is active,
-                T5 idle is (slightly confusingly) semi-idle, and T5 is idle</p>
-                <h4>T5AI</h4>
-                <table>
-                    <tr><td>\(q_1\)</td><td>Buy at 15% of \(min(q_2 cost, c_2 cost, c_3 cost)\)                               </td></tr>
-                    <tr><td>\(q_2\)</td><td style="color: green;">Always buy                                                </td></tr>
-                    <tr><td>\(c_1\)</td><td>Buy at 15% of \(min(q_2 cost, c_2 cost, c_3 cost)\) IF AND ONLY IF q is not capped</td></tr>
-                    <tr><td>\(c_2\)</td><td style="color: green;">Always buy                                                </td></tr>
-                    <tr><td>\(c_3\)</td><td style="color: green;">Always buy                                                </td></tr>
-                </table>
-                <h4>T5Idle xexxx</h4>
-                <table>
-                    <tr><th>var    </th><th>Before xexxx \(\rho\)             </th><th>After xexxx \(\rho\)</th></tr>
-                    <tr><td>\(q_1\)</td><td style="color: green;">Always buy</td><td style="color: green;">Always buy</td></tr>
-                    <tr><td>\(q_2\)</td><td style="color: green;">Always buy</td><td style="color: green;">Always buy</td></tr>
-                    <tr><td>\(c_1\)</td><td style="color: green;">Always buy</td><td style="color: red;">Never buy   </td></tr>
-                    <tr><td>\(c_2\)</td><td style="color: green;">Always buy</td><td style="color: green;">Always buy</td></tr>
-                    <tr><td>\(c_3\)</td><td style="color: green;">Always buy</td><td style="color: green;">Always buy</td></tr>
-                </table>
-                <p>The value xexxx is found in the theory simulator. If not using the theory sim it is usually 10x higher then the last pub poin, i.e. if you
-                published at 1e100 then stop buying \(c_1\) at 1e101</p>
-                <h4>T5</h4>
-                <p style="color: green;">Full Autobuy</p>
+                    <p><i>I need feedback! If this is your first time encountering logistic fuctions, please tell me how effectively this above description (and the
+                    bicycle analogy below) helped!</i></p>
+
+                    <img src="images/LogisticFunc.png">
+                    <p><i>A logistic function \(\dot{q} = q(1-q)\)</i></p>
+
+                <h3>Bicycle analogy</h3>
+
+                <p>Written by Playspout</p>
+                <p>Think of buy­ing \(c_1\) as throt­tling on the bi­cycle faster. Buy­ing \(c_2\) is sim­ilar to shift­ing the bi­cycle gear up by 1 gear. If all we do is buy
+                    \(c_1\) and never \(c_2\), then we’re stuck in gear 1 forever and make no pro­gress. However, if all we do is buy \(c_2\) and never \(c_1\), then
+                    this is sim­ilar to try­ing to ride from highest gear from 0 speed, which we know takes a long time and a lot of ef­fort. There­fore us­ing the bi­cycle
+                    ana­logy, we should buy \(c_2\) only when we have the speed to sup­port it; not too early and not too late. Fur­ther­more, later in the pub­lic­a­tion, we
+                    should buy only 1 level of \(c_2\) at a time. We should buy \(c_1\) only right after buy­ing \(c_2\) (shift­ing up gear).When de­cid­ing when to buy
+                    \(c_1\), \(c_2\), think of \(c_1\) as throt­tling a bi­cycle, and \(c_2\) as shift­ing up gear by 1 level.</p>
+
+                <h3>Equation Breakdown</h3>
+                <blockquote>\(\dot{\rho} = q_1q_2q\)</blockquote>
+                <blockquote>\(\dot{q} = (\frac{c_1}{c_2})q(1 - \frac{q}{c_2})\)</blockquote>
+                <p>After \(c_3\) unlock</p>
+                <blockquote>\(\dot{q} = (\frac{c_1}{c_2})q(c_3 - \frac{q}{c_2})\)</blockquote>
+                <p>This first section is a simple equation. Increase \(q_1\), \(q_2\), and \(q\) to increase \(\rho\). The interesting part of these equations is the
+                \(\dot{q} = (\frac{c_1}{c_2})q(c_3 - \frac{q}{c_2})\) part. This part can be split into 3 sections that are multiplied together:</p>
+                <ul>
+                    <li>\((\frac{c_1}{c_2})\): This means that increasing c1 increases q growth and increasing c2 decreases q.</li>
+                    <li>q: This means that increasing q increases qdot. This is the "speeds up in the middle" part of a logistic function. Furthermore, this is
+                    what makes it look exponential when it is far from the cap, as having the derivative of a function be a proportional to itself is a key property of
+                    exponential functions</li>
+                    <li>\(c_3 - \frac{q}{c_2}\): This is the "cap" that q has. As q increases, this section tends towards zero, slowing down q growth,
+                    and equals zero when \(q = c_2c_3\), stopping q growth, as the 3 terms are multiplied together. Thus q can never increase past \(c_2c_3\), capping
+                    q.</li>
+                </ul>
+                <p>From this one can understand what each variable does, and how q works:</p>
+                <ul>
+                    <li>\(q_1\) increases rhodot when bought (~7% increase)</li>
+                    <li>\(q_2\) doubles rhodot when bought</li>
+                    <li>\(c_1\) increases q growth speed when bought</li>
+                    <li>\(c_2\) doubles q cap when bought, but halves q growth speed</li>
+                    <li>\(c_3\) doubles q cap when bought</li>
+                </ul>
+                <p>q increases slowly, then speeds up until it reaches (about) half it's cap and then slows down as it approaches it's cap, never surpassing it.</p>
+                <p>T5 is also the second fastest theory in endgame</p>
+
+                <h3>Optimal publication multiplier:</h3>
+                    <p>t1's pub multi has no best fit, as it fluctuates a lot, but here is known:</p>
+                    <ul>
+                        <li>around 3 until 1e25</li>
+                        <li>6 - 10 until max milestones</li>
+                        <li>Use the theory sim after that</li>
+                    </ul>
+                <h3>Theory pushing</h3>
+                    <ul>
+                        <li>Active: T5</li>
+                        <li>Idle: T5 EXCEPT recovery must be done active, if in recovery do T34 until 1e150 on both then T2</li>
+                        <li>Overnight: T2 until 1e400 then T4</li>
+                    </ul>
+                <h3>Strategies:</h3>
+                    <p>Because of the drawbacks of \(c_2\), T5 benefits the most from active play. Manual \(c_2\) buying is almost mandatory when doing T5. This is
+                    because if you buy too much \(c_2\), the \(\frac{c_1}{c_2}\) term at the front decreases massively, and if q is also low, \(\dot{q}\) ends up stuck!
+                    this is as if you are stuck on the left tail of the logistic function - it takes a long time for even marginal growth</p>
+                    <p>Despite \(q\) appearing to be a cumulative variable, because it is capped, it doesn't actually count, and so going over the optimal pub multi
+                    is actually very bad</p>
+                    <p class="important">Warning: do NOT overnight this theory. It has terrible decay past a good pub multi, and will not give good results.</p>
+                    <p>All strategies revolve around increasing q as fast as possible, with doubling strats for \(q_{12}\). Before learning strats one must understand
+                    manual \(c_2\) buying during recovery</p>
+                    <h4>Manual \(c_2\) purchase during recovery</h4>
+                    <ul>
+                        <li>Autobuy everything except \(c_2\)</li>
+                        <li>Set buy amount to x1 or x10 if over 1e150</li>
+                        <li>If q is capped (i.e. not changing) buy \(c_2\) (when \(c_2\) purchases slow down set it to x1 if it was set to x10)</li>
+                        <li><i>Note: You will have to spam it early in recovery just make sure not to spam it too much</i></li>
+                        <li>At e5 from recovery you can safely autobuy \(c_2\)</li>
+                    </ul>
+                    <p>Remember to untick \(c_2\) autobuy at the end of a publication before you click publish!</p>
+                    <h4>Alt. Manual \(c_2\) purchase during recovery</h4>
+                    <p class="important">This strategy is NOT recommended, and may cause this section to last longer than expected</p>
+                    <p>You can set your buy amount to xmax instead of x1 or x10. This means that after every \(c_2\) purchase, the downside of \(c_2\) will cause
+                    q to not move for a while. For this strategy, instead of spamming \(c_2\) buy a round of it. Wait a while and buy it again. This means you could
+                    almost semi-idle it, buy not quite, as it is still pretty active (check every minute)</p>
+
+                    <p>After manual buying \(c_2\) there are different strategies for what you do after. This strategies are seperated by activity. T5AI is active,
+                    T5 idle is (slightly confusingly) semi-idle, and T5 is idle</p>
+                    <h4>T5AI</h4>
+                    <table>
+                        <tr><td>\(q_1\)</td><td>Buy at 15% of \(min(q_2 cost, c_2 cost, c_3 cost)\)                               </td></tr>
+                        <tr><td>\(q_2\)</td><td style="color: green;">Always buy                                                </td></tr>
+                        <tr><td>\(c_1\)</td><td>Buy at 15% of \(min(q_2 cost, c_2 cost, c_3 cost)\) IF AND ONLY IF q is not capped</td></tr>
+                        <tr><td>\(c_2\)</td><td style="color: green;">Always buy                                                </td></tr>
+                        <tr><td>\(c_3\)</td><td style="color: green;">Always buy                                                </td></tr>
+                    </table>
+                    <h4>T5Idle xexxx</h4>
+                    <table>
+                        <tr><th>var    </th><th>Before xexxx \(\rho\)             </th><th>After xexxx \(\rho\)</th></tr>
+                        <tr><td>\(q_1\)</td><td style="color: green;">Always buy</td><td style="color: green;">Always buy</td></tr>
+                        <tr><td>\(q_2\)</td><td style="color: green;">Always buy</td><td style="color: green;">Always buy</td></tr>
+                        <tr><td>\(c_1\)</td><td style="color: green;">Always buy</td><td style="color: red;">Never buy   </td></tr>
+                        <tr><td>\(c_2\)</td><td style="color: green;">Always buy</td><td style="color: green;">Always buy</td></tr>
+                        <tr><td>\(c_3\)</td><td style="color: green;">Always buy</td><td style="color: green;">Always buy</td></tr>
+                    </table>
+                    <p>The value xexxx is found in the theory simulator. If not using the theory sim it is usually 10x higher then the last pub poin, i.e. if you
+                    published at 1e100 then stop buying \(c_1\) at 1e101</p>
+                    <h4>T5</h4>
+                    <p style="color: green;">Full Autobuy</p>
 
 
             <!--T2-->
             <h2>Theory 6 - Integral Calculus</h2>
-            <ul>
-                <li><b>Expected time:</b> 2 - 5 days</li>
-                <li><b>Local Grad Route:</b> 10k -> 10.4k -> 10.6k -> 11k</li>
-                <li><b>Stuck?</b> Read the General Info</li>
-                <li><b>Milestone route:</b> 0/1/0 -> 1/1/0/0 -> 1/1/1/0 -> 1/0/0/3 -> 1/0/1/3 -> 1/1/1/3</li>
-                <li><b>One sentence description:</b> Looks complicated, but just a polynomial with extra steps</li>
-            </ul>
-            <h3>T6 overview:</h3>
-                <p>T6 is based on the idea of a definite integral. A definite integral finds the area under the graph of an equation from 2 points. Before a new
-                dimension is bought, it's finding the area under the graph of a 2d expression (q, f(q)), after it is bought, the graph moves into 3d
-                (q, r, f(q,r)).</p>
-                <p>For example, let's take the equation f(x) = x. The graph f(x) = x is just a line. The area under the line from 0 to 10 is shown below. The
-                integral from 0 to 10 of f(x) is the shaded area in the diagram. That is what an integral is. This can be calculated as a triangle, but there are
-                other methods.</p>
+                <ul>
+                    <li><b>Expected time:</b> 2 - 5 days</li>
+                    <li><b>Local Grad Route:</b> 10k -> 10.4k -> 10.6k -> 11k</li>
+                    <li><b>Stuck?</b> Read the General Info</li>
+                    <li><b>Milestone route:</b> 0/1/0 -> 1/1/0/0 -> 1/1/1/0 -> 1/0/0/3 -> 1/0/1/3 -> 1/1/1/3</li>
+                    <li><b>Activity:</b> Idle (1.18)</li>
+                </ul>
+                <h3>T6 overview:</h3>
+                    <p>T6 is based on the idea of a definite integral. A definite integral finds the area under the graph of an equation from 2 points. Before a new
+                    dimension is bought, it's finding the area under the graph of a 2d expression (q, f(q)), after it is bought, the graph moves into 3d
+                    (q, r, f(q,r)).</p>
+                    <p>For example, let's take the equation f(x) = x. The graph f(x) = x is just a line. The area under the line from 0 to 10 is shown below. The
+                    integral from 0 to 10 of f(x) is the shaded area in the diagram. That is what an integral is. This can be calculated as a triangle, but there are
+                    other methods, as integration turns out to be essentially equivelent to antidifferentiation</p>
 
-                <img src="images/integral.png">
+                    <img src="images/integral.png">
 
-            <h3>Equation breakdown</h3>
-            <p>Using said other methods, T6's equation can be simplified to the following (remove any terms containing not unlocked variables):</p>
-            <blockquote>\(\rho = c_1c_2q + \frac{1}{2}c_3q^2 + \frac{1}{3}c_4q^3 - C\)</blockquote>
-            <blockquote>\(\dot{\rho} = c_1c_2\dot{q} + c_3q\dot{q} + c_4q^2\dot{q}\)</blockquote>
-            <p>Or after the new dimension milestone</p>
-            <blockquote>\(\rho = c_1c_2qr + \frac{1}{2}c_3q^2r + \frac{1}{3}c_4q^3r + \frac{1}{2}c_5qr^2 - C\)</blockquote>
-            <blockquote>\(\dot{\rho} = c_1c_2(q\dot{r} + r\dot{q}) + \frac{1}{2}c_3(q^2\dot{r} + 2qr\dot{q}) + \frac{1}{3}c_4(q^3\dot{r} + 3q^2r\dot{q}) + \frac{1}{2}c_5(2qr\dot{r} + r^2\dot{q})\)</blockquote>
-            <p>The -C part can be ignored, it's just there to decrease \(\rho\) when you buy an upgrade. </p>
+                <h3>Equation breakdown</h3>
+                <p>Using said other methods, T6's equation can be simplified to the following (remove any terms containing not unlocked variables):</p>
+                <blockquote>\(\rho = c_1c_2q + \frac{1}{2}c_3q^2 + \frac{1}{3}c_4q^3 - C\)</blockquote>
+                <blockquote>\(\dot{\rho} = c_1c_2\dot{q} + c_3q\dot{q} + c_4q^2\dot{q}\)</blockquote>
+                <p>Or after the new dimension milestone</p>
+                <blockquote>\(\rho = c_1c_2qr + \frac{1}{2}c_3q^2r + \frac{1}{3}c_4q^3r + \frac{1}{2}c_5qr^2 - C\)</blockquote>
+                <blockquote>\(\dot{\rho} = c_1c_2(q\dot{r} + r\dot{q}) + \frac{1}{2}c_3(q^2\dot{r} + 2qr\dot{q}) + \frac{1}{3}c_4(q^3\dot{r} + 3q^2r\dot{q}) + \frac{1}{2}c_5(2qr\dot{r} + r^2\dot{q})\)</blockquote>
+                <p>The -C part can be ignored, it's just there to decrease \(\rho\) when you buy an upgrade. </p>
 
-            <h3>Optimal publication multiplier:</h3>
-            <p>6 - 12</p>
+                <h3>Optimal publication multiplier:</h3>
+                <p>6 - 12</p>
 
-            <h3>Theory Pushing</h3>
-            <ul>
-                <li>Active: T6</li>
-                <li>Idle: T6</li>
-                <li>Overnight: T2 until 1e350 T2 then T6</li>
-            </ul>
+                <h3>Theory Pushing</h3>
+                <ul>
+                    <li>Active: T6</li>
+                    <li>Idle: T6</li>
+                    <li>Overnight: T2 until 1e350 T2 then T6</li>
+                </ul>
 
-            <h3>Strategies:</h3>
-            <p>Like T4, the strategies change due to variable competition and different variable taking over</p>
+                <h3>Strategies:</h3>
+                <p>Like T4, the strategies change due to variable competition and different variable taking over</p>
+                <p>Also like T4, the ecumulative variables \(q\) and \(r\) give it a high pub multi and more leniency in going past the optimal pub multi</p>
 
-            <ul>
-                <li>1 - 1e25: T6C3d*</li>
-                <li>1e25 - 1e100: T6C4d**</li>
-                <li>1e100 - 1e120: T6noC34d</li>
-                <li>1e120 - 1e190: T6noC345d</li>
-                <li>1e200+: T6noC34d</li>
-            </ul>
+                <ul>
+                    <li>1 - 1e25: T6C3d*</li>
+                    <li>1e25 - 1e100: T6C4d**</li>
+                    <li>1e100 - 1e120: T6noC34d</li>
+                    <li>1e120 - 1e190: T6noC345d</li>
+                    <li>1e200+: T6noC34d</li>
+                </ul>
 
-            <p><i>*note the before 1e7 you will have to buy \(c_{12}\) because you can't afford \(c_3\) </i></p>
-            <p><i>** note that before 1e25 you will have to buy \(c_3\) because you cannot afford \(c_4\) </i></p>
-            <p>There is a more difficult strategy pot 1e200 called T6AI. However to simplify, I have a strategy I call T6AInoMod (renamed) or T6C5dC12rcv using
-            descriptive names. Because it is not in the guide The sim will not recommend this strat, and people may not know it.</p>
-            <p>For the relevant idle strategy, simply autobuy all variables that are not listed as "Never Buy"</p>
+                <p><i>*note the before 1e7 you will have to buy \(c_{12}\) because you can't afford \(c_3\) </i></p>
+                <p><i>** note that before 1e25 you will have to buy \(c_3\) because you cannot afford \(c_4\) </i></p>
+                <p>There is a more difficult strategy pot 1e200 called T6AI. However to simplify, I have a strategy I call T6AInoMod (renamed) or T6C5dC12rcv using
+                descriptive names. Because it is not in the guide The sim will not recommend this strat, and people may not know it.</p>
+                <p>For the relevant idle strategy, simply autobuy all variables that are not listed as "Never Buy"</p>
 
-            <h4>T6C3d</h4>
-            <table>
-                <tr><td>\(q_1\)</td><td>Buy at 10x less then \(min(q_2 cost, c_3 cost)\)</td></tr>
-                <tr><td>\(q_2\)</td><td style="color: green;">Always buy              </td></tr>
-                <tr><td>\(c_1\)</td><td style="color: red;">Never buy                 </td></tr>
-                <tr><td>\(c_2\)</td><td style="color: red;">Never buy                 </td></tr>
-                <tr><td>\(c_3\)</td><td style="color: green;">Always buy              </td></tr>
-            </table>
+                <h4>T6C3d</h4>
+                <table>
+                    <tr><td>\(q_1\)</td><td>Buy at 10x less then \(min(q_2 cost, c_3 cost)\)</td></tr>
+                    <tr><td>\(q_2\)</td><td style="color: green;">Always buy              </td></tr>
+                    <tr><td>\(c_1\)</td><td style="color: red;">Never buy                 </td></tr>
+                    <tr><td>\(c_2\)</td><td style="color: red;">Never buy                 </td></tr>
+                    <tr><td>\(c_3\)</td><td style="color: green;">Always buy              </td></tr>
+                </table>
 
-            <h4>T6C4d</h4>
-            <table>
-                <tr><td>\(q_1\)</td><td>Buy at 10x less then \(min(q_2 cost, c_4 cost)\)</td></tr>
-                <tr><td>\(q_2\)</td><td style="color: green;">Always buy              </td></tr>
-                <tr><td>\(c_1\)</td><td style="color: red;">Never buy                 </td></tr>
-                <tr><td>\(c_2\)</td><td style="color: red;">Never buy                 </td></tr>
-                <tr><td>\(c_3\)</td><td style="color: red;">Never buy                 </td></tr>
-                <tr><td>\(c_4\)</td><td style="color: green;">Always buy              </td></tr>
-            </table>
+                <h4>T6C4d</h4>
+                <table>
+                    <tr><td>\(q_1\)</td><td>Buy at 10x less then \(min(q_2 cost, c_4 cost)\)</td></tr>
+                    <tr><td>\(q_2\)</td><td style="color: green;">Always buy              </td></tr>
+                    <tr><td>\(c_1\)</td><td style="color: red;">Never buy                 </td></tr>
+                    <tr><td>\(c_2\)</td><td style="color: red;">Never buy                 </td></tr>
+                    <tr><td>\(c_3\)</td><td style="color: red;">Never buy                 </td></tr>
+                    <tr><td>\(c_4\)</td><td style="color: green;">Always buy              </td></tr>
+                </table>
 
-            <h4>T6noC34d</h4>
-            <table>
-                <tr><td>\(q_1\)</td><td>Buy at 10x less then \(min(q_2 cost, c_2 cost)\)</td></tr>
-                <tr><td>\(q_2\)</td><td style="color: green;">Always buy              </td></tr>
-                <tr><td>\(r_1\)</td><td>Buy at 10x less then \(min(r_2 cost, c_2 cost)\)</td></tr>
-                <tr><td>\(r_2\)</td><td style="color: green;">Always buy              </td></tr>
-                <tr><td>\(c_1\)</td><td>Buy at 10x less then \(min(q_2 cost, c_2 cost)\)</td></tr>
-                <tr><td>\(c_2\)</td><td style="color: green;">Always buy              </td></tr>
-                <tr><td>\(c_3\)</td><td style="color: red;">Never buy                 </td></tr>
-                <tr><td>\(c_4\)</td><td style="color: red;">Never buy                 </td></tr>
-                <tr><td>\(c_5\)</td><td style="color: green;">Always buy              </td></tr>
-            </table>
- 
-            <h4>T6noC345d</h4>
-            <table>
-                <tr><td>\(q_1\)</td><td>Buy at 10x less then \(min(q_2 cost, c_2 cost)\)</td></tr>
-                <tr><td>\(q_2\)</td><td style="color: green;">Always buy              </td></tr>
-                <tr><td>\(r_1\)</td><td>Buy at 10x less then \(min(r_2 cost, c_2 cost)\)</td></tr>
-                <tr><td>\(r_2\)</td><td style="color: green;">Always buy              </td></tr>
-                <tr><td>\(c_1\)</td><td>Buy at 10x less then \(min(q_2 cost, c_2 cost)\)</td></tr>
-                <tr><td>\(c_2\)</td><td style="color: green;">Always buy              </td></tr>
-                <tr><td>\(c_3\)</td><td style="color: red;">Never buy                 </td></tr>
-                <tr><td>\(c_4\)</td><td style="color: red;">Never buy                 </td></tr>
-                <tr><td>\(c_5\)</td><td style="color: red;">Never buy                 </td></tr>
-            </table>
+                <h4>T6noC34d</h4>
+                <table>
+                    <tr><td>\(q_1\)</td><td>Buy at 10x less then \(min(q_2 cost, c_2 cost)\)</td></tr>
+                    <tr><td>\(q_2\)</td><td style="color: green;">Always buy              </td></tr>
+                    <tr><td>\(r_1\)</td><td>Buy at 10x less then \(min(r_2 cost, c_2 cost)\)</td></tr>
+                    <tr><td>\(r_2\)</td><td style="color: green;">Always buy              </td></tr>
+                    <tr><td>\(c_1\)</td><td>Buy at 10x less then \(min(q_2 cost, c_2 cost)\)</td></tr>
+                    <tr><td>\(c_2\)</td><td style="color: green;">Always buy              </td></tr>
+                    <tr><td>\(c_3\)</td><td style="color: red;">Never buy                 </td></tr>
+                    <tr><td>\(c_4\)</td><td style="color: red;">Never buy                 </td></tr>
+                    <tr><td>\(c_5\)</td><td style="color: green;">Always buy              </td></tr>
+                </table>
+    
+                <h4>T6noC345d</h4>
+                <table>
+                    <tr><td>\(q_1\)</td><td>Buy at 10x less then \(min(q_2 cost, c_2 cost)\)</td></tr>
+                    <tr><td>\(q_2\)</td><td style="color: green;">Always buy              </td></tr>
+                    <tr><td>\(r_1\)</td><td>Buy at 10x less then \(min(r_2 cost, c_2 cost)\)</td></tr>
+                    <tr><td>\(r_2\)</td><td style="color: green;">Always buy              </td></tr>
+                    <tr><td>\(c_1\)</td><td>Buy at 10x less then \(min(q_2 cost, c_2 cost)\)</td></tr>
+                    <tr><td>\(c_2\)</td><td style="color: green;">Always buy              </td></tr>
+                    <tr><td>\(c_3\)</td><td style="color: red;">Never buy                 </td></tr>
+                    <tr><td>\(c_4\)</td><td style="color: red;">Never buy                 </td></tr>
+                    <tr><td>\(c_5\)</td><td style="color: red;">Never buy                 </td></tr>
+                </table>
 
-            <h4>T6AInoMod / T6C5dC12rcv</h4>
-            <table>
-                <tr><th>var    </th><th>Recovery                                        </th><th>Tau gain                                                  </th></tr>
-                <tr><td>\(q_1\)</td><td>Buy at 10x less then \(min(q_2 cost, c_2 cost)\)</td><td>Buy at 10x less then \(min(q_2 cost, r_2 cost, c_5 cost)\)</td></tr>
-                <tr><td>\(q_2\)</td><td style="color: green;">Always buy              </td><td style="color: green;">Always buy                        </td></tr>
-                <tr><td>\(r_1\)</td><td>Buy at 10x less then \(min(r_2 cost, c_2 cost)\)</td><td>Buy at 10x less then \(min(r_2 cost, r_2 cost, c_5 cost)\)</td></tr>
-                <tr><td>\(r_2\)</td><td style="color: green;">Always buy              </td><td style="color: green;">Always buy                        </td></tr>
-                <tr><td>\(c_1\)</td><td>Buy at 10x less then \(min(q_2 cost, c_2 cost)\)</td><td style="color: red;">Never buy                           </td></tr>
-                <tr><td>\(c_2\)</td><td style="color: green;">Always buy              </td><td style="color: red;">Never buy                           </td></tr>
-                <tr><td>\(c_3\)</td><td style="color: red;">Never buy                 </td><td style="color: red;">Never buy                           </td></tr>
-                <tr><td>\(c_4\)</td><td style="color: red;">Never buy                 </td><td style="color: red;">Never buy                           </td></tr>
-                <tr><td>\(c_5\)</td><td style="color: red;">Never buy                 </td><td style="color: green;">Always buy                        </td></tr>
-            </table>
+                <h4>T6AInoMod / T6C5dC12rcv</h4>
+                <table>
+                    <tr><th>var    </th><th>Recovery                                        </th><th>Tau gain                                                  </th></tr>
+                    <tr><td>\(q_1\)</td><td>Buy at 10x less then \(min(q_2 cost, c_2 cost)\)</td><td>Buy at 10x less then \(min(q_2 cost, r_2 cost, c_5 cost)\)</td></tr>
+                    <tr><td>\(q_2\)</td><td style="color: green;">Always buy              </td><td style="color: green;">Always buy                        </td></tr>
+                    <tr><td>\(r_1\)</td><td>Buy at 10x less then \(min(r_2 cost, c_2 cost)\)</td><td>Buy at 10x less then \(min(r_2 cost, r_2 cost, c_5 cost)\)</td></tr>
+                    <tr><td>\(r_2\)</td><td style="color: green;">Always buy              </td><td style="color: green;">Always buy                        </td></tr>
+                    <tr><td>\(c_1\)</td><td>Buy at 10x less then \(min(q_2 cost, c_2 cost)\)</td><td style="color: red;">Never buy                           </td></tr>
+                    <tr><td>\(c_2\)</td><td style="color: green;">Always buy              </td><td style="color: red;">Never buy                           </td></tr>
+                    <tr><td>\(c_3\)</td><td style="color: red;">Never buy                 </td><td style="color: red;">Never buy                           </td></tr>
+                    <tr><td>\(c_4\)</td><td style="color: red;">Never buy                 </td><td style="color: red;">Never buy                           </td></tr>
+                    <tr><td>\(c_5\)</td><td style="color: red;">Never buy                 </td><td style="color: green;">Always buy                        </td></tr>
+                </table>
 
             <!--T3-->
             <h2>Theory 7 - Numerical methods</h2>
-            <ul>
-                <li><b>Expected time:</b> 2 - 5 days</li>
-                <li><b>Local Grad Route:</b> This section lasts until 12k but do NOT grad at 12k</li>
-                <li><b>Stuck?</b> Read the General Info</li>
-                <li><b>Milestone route:</b> 0/1/0 -> 0/1/1 -> 0/0/2 -> 0/0/3 -> 0/1/3 -> 1/1/1/1/1 -> 1/1/1/1/3. The swap from 0/1/1 to 0/0/2 occurs at 1e67\(\rho\)</li>
-                <li><b><s>One sentence</s> description:</b> Short answer: Move a point up a steep slope fast, Long answer: it's complicated</li>
-            </ul>
+                <ul>
+                    <li><b>Expected time:</b> 2 - 5 days</li>
+                    <li><b>Local Grad Route:</b> This section lasts until 12k but do NOT grad at 12k</li>
+                    <li><b>Stuck?</b> Read the General Info</li>
+                    <li><b>Milestone route:</b> 0/1/0 -> 0/1/1 -> 0/0/2 -> 0/0/3 -> 0/1/3 -> 1/1/1/1/1 -> 1/1/1/1/3. The swap from 0/1/1 to 0/0/2 occurs at 1e67\(\rho\)</li>
+                    <li><b>Activity:</b> Active (1.19)</li>
+                </ul>
 
-            <h3>T7 overview:</h3>\
-            <p>I have recently learnt how T7 works (thankyou megaminX and 3b1b), and it's really freaking complicated.</p>
-            <p>This part is not simple at all. You don't have to read all this, you can just skip to the strategies</p>
-            <p>The function \(g(\rho_1, \rho_2)\) is a function that maps every point in \(\rho_1, \rho_2\) space to a number. You can imagine each point in
-            \(\rho_1, rho_2\) space, raised to that number. So for example, if g(1,1) = 2, then the point 1, 1 would be raised 2 units up in the 3rd
-            dimension. This create a surface in the 3rd dimension, a sort of 2d terrain if you will.</p>
-            <p>the \(\nabla\) is the del operator. It is the gradient of the function. You can imagine it like this: Imagine you are standing on a
-            point. You look around and you see the terrain around you, and the gradient of the function tell you which way is uphill. Is it in the positive
-            x direction? negative y? Some other direction? And it tells you how steep it is. Is it a cliff? or only a gentle incline.</p>
-            <p>This information is given as a vector. You can this of a vector as an arrow which is in the same spot you are, pointing uphill, and the bigger the
-            arrow the steeper it is.</p>
-            <p>and finally we have the equation \(\dot{\rho} = q \nabla g\). This means you look in the direction the arrow is pointing and start walking.
-            Your speed depends on q and the size of the vector \(\nabla\) g. As you walk you constantly make adjustments to your speed and directing based on
-            the the value of \(\nabla\) g is at you new point.</p>
-            <p>A vector can be split up into x and y components, meaning if you walk in the direction of the vector, from the start of the arrow to the end of the
-            arrow, you will have moved the vectors x component in the x direction, and the vectors y component in the y direction. In our case, we split it into
-            \(\rho_1\) and \(\rho_2\) components</p>
-            <p>This is an example of a maximisation algorithm. It moves you to a local maximum, a point where the graph is highest, as you will always move
-            upwards</p>
-            <p>From now on I will only use \(\rho_1\), \(\rho_2\) coordinates, not x and y.</p>
-            <p>\(\rho\) is the point \(\rho_1\), \(\rho_2\), and we will still use "you" as the thing that moving. Just remember it's actually \(\rho\)</p>
-            <p>In this example your goal is to maximise \(\rho_1\), to be as far away from the origin in the \(\rho_1\) direction. To do this you want to increase
-            both q and the \(\rho_1\) component of \(\nabla\) g. To do this you want to be facing the steepest incline you can facing to the \(\rho_1\)
-            direction</p>
-            <p>So, block out the \(\rho_2\) direction. You are now on a line. What you want is that when moving forwards, you find yourself moving up a very,
-            very steep incline, the steepest you can get. To find this incline you can use differentiation (slightly different from how T2 uses it,
-            here the derivative of a function is it's gradient). This allows you to look at a function and a point along the function and can find the
-            gradient at a point.</p>
-            <p>Right now, we are not moving along \(\rho_2\), so we can treat \(\rho_2\) as a constant. This means that at least in our limited view,
-            \(g(\rho_1, \rho_2)\) is just g(\(\rho_1\)). So we take the derivative of g with respect to \(\rho_1\) and we have the \(\rho_1\) direction of our
-            \(\nabla\) g vector!</p>
-            <p>We can do the same thing for \(\rho_2\) to find the \(\rho_2\) component.</p>
+                <h3>T7 overview:</h3>\
+                <p>I have recently learnt how T7 works (thankyou megaminX and 3b1b), and it's really freaking complicated.</p>
+                <p>This part is not simple at all. You don't have to read all this, you can just skip to the strategies</p>
+                <p>The function \(g(\rho_1, \rho_2)\) is a function that maps every point in \(\rho_1, \rho_2\) space to a number. You can imagine each point in
+                \(\rho_1, rho_2\) space, raised to that number. So for example, if g(1,1) = 2, then the point 1, 1 would be raised 2 units up in the 3rd
+                dimension. This create a surface in the 3rd dimension, a sort of 2d terrain if you will.</p>
+                <p>the \(\nabla\) is the del operator. It is the gradient of the function. You can imagine it like this: Imagine you are standing on a
+                point. You look around and you see the terrain around you, and the gradient of the function tell you which way is uphill. Is it in the positive
+                x direction? negative y? Some other direction? And it tells you how steep it is. Is it a cliff? or only a gentle incline.</p>
+                <p>This information is given as a vector. You can this of a vector as an arrow which is in the same spot you are, pointing uphill, and the bigger the
+                arrow the steeper it is.</p>
+                <p>and finally we have the equation \(\dot{\rho} = q \nabla g\). This means you look in the direction the arrow is pointing and start walking.
+                Your speed depends on q and the size of the vector \(\nabla\) g. As you walk you constantly make adjustments to your speed and directing based on
+                the the value of \(\nabla\) g is at you new point.</p>
+                <p>A vector can be split up into x and y components, meaning if you walk in the direction of the vector, from the start of the arrow to the end of the
+                arrow, you will have moved the vectors x component in the x direction, and the vectors y component in the y direction. In our case, we split it into
+                \(\rho_1\) and \(\rho_2\) components</p>
+                <p>This is an example of a maximisation algorithm. It moves you to a local maximum, a point where the graph is highest, as you will always move
+                upwards</p>
+                <p>From now on I will only use \(\rho_1\), \(\rho_2\) coordinates, not x and y.</p>
+                <p>\(\rho\) is the point \(\rho_1\), \(\rho_2\), and we will still use "you" as the thing that moving. Just remember it's actually \(\rho\)</p>
+                <p>In this example your goal is to maximise \(\rho_1\), to be as far away from the origin in the \(\rho_1\) direction. To do this you want to increase
+                both q and the \(\rho_1\) component of \(\nabla\) g. To do this you want to be facing the steepest incline you can facing to the \(\rho_1\)
+                direction</p>
+                <p>So, block out the \(\rho_2\) direction. You are now on a line. What you want is that when moving forwards, you find yourself moving up a very,
+                very steep incline, the steepest you can get. To find this incline you can use differentiation (slightly different from how T2 uses it,
+                here the derivative of a function is it's gradient). This allows you to look at a function and a point along the function and can find the
+                gradient at a point.</p>
+                <p>Right now, we are not moving along \(\rho_2\), so we can treat \(\rho_2\) as a constant. This means that at least in our limited view,
+                \(g(\rho_1, \rho_2)\) is just g(\(\rho_1\)). So we take the derivative of g with respect to \(\rho_1\) and we have the \(\rho_1\) direction of our
+                \(\nabla\) g vector!</p>
+                <p>We can do the same thing for \(\rho_2\) to find the \(\rho_2\) component.</p>
 
-            <h3>What \(\nabla\) does mathematically</h3>
-            <p>Assumed knowledge: Basic understanding of vectors and differentiation</p>
-            <p>The \(\nabla\) operator is a way of taking the derivative of a multi-variable function. The function \(\nabla\)g is a function that takes in
-            the 2 initial arguments \(\rho_1\) and \(\rho_2\) and returns a vector. As shown before this vector is found by looking at each argument individually
-            and treating the others as constants. Thus you have the vector \(\begin{bmatrix}dg/d\rho_1\\dg/d\rho_2\end{bmatrix}\).</p>
+                <h3>What \(\nabla\) does mathematically</h3>
+                <p>Assumed knowledge: Basic understanding of vectors and differentiation</p>
+                <p>The \(\nabla\) operator is a way of taking the derivative of a multi-variable function. The function \(\nabla\)g is a function that takes in
+                the 2 initial arguments \(\rho_1\) and \(\rho_2\) and returns a vector. As shown before this vector is found by looking at each argument individually
+                and treating the others as constants. Thus you have the vector \(\begin{bmatrix}dg/d\rho_1\\dg/d\rho_2\end{bmatrix}\).</p>
 
-            <h3>Equation breakdown</h3>
-            <p>So finally, here are the simplified equations:</p>
-            <blockquote>\(g(\rho_1, \rho_2) = c_1c_2\rho_1 + c_3\rho_1^{1.5} + c_4\rho_2 + c_5\rho_2^{1.5} + c_6\rho_1^{0.5}\rho_2^{0.5} \)</blockquote>
-            <blockquote>\(\dot{\rho_1} = c_1c_2 + 1.5c_3\rho_1^{0.5} + c_6\rho_2^{0.5} / 2\rho_1^{0.5} \)</blockquote>
-            <blockquote>\(\dot{\rho_2} = c_4 + 1.5c_5\rho_2^{0.5} + c_6\rho_1^{0.5} / 2\rho_2^{0.5} \)</blockquote>
+                <h3>Equation breakdown</h3>
+                <p>So finally, here are the simplified equations:</p>
+                <blockquote>\(g(\rho_1, \rho_2) = c_1c_2\rho_1 + c_3\rho_1^{1.5} + c_4\rho_2 + c_5\rho_2^{1.5} + c_6\rho_1^{0.5}\rho_2^{0.5} \)</blockquote>
+                <blockquote>\(\dot{\rho_1} = c_1c_2 + 1.5c_3\rho_1^{0.5} + c_6\rho_2^{0.5} / 2\rho_1^{0.5} \)</blockquote>
+                <blockquote>\(\dot{\rho_2} = c_4 + 1.5c_5\rho_2^{0.5} + c_6\rho_1^{0.5} / 2\rho_2^{0.5} \)</blockquote>
 
-            <h3>Optimal publication multiplier:</h3>
-            <p>2 - 3</p>
+                <h3>Optimal publication multiplier:</h3>
+                <p>2 - 3</p>
 
-            <h3>Theory pushing:</h3>
-            <ul>
-                <li>Active: T7</li>
-                <li>Idle: T7</li>
-                <li>Overnight: T2 until 1e350 T2 then T6</li>
-            </ul>
+                <h3>Theory pushing:</h3>
+                <ul>
+                    <li>Active: T7</li>
+                    <li>Idle: T7</li>
+                    <li>Overnight: T2 until 1e350 T2 then T6</li>
+                </ul>
 
-            <h3>Strategy:</h3>
-            <p>Despite the complexity of T7. The strategies for T7 are just standard doubling strats. with competing variables.<br/>
-            for idle strats simple autobuy all variables not listed as "Never Buy". The Corresponding idle strat to T7PlaySpqcayX is T7noC12</p>
+                <h3>Strategy:</h3>
+                <p>Despite the complexity of T7, we can just examine the equations after we've evaluated all the calculus.
+                The strategies for T7 are just standard doubling strats. with competing variables.<br/>
+                <p>Just like T3, since \(\rho_2\) is technically a currency, so its effected by pub multi, so it "doesn't count" and T7 is have a pub multi
+                around e.</p>
+                for idle strats simple autobuy all variables not listed as "Never Buy". The Corresponding idle strat to T7PlaySpqcayX is T7noC12</p>
 
-            <ul>
-                <li>1 - 1e25: T7C12d</li>
-                <li>1e25 - 1e75: T7C3d</li>
-                <li>1e75 - 1e110: T7C12d</li>
-                <li>1e110 - 1e175 T7PlaySpqcey100</li>
-                <li>1e175 - 1e250: T7PlaySpqcey10</li>
-                <li>1e250 - 1e300: T7PlaySpqcey50</li>
-            </ul>
-            <h4>T7C12d</h4>
-            <table>
-                <tr><td>\(q_1\)</td><td>When \(\frac{1}{10}\) of \(c_2\) cost</td></tr>
-                <tr><td>\(c_1\)</td><td>When \(\frac{1}{10}\) of \(c_2\) cost</td></tr>
-                <tr><td>\(c_2\)</td><td style="color: green;">Always buy   </td></tr>
-                <tr><td>\(c_3\)</td><td style="color: red;">Never buy      </td></tr>
-                <tr><td>\(c_4\)</td><td style="color: red;">Never buy      </td></tr>
-                <tr><td>\(c_5\)</td><td style="color: red;">Never buy      </td></tr>
-                <tr><td>\(c_6\)</td><td style="color: red;">Never buy      </td></tr>
-            </table>
-            <h4>T7C3d</h4>
-            <table>
-                <tr><td>\(q_1\)</td><td>When \(\frac{1}{10}\) of \(c_3\) cost</td></tr>
-                <tr><td>\(c_1\)</td><td style="color: red;">Never buy      </td></tr>
-                <tr><td>\(c_2\)</td><td style="color: red;">Never buy      </td></tr>
-                <tr><td>\(c_3\)</td><td style="color: green;">Always buy   </td></tr>
-                <tr><td>\(c_4\)</td><td style="color: red;">Never buy      </td></tr>
-                <tr><td>\(c_5\)</td><td style="color: red;">Never buy      </td></tr>
-                <tr><td>\(c_6\)</td><td style="color: red;">Never buy      </td></tr>
-            </table>
-            <h4>T7PlaySpqceyX</h4>
-            <table>
-                <tr><td>\(q_1\)</td><td>When \(\frac{1}{4}\) of \(c_6\) cost </td></tr>
-                <tr><td>\(c_1\)</td><td>When \(\frac{1}{4}\) of \(c_2\) cost </td></tr>
-                <tr><td>\(c_2\)</td><td>When \(\frac{1}{X}\) of \(c_6\) cost </td></tr>
-                <tr><td>\(c_3\)</td><td>When \(\frac{1}{10}\) of \(c_6\) cost</td></tr>
-                <tr><td>\(c_4\)</td><td>When \(\frac{1}{10}\) of \(c_6\) cost</td></tr>
-                <tr><td>\(c_5\)</td><td>When \(\frac{1}{4}\) of \(c_6\) cost </td></tr>
-                <tr><td>\(c_6\)</td><td style="color: green;">Always buy   </td></tr>
-            </table>
-            <p><i>Note that a higher X not only directly affects c2 buying but also indirectly affect c1 buying through c2</i></p>
-            <p>If there is no X, treat it as infinity, that is to use the following chart:</p>
-            <h4>T7PlaySpqcey</h4>
-            <table>
-                <tr><td>\(q_1\)</td><td>When \(\frac{1}{4}\) of \(c_6\) cost </td></tr>
-                <tr><td>\(c_1\)</td><td style="color: red;">Never buy      </td></tr>
-                <tr><td>\(c_2\)</td><td style="color: red;">Never buy      </td></tr>
-                <tr><td>\(c_3\)</td><td>When \(\frac{1}{10}\) of \(c_6\) cost</td></tr>
-                <tr><td>\(c_4\)</td><td>When \(\frac{1}{10}\) of \(c_6\) cost</td></tr>
-                <tr><td>\(c_5\)</td><td>When \(\frac{1}{4}\) of \(c_6\) cost </td></tr>
-                <tr><td>\(c_6\)</td><td style="color: green;">Always buy   </td></tr>
-            </table>
-            <p><i>Note that the corresponding idle strat to T7PlaySpqcey is called T7noC12 by the theory sim</i></p>
+                <ul>
+                    <li>1 - 1e25: T7C12d</li>
+                    <li>1e25 - 1e75: T7C3d</li>
+                    <li>1e75 - 1e110: T7C12d</li>
+                    <li>1e110 - 1e175 T7PlaySpqcey100</li>
+                    <li>1e175 - 1e250: T7PlaySpqcey10</li>
+                    <li>1e250 - 1e300: T7PlaySpqcey50</li>
+                </ul>
+                <h4>T7C12d</h4>
+                <table>
+                    <tr><td>\(q_1\)</td><td>When \(\frac{1}{10}\) of \(c_2\) cost</td></tr>
+                    <tr><td>\(c_1\)</td><td>When \(\frac{1}{10}\) of \(c_2\) cost</td></tr>
+                    <tr><td>\(c_2\)</td><td style="color: green;">Always buy   </td></tr>
+                    <tr><td>\(c_3\)</td><td style="color: red;">Never buy      </td></tr>
+                    <tr><td>\(c_4\)</td><td style="color: red;">Never buy      </td></tr>
+                    <tr><td>\(c_5\)</td><td style="color: red;">Never buy      </td></tr>
+                    <tr><td>\(c_6\)</td><td style="color: red;">Never buy      </td></tr>
+                </table>
+                <h4>T7C3d</h4>
+                <table>
+                    <tr><td>\(q_1\)</td><td>When \(\frac{1}{10}\) of \(c_3\) cost</td></tr>
+                    <tr><td>\(c_1\)</td><td style="color: red;">Never buy      </td></tr>
+                    <tr><td>\(c_2\)</td><td style="color: red;">Never buy      </td></tr>
+                    <tr><td>\(c_3\)</td><td style="color: green;">Always buy   </td></tr>
+                    <tr><td>\(c_4\)</td><td style="color: red;">Never buy      </td></tr>
+                    <tr><td>\(c_5\)</td><td style="color: red;">Never buy      </td></tr>
+                    <tr><td>\(c_6\)</td><td style="color: red;">Never buy      </td></tr>
+                </table>
+                <h4>T7PlaySpqceyX</h4>
+                <table>
+                    <tr><td>\(q_1\)</td><td>When \(\frac{1}{4}\) of \(c_6\) cost </td></tr>
+                    <tr><td>\(c_1\)</td><td>When \(\frac{1}{4}\) of \(c_2\) cost </td></tr>
+                    <tr><td>\(c_2\)</td><td>When \(\frac{1}{X}\) of \(c_6\) cost </td></tr>
+                    <tr><td>\(c_3\)</td><td>When \(\frac{1}{10}\) of \(c_6\) cost</td></tr>
+                    <tr><td>\(c_4\)</td><td>When \(\frac{1}{10}\) of \(c_6\) cost</td></tr>
+                    <tr><td>\(c_5\)</td><td>When \(\frac{1}{4}\) of \(c_6\) cost </td></tr>
+                    <tr><td>\(c_6\)</td><td style="color: green;">Always buy   </td></tr>
+                </table>
+                <p><i>Note that a higher X not only directly affects c2 buying but also indirectly affect c1 buying through c2</i></p>
+                <p>If there is no X, treat it as infinity, that is to use the following chart:</p>
+                <h4>T7PlaySpqcey</h4>
+                <table>
+                    <tr><td>\(q_1\)</td><td>When \(\frac{1}{4}\) of \(c_6\) cost </td></tr>
+                    <tr><td>\(c_1\)</td><td style="color: red;">Never buy      </td></tr>
+                    <tr><td>\(c_2\)</td><td style="color: red;">Never buy      </td></tr>
+                    <tr><td>\(c_3\)</td><td>When \(\frac{1}{10}\) of \(c_6\) cost</td></tr>
+                    <tr><td>\(c_4\)</td><td>When \(\frac{1}{10}\) of \(c_6\) cost</td></tr>
+                    <tr><td>\(c_5\)</td><td>When \(\frac{1}{4}\) of \(c_6\) cost </td></tr>
+                    <tr><td>\(c_6\)</td><td style="color: green;">Always buy   </td></tr>
+                </table>
+                <p><i>Note that the corresponding idle strat to T7PlaySpqcey is called T7noC12 by the theory sim</i></p>
 
             <!--POST T7-->
             <h2>Post T7 and T8 skip</h2>
@@ -506,6 +529,11 @@
 
 
             <p>Next: <a href="Theory-8-and-R9.html">Theory 8 and R9</a></p>
+
+            <h2>Extra Notes</h2>
+                <ul>
+                    <li>Average tau/hour calculated by using the Theory Sim best overall tau/hour divided by the best idle tau/hour from 0 to 300 tau</li>
+                </ul>
 
         </div>
     </body>
